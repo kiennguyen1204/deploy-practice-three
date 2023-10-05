@@ -1,0 +1,157 @@
+.weed-education-container {
+  background: var(--color-matte-white);
+  padding-top: 64px;
+}
+
+.weed-education-container .card-box {
+  padding: 32px 24px;
+}
+
+.weed-education-container .card-box .card-box-element {
+  padding: 0;
+  background: var(--color-matte-white);
+}
+
+.weed-education-container .card-box .card-box-element .weed-education-group {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 24px;
+  width: 100%;
+}
+
+.weed-education-container .card-box .card-box-element .weed-education-group .weed-education-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  gap: 24px;
+  position: relative;
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+}
+
+.weed-education-container
+  .card-box
+  .card-box-element
+  .weed-education-group
+  .weed-education-item
+  .weed-education-item-image
+  img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+  image-rendering: auto;
+}
+
+.weed-education-container
+  .card-box
+  .card-box-element
+  .weed-education-group
+  .weed-education-item
+  .weed-education-item-content {
+  gap: 32px;
+}
+
+.weed-education-container
+  .card-box
+  .card-box-element
+  .weed-education-group
+  .weed-education-item
+  .weed-education-item-content
+  .weed-education-item-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.weed-education-container
+  .card-box
+  .card-box-element
+  .weed-education-group
+  .weed-education-item
+  .weed-education-item-content
+  .weed-education-item-info
+  .weed-education-item-subtitle {
+  color: var(--color-neutral-light);
+  font-size: var(--font-size-normal);
+  font-weight: var(--font-weight-light);
+  font-family: var(--font-family-regular);
+  line-height: var(--line-height-small);
+}
+
+.weed-education-container
+  .card-box
+  .card-box-element
+  .weed-education-group
+  .weed-education-item
+  .weed-education-item-content
+  .weed-education-item-info
+  .weed-education-item-title {
+  color: var(--color-neutral-black);
+  font-size: var(--font-size-xxl);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-xl);
+  letter-spacing: -0.5px;
+}
+
+.weed-education-container
+  .card-box
+  .card-box-element
+  .weed-education-group
+  .weed-education-item
+  .weed-education-item-content
+  .weed-education-item-info
+  .weed-education-item-description {
+  color: var(--color-neutral-light);
+  font-size: var(--font-size-normal);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-medium);
+}
+
+.weed-education-container
+  .card-box
+  .card-box-element
+  .weed-education-group
+  .weed-education-item
+  .weed-education-item-content
+  .weed-education-item-read-more
+  .base-link {
+  color: var(--color-primary-base);
+  font-size: var(--font-size-normal);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-medium);
+  text-decoration: underline;
+}
+
+@media screen and (min-width: 768px) {
+  .weed-education-container .card-box .card-box-element .weed-education-group {
+    gap: 32px;
+    justify-content: space-between;
+  }
+
+  .weed-education-container .card-box .card-box-element .weed-education-group .weed-education-item {
+    max-width: calc(100% / 2 - 24px);
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .weed-education-container .card-box .card-box-element .weed-education-group .weed-education-item {
+    max-width: calc(100% / 3 - 24px);
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .weed-education-container {
+    padding-top: 120px;
+  }
+
+  .weed-education-container .card-box {
+    padding: 0 120px;
+  }
+}

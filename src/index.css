@@ -1,0 +1,59 @@
+.custom-container {
+  position: relative;
+  max-width: 100%;
+  flex: 1;
+  margin: auto;
+}
+
+.flex-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container-item {
+  position: relative;
+}
+
+.box-container {
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  height: auto;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  height: auto;
+}
+
+.scrollable-container {
+  max-height: 400px;
+  overflow: auto;
+}
+
+.tooltip-container {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.list-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.wrapper-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start; 
+}

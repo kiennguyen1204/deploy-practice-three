@@ -1,0 +1,58 @@
+.toast {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+}
+
+.notification {
+  background-color: var(--color-neutral-white);
+  border-radius: var(--border-radius-small);
+  box-shadow: var(--shadow);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.notification .status {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.notification .content {
+  margin: 0;
+}
+
+.btn-close {
+  background: none;
+  border: none;
+  color: var(--color-neutral-dark);
+  cursor: pointer;
+  font-size: var(--font-size-normal);
+  margin-left: 10px;
+  padding: 0;
+}
+
+.btn-close:hover {
+  color: var(--color-other-red);
+}
+
+.toast:not(.showing):not(.show) {
+  opacity: 1 !important;
+}
+
+.toast.success .notification {
+  background-color: var(--color-success);
+}
+
+.toast.success .check-icon {
+  color: var(--color-check);
+}
+
+.toast.error .notification {
+  background-color: var(--color-error);
+}
+
+.toast.error .error-icon {
+  color: var(--color-error);
+}

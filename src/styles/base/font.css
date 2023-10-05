@@ -1,0 +1,13 @@
+@font-face {
+  font-family: 'Lexend-Medium';
+  src: url('../../assets/fonts/Lexend-Medium.ttf');
+}
+
+@font-face {
+  font-family: 'Lexend-Regular';
+  src: url('../../assets/fonts/Lexend-Regular.ttf');
+}
+
+body {
+  font-family: var(--font-family-primary);
+}

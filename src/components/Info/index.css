@@ -1,0 +1,115 @@
+.box-info-bottom-container {
+  padding: 0 24px;
+  margin-bottom: 64px;
+}
+
+.box-info-bottom-container .box-container {
+  padding-top: 64px;
+  border-top: 1px solid var(--color-neutral-light);
+}
+
+.box-info-bottom-container .box-container .item-box {
+  position: relative;
+  padding: 24px;
+  margin-bottom: 24px;
+  border: 1px solid var(--color-matte-white);
+  border-radius: 12px;
+}
+
+.box-info-bottom-container .box-container .item-box:last-child {
+  margin-bottom: 0;
+}
+
+.card-image {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background: var(--color-secondary-ultra-light);
+  border-radius: 8px;
+  text-align: center;
+  padding: 24px;
+  background: var(--color-secondary-ultra-light);
+}
+
+.icon-image {
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background-color: var(--color-neutral-white);
+  bottom: 0;
+  left: 65%;
+  top: 60%;
+  transform: translateX(-50%);
+}
+
+.icon-image img {
+  position: absolute;
+  z-index: 1;
+}
+
+.box-info-bottom-container .box-container .item-box .title {
+  margin-top: 24px;
+  margin-bottom: 16px;
+  color: var(--color-neutral-base);
+  font-size: var(--font-size-xxl);
+  font-weight: var(--font-weight-medium);
+}
+
+.box-info-bottom-container .box-container .item-box .description {
+  font-size: var(--font-size-medium);
+  color: var(--color-neutral-light);
+  line-height: 21px;
+  margin-bottom: 24px;
+}
+
+.box-info-bottom-container .box-container .item-box .shop {
+  color: var(--color-primary-base);
+  font-size: var(--font-size-medium);
+}
+
+.card-image .icon-position {
+  border-radius: 50%;
+  background: var(--color-neutral-white);
+}
+
+@media only screen and (min-width: 768px) {
+  .box-info-bottom-container .box-container {
+    display: flex;
+    gap: 24px;
+    justify-content: space-between;
+  }
+
+  .box-info-bottom-container .box-container .item-box {
+    width: calc(((100% + 24px) / 3) - 24px);
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .box-info-bottom-container {
+    margin-bottom: 120px;
+    padding: 0 120px;
+  }
+
+  .box-info-bottom-container .box-container {
+    gap: 32px;
+  }
+
+  .box-info-bottom-container .box-container .item-box {
+    width: calc(((100% + 32px) / 3) - 32px);
+  }
+
+  .box-info-bottom-container .box-container .item-box .title {
+    font-size: var(--font-size-32);
+    font-weight: var(--font-weight-normal);
+    padding-left: 0;
+    margin-top: 32px;
+  }
+}
+
+@media only screen and (min-width: 1400px) {
+  .box-info-bottom-container .box-container {
+    padding: 0;
+  }
+}

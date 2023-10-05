@@ -1,0 +1,35 @@
+.list-container {
+  position: relative;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+.list-container-box {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.list-container-box-row {
+  flex-direction: row;
+}
+
+.list-container-box-column {
+  flex-direction: column;
+}
+
+.list-container-box-header {
+  position: relative;
+  color: var(--color-secondary-dark);
+  font-size: var(--font-size-xxl);
+  font-weight: var(--font-weight-semibold);
+  font-family: var(--font-family-medium);
+}
+
+.list-container-box-footer {
+  position: relative;
+  color: var(--color-secondary-dark);
+  font-size: var(--font-size-xxl);
+  font-weight: var(--font-weight-semibold);
+  font-family: var(--font-family-medium);
+}

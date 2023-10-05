@@ -1,0 +1,15 @@
+.navbar-custom {
+  display: block;
+  top: 0;
+  left: 0;
+  width: var(--width-base);
+  height: auto;
+}
+
+.container {
+  display: block;
+  position: relative;
+  max-width: var(--width-base);
+  width: var(--width-base);
+  margin: auto;
+}

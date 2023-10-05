@@ -1,0 +1,116 @@
+.best-seller-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.best-seller-container .best-seller-container-box {
+  position: relative;
+  padding: 120px;
+}
+
+.best-seller-container .best-seller-container-box {
+  padding: 80px 24px;
+}
+
+.best-seller-container .best-seller-container-box .best-seller-title {
+  position: relative;
+  max-width: 948px;
+  width: 100%;
+  color: var(--color-neutral-base);
+  font-size: var(--font-size-32);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-xxl);
+  text-align: center;
+  margin: auto;
+  padding-bottom: 64px;
+}
+
+.best-seller-container .best-seller-container-box .best-seller-box-wrapper {
+  position: relative;
+  margin-bottom: 64px;
+  overflow: hidden;
+}
+
+.best-seller-container .best-seller-container-box .best-seller-box-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.best-seller-container .best-seller-container-box .best-seller-box-wrapper .nav-pill {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 32px;
+  width: 30rem;
+  padding-block: 1rem;
+}
+
+.best-seller-container .best-seller-container-box .best-seller-box-wrapper .nav-pill .nav-item {
+  position: relative;
+  color: var(--color-neutral-base);
+  font-size: var(--font-size-normal);
+  font-weight: var(--font-weight-medium);
+  font-family: var(--font-family-medium);
+  line-height: 1.5;
+  border-radius: var(--border-radius-huge);
+  transition: all 0.3s ease-in-out;
+  background: var(--color-secondary-ultra-light);
+  overflow: hidden;
+}
+
+.best-seller-container
+  .best-seller-container-box
+  .best-seller-box-wrapper
+  .nav-pill
+  .nav-item
+  .nav-link {
+  display: inline-block;
+  position: relative;
+  width: var(--width-base);
+  padding: 8px 20px;
+  white-space: nowrap;
+  border: none;
+  background: transparent;
+}
+
+.best-seller-container
+  .best-seller-container-box
+  .best-seller-box-wrapper
+  .nav-pill
+  .nav-item.active {
+  color: var(--color-secondary-dark);
+  border: 1px solid var(--color-secondary-dark);
+}
+
+@media screen and (min-width: 768px) {
+  .best-seller-container .best-seller-container-box {
+    padding: 80px 64px;
+  }
+
+  .best-seller-container .best-seller-container-box .best-seller-title {
+    font-size: 40px;
+    line-height: 70.4px;
+    letter-spacing: 1px;
+  }
+
+  .best-seller-container .best-seller-container-box .best-seller-box-wrapper .nav-pill {
+    width: auto;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .best-seller-container
+    .best-seller-container-box
+    .best-seller-box-wrapper
+    .nav-pill
+    .nav-item
+    .nav-link {
+    padding: 8px 137px;
+  }
+
+  .best-seller-container .best-seller-container-box .best-seller-title {
+    font-size: 64px;
+  }
+}

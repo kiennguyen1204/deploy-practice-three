@@ -1,0 +1,106 @@
+:root {
+  /* Colors */
+  --color-neutral-white: #fff;
+  --color-matte-white: #f4f4f4;
+  --color-neutral-lightest: #c8c9cb;
+  --color-neutral-lighter: #9d9ea2;
+  --color-neutral-light: #717378;
+  --color-neutral-mid: #46494f;
+  --color-neutral-ultra-light: #f4f4f4;
+  --color-neutral-base: #1a1e26;
+  --color-neutral-dark: #54576d;
+  --color-neutral-black: #060709;
+  --color-other-orange: #f2bc1b;
+  --color-other-red: #eb2606;
+  --color-success: #68c03f;
+  --color-error: #f8d7da;
+
+  --color-primary-light: #9bdda2;
+  --color-primary-base: #17af26;
+  --color-neutral-dark-green: #062a09;
+
+  --color-secondary-light: #c3d2cc;
+  --color-secondary-mid: #648a7c;
+  --color-secondary-base: #346654;
+  --color-secondary-ultra-light: #f2f6f4;
+  --color-secondary-dark: #05422c;
+  --color-secondary-ultra-dark: #01100b;
+  --color-semi-transparent-white: rgba(255, 255, 255, 0.6);
+
+  /* Fonts */
+  --font-size-super-small: 8px;
+  --font-size-small: 12px;
+  --font-size-medium: 14px;
+  --font-size-normal: 16px;
+  --font-size-large: 18px;
+  --font-size-xl: 20px;
+  --font-size-xxl: 24px;
+  --font-size-huge: 32px;
+  --font-size-huge-1: 64px;
+
+  /* Weight */
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+
+  /* Height */
+  --height-base: 100%;
+  --height-tiny: 15px;
+  --height-small: 18px;
+  --height-medium: 32px;
+  --height-regular: 36px;
+  --height-large: 40px;
+  --height-xl: 42px;
+  --height-xxl: 48px;
+  --height-huge: 56px;
+  --height-giant: 720px;
+
+  /* Line height */
+  --line-height-super-small: 1.5;
+  --line-height-tiny: 5.5;
+  --line-height-base: 18px;
+  --line-height-small: 21px;
+  --line-height-medium: 24px;
+  --line-height-normal: 27px;
+  --line-height-large: 30px;
+  --line-height-xl: 36px;
+  --line-height-xxl: 38.4px;
+  --line-height-huge: 42px;
+  --line-height-huge-1: 70.4px;
+
+  /* width */
+  --width-base: 100%;
+  --width-super-small: 1px;
+  --width-small: 50px;
+  --width-medium: 100px;
+  --width-regular: 300px;
+  --width-large: 400px;
+  --width-extra-large: 600px;
+
+  /* Border radius */
+  --border-radius-small: 4px;
+  --border-radius-medium: 8px;
+  --border-radius-large: 12px;
+  --border-radius-xl: 16px;
+  --border-radius-xxl: 20px;
+  --border-radius-huge: 100px;
+  --border-radius-huge-1: 50%;
+
+  /* Fonts family */
+  --font-family-primary: 'Lexend-Regular';
+  --font-family-secondary: 'Lexend-Medium';
+
+  /* Shadows */
+  --shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  --box-shadow-color-1: rgba(0, 0, 0, 0.12);
+  --box-shadow-color-2: rgba(0, 0, 0, 0.24);
+  --box-shadow-x: 0px;
+  --box-shadow-y: 1px;
+  --box-shadow-blur: 3px;
+  --box-shadow-spread: 0px;
+
+  --box-shadow-1: 0 2px 4px rgba(244, 243, 243, 0.2);
+  --box-shadow-2: 0 2px 4px rgba(0, 0, 0, 0.2);
+  --box-shadow-3: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  --box-shadow-4: 0px 6px 16px 0px rgba(0, 0, 0, 0.25);
+}

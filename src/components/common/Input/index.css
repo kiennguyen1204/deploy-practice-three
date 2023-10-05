@@ -1,0 +1,23 @@
+.text-input-default {
+  display: flex;
+  width: var(--width-base);
+  padding: 4px 4px 4px 24px;
+  align-items: center;
+  width: var(--width-base);
+  gap: 8px;
+  border-radius: var(--border-radius-huge);
+  border: 1px solid var(--color-matte-white);
+  background: var(--color-neutral-white);
+}
+
+.text-wrapper {
+  width: var(--width-base);
+}
+
+.text-input.input-sm {
+  padding: 4px 4px 4px 24px;
+}
+
+.text-input.input-md {
+  padding: 24px 44px;
+}

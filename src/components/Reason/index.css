@@ -1,0 +1,105 @@
+.what-make-box-container {
+  margin: 64px 0;
+  padding-inline: 24px;
+}
+
+.what-make-box-container .wrapper-element .title {
+  font-size: var(--font-size-huge);
+  color: var(--color-neutral-base);
+  text-align: left;
+}
+
+.what-make-box-container .wrapper-element .title .num-1 {
+  color: var(--color-other-orange);
+}
+
+.what-make-box-container .wrapper-element .description {
+  color: var(--color-neutral-light);
+  font-size: clamp(var(--font-size-medium), 2vw, var(--font-size-normal));
+  line-height: 24px;
+  max-width: 789px;
+  margin-top: 16px;
+  margin-bottom: 32px;
+}
+
+.what-make-box-container .wrapper-element .content-box-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: center;
+}
+
+.what-make-box-container .wrapper-element .content-box-container .item-box {
+  border-radius: var(--border-radius-large);
+  padding: 16px;
+  border: 1px solid rgba(206, 207, 213, 0.4);
+}
+
+.what-make-box-container .wrapper-element .content-box-container .item-box .icon {
+  margin-bottom: 16px;
+}
+
+.what-make-box-container .wrapper-element .content-box-container .item-box .title-box {
+  margin-bottom: 16px;
+  font-size: clamp(var(--font-size-large), 2vw, var(--font-size-xxl));
+  color: var(--color-neutral-base);
+  font-weight: var(--font-weight-medium);
+}
+
+.what-make-box-container .wrapper-element .content-box-container .item-box .description {
+  font-size: clamp(var(--font-size-small), 3vw, var(--font-size-medium));
+  color: var(--color-neutral-light);
+  line-height: var(--height-small);
+  margin-bottom: 0;
+}
+
+@media only screen and (min-width: 768px) {
+  .what-make-box-container .wrapper-element .content-box-container .item-box {
+    width: calc(((100% + 16px) / 3) - 32px);
+    height: auto;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .what-make-box-container .wrapper-element .content-box-container .item-box {
+    width: calc(((100% + 32px) / 3) - 32px);
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .what-make-box-container {
+    padding: 0 120px;
+    margin: 120px 0;
+  }
+
+  .what-make-box-container .wrapper-element .title {
+    font-size: var(--font-size-huge-1);
+    font-weight: var(--font-weight-semibold);
+    line-height: 110%;
+    width: 100%;
+    max-width: 789px;
+  }
+
+  .what-make-box-container .wrapper-element .description {
+    margin-top: 24px;
+    margin-bottom: 64px;
+  }
+
+  .what-make-box-container .wrapper-element .content-box-container {
+    gap: 32px;
+  }
+
+  .what-make-box-container .wrapper-element .content-box-container .item-box .icon {
+    margin-bottom: 44px;
+  }
+
+  .what-make-box-container .wrapper-element .content-box-container .item-box .description {
+    margin-top: 0;
+  }
+
+  .what-make-box-container .wrapper-element .content-box-container .item-box {
+    padding: 32px;
+    height: 375px;
+    width: calc(((100% + 32px) / 3) - 32px);
+  }
+}

@@ -1,0 +1,12 @@
+# package
+node_modules
+dist
+
+# Storybook
+storybook-static
+
+# Test  
+coverage
+
+# vite env environment variables file
+.env

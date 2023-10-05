@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CloseButton should match the snapshot 1`] = `
+<div>
+  <button
+    class="modal-close-button"
+    data-testid="modal-close-button"
+    type="button"
+  >
+    ×
+  </button>
+</div>
+`;
