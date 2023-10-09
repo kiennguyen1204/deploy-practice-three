@@ -14,10 +14,10 @@ const ReferFriendItem: React.FC<Props> = ({
   description = 'Default description'
 }) => (
   <article className='item-bottom'>
-    <header className='top-header'>
+    <section className='flex-start-container top-header'>
       <div className='flex-container index-circle'>{index + 1}</div>
       <div className='icon'>{icon}</div>
-    </header>
+    </section>
     <section className='item-content'>
       <h2 className='title'>{title}</h2>
       <p className='description'>{description}</p>

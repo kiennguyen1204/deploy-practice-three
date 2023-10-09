@@ -14,20 +14,20 @@ interface Props {
 const WeedEducationItem: React.FC<Props> = ({ item }): JSX.Element => {
   const {
     image = '/src/assets/images/default_image.webp',
-    subtitle = 'Default Subtitle',
-    title = 'Default Title',
+    subtitle = '',
+    title = '',
     description = 'Default Description',
-    to = '/default-link'
+    to = 'https://dol.ny.gov/cannabis-education'
   } = item || {};
 
   return (
-    <article className='weed-education-item'>
-      <figure className='weed-education-item-image'>
+    <article className='list-container weed-education-item'>
+      <picture className='weed-education-item-image'>
         <img src={image} alt='main image' />
-      </figure>
+      </picture>
 
       <section className='wrapper-container weed-education-item-content'>
-        <header className='weed-education-item-info'>
+        <header className='wrapper-container weed-education-item-info'>
           <h2 className='weed-education-item-subtitle'>{subtitle}</h2>
           <h1 className='weed-education-item-title'>{title}</h1>
           <p className='weed-education-item-description'>{description}</p>

@@ -9,14 +9,18 @@ interface Props {
 }
 
 const ReasonItem: React.FC<Props> = ({ item }): JSX.Element => {
-  const { icon, title = 'Default title', description = 'Default description' } = item;
+  const {
+    icon = '/src/assets/images/default_image.webp',
+    title = '',
+    description = 'Default description'
+  } = item;
 
   return (
-    <div className='item-box'>
+    <section className='item-box'>
       <div className='icon'>{icon}</div>
       <p className='title-box'>{title}</p>
       <p className='description'>{description}</p>
-    </div>
+    </section>
   );
 };
 

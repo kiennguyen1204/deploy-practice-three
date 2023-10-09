@@ -10,7 +10,6 @@ export interface Item {
   category: string;
   price?: number;
   discount?: number;
-  purity: string;
   volume: string[];
   unit: string;
   perPrice?: string | number;

@@ -1,4 +1,4 @@
-import Mastercard from 'assets/images/mastercard.svg';
+import Mastercard from 'assets/images/master_card.svg';
 import Visa from 'assets/images/visa.svg';
 import Bitcoin from 'assets/images/bitcoin.svg';
 import Interac from 'assets/images/interac.svg';

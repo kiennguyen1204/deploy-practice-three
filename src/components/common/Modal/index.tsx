@@ -13,16 +13,16 @@ interface Props {
 
 //TODO: handle dismiss when touching on overlay
 const Modal = ({ onClose, children }: Props): ReactElement => (
-  <div className="modal-overlay" data-testid="modal-overlay">
-    <div className="modal-content" data-testid="modal-content">
-      <div className="modal-header" data-testid="modal-header">
+  <article className='modal-overlay' data-testid='modal-overlay'>
+    <section className='modal-content' data-testid='modal-content'>
+      <div className='modal-header' data-testid='modal-header'>
         <CloseButton onClick={onClose} />
       </div>
-      <div className="modal-body" data-testid="modal-body">
+      <div className='modal-body' data-testid='modal-body'>
         {children}
       </div>
-    </div>
-  </div>
+    </section>
+  </article>
 );
 
 export default memo(Modal);

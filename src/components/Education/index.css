@@ -22,8 +22,6 @@
 }
 
 .weed-education-container .card-box .card-box-element .weed-education-group .weed-education-item {
-  display: flex;
-  flex-direction: column;
   justify-content: flex-start;
   align-items: stretch;
   gap: 24px;
@@ -63,10 +61,6 @@
   .weed-education-item
   .weed-education-item-content
   .weed-education-item-info {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
   gap: 8px;
 }
 
@@ -81,7 +75,6 @@
   color: var(--color-neutral-light);
   font-size: var(--font-size-normal);
   font-weight: var(--font-weight-light);
-  font-family: var(--font-family-regular);
   line-height: var(--line-height-small);
 }
 

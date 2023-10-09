@@ -11,24 +11,30 @@ interface Props {
 }
 
 const BoxInfoItem: React.FC<Props> = ({
-  image,
-  title = 'Default Title',
+  image = '/src/assets/images/default_image.webp',
+  title = '',
   description = 'Default Description',
-  to,
-  shop,
-  icon
+  to = '',
+  shop = '',
+  icon = '/src/assets/images/default_image.webp'
 }): JSX.Element => (
-  <div className='item-box'>
-    <div className='card-image'>
+  <section className='item-box'>
+    <picture className='flex-row-container card-image'>
       <img src={image} alt={title} />
-      {icon && <img className='flex-container icon-image' src={icon} alt={title} />}
-    </div>
-    <p className='title'>{title}</p>
+
+      <img
+        className='flex-container icon-image'
+        src={icon}
+        alt={`${title} Icon`}
+        aria-hidden='true'
+      />
+    </picture>
+    <h2 className='title'>{title}</h2>
     <p className='description'>{description}</p>
-    <NavLink to={to} className='shop'>
+    <NavLink to={to} className='shop' aria-label={`Visit ${shop}`}>
       {shop}
     </NavLink>
-  </div>
+  </section>
 );
 
 export default memo(BoxInfoItem);

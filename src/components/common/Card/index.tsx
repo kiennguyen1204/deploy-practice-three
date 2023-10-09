@@ -11,22 +11,22 @@ interface Props {
 }
 
 const Card: React.FC<Props> = ({ children, classes, iShowAll, title = '' }): JSX.Element => (
-  <div className={`card-box-container ${classes}`}>
+  <article className={`card-box-container ${classes}`}>
     {title.length > 0 && (
-      <div className='flex header-title'>
-        <div className='title'>{title}</div>
+      <header className='flex-space-between-container header-title'>
+        <h2 className='title'>{title}</h2>
         {iShowAll && (
           <a href='https://weedmaps.com/learn' className='show-all-link'>
             Show All
           </a>
         )}
-      </div>
+      </header>
     )}
 
-    <div className='card-box'>
+    <section className='card-box'>
       <div className='card-box-element'>{children}</div>
-    </div>
-  </div>
+    </section>
+  </article>
 );
 
 export default memo(Card);

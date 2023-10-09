@@ -22,8 +22,6 @@
 
 .card-image {
   position: relative;
-  display: flex;
-  flex-direction: row;
   justify-content: center;
   background: var(--color-secondary-ultra-light);
   border-radius: 8px;

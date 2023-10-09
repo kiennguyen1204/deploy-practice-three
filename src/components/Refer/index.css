@@ -1,5 +1,4 @@
 .refer-box-container {
-  display: block;
   position: relative;
   color: var(--color-neutral-white);
   overflow: hidden;
@@ -37,7 +36,6 @@
 }
 
 .refer-box-container .card-box-container .card-box .card-box-element {
-  display: block;
   position: relative;
   border-radius: 24px;
   color: var(--color-neutral-white);
@@ -134,9 +132,6 @@
 }
 
 .refer-box-container .content-full-card .content-bottom .list-content .item-bottom .top-header {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
   margin-bottom: 16px;
   margin-left: -15px;
 }

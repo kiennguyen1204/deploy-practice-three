@@ -48,9 +48,9 @@ const ReferFriend: React.FC = (): JSX.Element => {
       <section className='card-box-container'>
         <div className='card-box'>
           <div className='card-box-element'>
-            <figure className='svg'>
+            <picture className='svg'>
               <img src={ReferFriendSVG} alt='refer' />
-            </figure>
+            </picture>
             <div className='wrapper-container card-wrapper'>
               <h1 className='title'>REFER A FRIEND</h1>
               <p className='get'>

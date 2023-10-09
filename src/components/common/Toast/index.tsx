@@ -28,17 +28,17 @@ const Toast = ({ status, message, onClose, timeout = 2000 }: Props): ReactElemen
   }, [timeout, onClose]);
 
   return (
-    <div className={`toast ${toastStatus}`}>
-      <div className="notification">
+    <section className={`toast ${toastStatus}`}>
+      <div className='flex-space-between-container notification'>
         <span className={`material-symbols-outlined ${toastProcess}`}></span>
-        <div className="message">
-          <p className="content">{message}</p>
+        <div className='message'>
+          <p className='content'>{message}</p>
         </div>
-        <button onClick={onClose} type="button" className="btn-close" aria-label="Close">
+        <button onClick={onClose} type='button' className='btn-close' aria-label='Close'>
           X
         </button>
       </div>
-    </div>
+    </section>
   );
 };
 

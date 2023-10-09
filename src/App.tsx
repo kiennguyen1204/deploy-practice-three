@@ -1,6 +1,8 @@
-import { Footer } from './layouts/footer';
-import Navbar from './layouts/header/Navbar';
 import RouterViews from './router';
+
+// layouts
+import { Footer } from 'layouts/Footer';
+import Navbar from 'layouts/Header/Navbar';
 
 const App: React.FC = () => {
   return (

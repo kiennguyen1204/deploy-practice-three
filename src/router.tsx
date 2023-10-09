@@ -1,7 +1,11 @@
 import { BrowserRouter as RouterView, Routes, Route } from 'react-router-dom';
+
+// pages
 import { Homepage } from './pages/Homepage';
+import Detail from 'pages/Detail';
+
+// constants
 import ROUTE from './constants/route';
-import Detail from './pages/Detail';
 
 interface RouterProps {
   children: React.ReactNode;

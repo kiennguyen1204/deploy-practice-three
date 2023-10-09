@@ -22,7 +22,7 @@ export const dataItemDetail = {
 export const DATA_LIST = [
   {
     isSoldOut: 86,
-    title: false,
+    title: '',
     totalReviews: 135,
     discount: '$200.00',
     price: '$102.00',
@@ -39,7 +39,7 @@ export const DATA_LIST = [
   },
   {
     isSoldOut: 86,
-    title: false,
+    title: '',
     totalReviews: 135,
     discount: '$200.00',
     price: '$102.00',
@@ -56,7 +56,7 @@ export const DATA_LIST = [
   },
   {
     isSoldOut: 86,
-    title: false,
+    title: '',
     totalReviews: 135,
     discount: '$200.00',
     price: '$102.00',
@@ -73,7 +73,7 @@ export const DATA_LIST = [
   },
   {
     isSoldOut: 86,
-    title: false,
+    title: '',
     totalReviews: 135,
     discount: '$200.00',
     price: '$102.00',

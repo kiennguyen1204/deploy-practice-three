@@ -14,11 +14,10 @@ import { Item } from 'interfaces/item';
 import { getProductById, getProducts } from 'services/api-action';
 
 // components
-import ItemCard from 'components/common/item';
+import ItemCard from 'components/common/Item';
 
 // styles
 import './index.css';
-import ThumbnailList from './ThumbListImage';
 
 const Detail: React.FC = (): JSX.Element => {
   const { productId } = useParams<{ productId: string }>();
@@ -50,34 +49,36 @@ const Detail: React.FC = (): JSX.Element => {
     fetchFeaturedProducts();
   }, []);
 
-  const handleThumbnailClick = (index: number) => {
-    setCurrentImage(index);
-  };
-
   const { image, name, sale, discount, price, category, rate, totalReviews, description } =
     product || {};
 
   return (
     <>
-      <div className='detail-container'>
-        <div className='image-container'>
-          <div className='flex-container image-product'>
+      <article className='list-container detail-container'>
+        <section className='list-container image-container'>
+          <picture className='flex-container image-product'>
             <img src={image} alt='main product' />
-          </div>
+          </picture>
+
           <div className='thumb-list'>
-            {Array.from({ length: 4 }).map((_, index) => (
-              <ThumbnailList
-                key={index}
-                currentImage={currentImage}
-                handleThumbnailClick={handleThumbnailClick}
-                image={image}
-                index={index} // Pass the index as a prop
-              />
-            ))}
+            {Array.from({ length: 4 }).map((_, index) => {
+              const handleThumbnailClick = () => {
+                setCurrentImage(index);
+              };
+
+              return (
+                <a
+                  className={`thumb-item ${index === currentImage && 'choosing'}`}
+                  onClick={handleThumbnailClick}>
+                  <img src={image} alt={`Thumbnail ${index}`} />
+                </a>
+              );
+            })}
           </div>
-        </div>
-        <div className='info-container'>
-          <div className='overview-container'>
+        </section>
+
+        <div className='list-container info-container'>
+          <div className='list-container overview-container'>
             <p className='category'>{category}</p>
             <p className='title'>{name}</p>
             <div className='sale'>
@@ -90,9 +91,9 @@ const Detail: React.FC = (): JSX.Element => {
               </div>
               <div className='review-container'>
                 <div className='rate-box'>
-                  <div className='rate-svg'>
+                  <picture className='rate-svg'>
                     <img src={Star} alt='star' />
-                  </div>
+                  </picture>
                   <span className='rate-text'>{rate}</span>
                 </div>
                 <div className='divider'></div>
@@ -104,25 +105,26 @@ const Detail: React.FC = (): JSX.Element => {
               </div>
             </div>
           </div>
-          <div className='effects-container'>
+          <div className='list-container effects-container'>
             {dataItemDetail.effects.map((e) => (
-              <div className='effects-box'>
+              <figure className='effects-box'>
                 <img src={e.image} />
-                <div className='effects-text'>
+                <figcaption className='effects-text'>
                   <p className='title'>{e.title}</p>
                   <p className='content'>{e.content}</p>
-                </div>
-              </div>
+                </figcaption>
+              </figure>
             ))}
           </div>
-          <div className='description-container'>
+          <div className='list-container description-container'>
             <p className='title'>description</p>
             <p className='content'>{description}</p>
           </div>
         </div>
-      </div>
-      <div className='featured-product'>
-        <p className='featured-title'>Featured Product</p>
+      </article>
+
+      <section className='featured-product'>
+        <h2 className='featured-title'>Featured Product</h2>
         <div className='container-list-item'>
           {featuredProducts.map((featuredProduct, index) => (
             <ItemCard
@@ -134,7 +136,7 @@ const Detail: React.FC = (): JSX.Element => {
             />
           ))}
         </div>
-      </div>
+      </section>
     </>
   );
 };

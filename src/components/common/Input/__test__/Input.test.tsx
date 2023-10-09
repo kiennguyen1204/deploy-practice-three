@@ -4,15 +4,15 @@ import { render, screen, fireEvent } from '@testing-library/react';
 import { INPUT_SIZE, INPUT_TYPE, INPUT_VARIANT } from 'constants/enums';
 
 // components
-import Input, { InputProps } from 'components/common/Input';
+import Input, { Props } from 'components/common/Input';
 
-const defaultProps: InputProps = {
+const defaultProps: Props = {
   name: 'test-input',
   value: '',
   onChange: jest.fn()
 };
 
-const renderInput = (props?: Partial<InputProps>) => {
+const renderInput = (props?: Partial<Props>) => {
   const mergedProps = { ...defaultProps, ...props };
   return render(<Input {...mergedProps} />);
 };
