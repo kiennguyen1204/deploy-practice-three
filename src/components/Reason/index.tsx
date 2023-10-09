@@ -63,7 +63,7 @@ const WhatMake: React.FC = (): JSX.Element => {
         </p>
 
         <div className="content-box-container">
-          {contentData.map((item, index) => (
+          {contentData.map((item) => (
             <ReasonItem item={item} />
           ))}
         </div>
