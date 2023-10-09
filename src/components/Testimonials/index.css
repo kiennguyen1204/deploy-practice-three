@@ -1,6 +1,6 @@
 .testimonials-list-container
   .testimonials-list-containerBox
-  .top-header-testitmonials
+  .top-header-testimonials
   .title-header {
   position: relative;
   max-width: 948px;
@@ -20,7 +20,10 @@
   padding-inline: 24px;
 }
 
-.testimonials-list-container .testimonials-list-containerBox .list-data .box-voted {
+.testimonials-list-container
+  .testimonials-list-containerBox
+  .list-data
+  .box-voted {
   border-radius: 16px;
   padding: 24px;
   gap: 32px;
@@ -39,7 +42,11 @@
   line-height: 36px;
 }
 
-.testimonials-list-container .testimonials-list-containerBox .list-data .box-voted .line-hor {
+.testimonials-list-container
+  .testimonials-list-containerBox
+  .list-data
+  .box-voted
+  .line-hor {
   margin: 32px 0;
   height: 1px;
   border: none;
@@ -59,7 +66,7 @@
   .list-data
   .box-voted
   .bottom-box-voted
-  .exellencet {
+  .excellence {
   color: var(--color-neutral-white);
   font-size: var(--font-size-normal);
   font-weight: var(--font-weight-regular);
@@ -110,7 +117,7 @@
   .rating-bottom
   .total-reviews::before {
   position: absolute;
-  content: '';
+  content: "";
   height: 100%;
   width: 1px;
   background: var(--color-secondary-mid);
@@ -128,7 +135,10 @@
   color: var(--color-secondary-mid);
 }
 
-.testimonials-list-container .testimonials-list-containerBox .list-data .testimonials-list {
+.testimonials-list-container
+  .testimonials-list-containerBox
+  .list-data
+  .testimonials-list {
   position: relative;
   display: block;
   margin-top: 32px;
@@ -199,7 +209,10 @@
     gap: 32px;
   }
 
-  .testimonials-list-container .testimonials-list-containerBox .list-data .box-voted {
+  .testimonials-list-container
+    .testimonials-list-containerBox
+    .list-data
+    .box-voted {
     width: 380px;
   }
 
@@ -211,7 +224,10 @@
     max-width: 300px;
   }
 
-  .testimonials-list-container .testimonials-list-containerBox .list-data .testimonials-list {
+  .testimonials-list-container
+    .testimonials-list-containerBox
+    .list-data
+    .testimonials-list {
     width: calc(100% - 380px - 32px);
   }
 }
@@ -233,7 +249,7 @@
 
   .testimonials-list-container
     .testimonials-list-containerBox
-    .top-header-testitmonials
+    .top-header-testimonials
     .title-header {
     font-size: 64px;
     line-height: 1.1;
@@ -257,7 +273,7 @@
 @media screen and (min-width: 1400px) {
   .testimonials-list-container
     .testimonials-list-containerBox
-    .top-header-testitmonials
+    .top-header-testimonials
     .title-header {
     padding-inline: unset;
   }
