@@ -25,7 +25,7 @@ export const LIST_ITEM_NAVIGATION = [
 export const DATA_INFO = [
   {
     title: "Indica",
-    image: "/src/assets/images/indica.png",
+    image: "/src/assets/images/indica.webp",
     icon: "/src/assets/images/sleeping_face.svg",
     description: `This type of cannabis is commonly taken by those who want to sink into a state of total relaxation in every limb. This reduces stress overall and can take your worries and fatigue away. Because of its relaxing effects, it is suggested to use this type of cannabis at night. It is particularly recommended for people who have trouble sleeping, be it due to insomnia, pain or other associated sleep issues.`,
     to: "/indica",
@@ -33,7 +33,7 @@ export const DATA_INFO = [
   },
   {
     title: "Sativa",
-    image: "/src/assets/images/indica.webp",
+    image: "/src/assets/images/indica .webp",
     icon: "/src/assets/images/sun.svg",
     description:
       "Contrary to the deep all-body relaxation that comes with the use of indica strains, sativas are known for increasing the feeling of creativity, enhancing focus and lessening anxiety. This is more of a mind-centered high in terms of how and where you will feel the effects. Given its stimulating nature, it is recommended to use this during the day.",
