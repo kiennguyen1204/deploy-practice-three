@@ -33,7 +33,7 @@ export const DATA_INFO = [
   },
   {
     title: "Sativa",
-    image: "/src/assets/images/indica .webp",
+    image: "/src/assets/images/indica.webp",
     icon: "/src/assets/images/sun.svg",
     description:
       "Contrary to the deep all-body relaxation that comes with the use of indica strains, sativas are known for increasing the feeling of creativity, enhancing focus and lessening anxiety. This is more of a mind-centered high in terms of how and where you will feel the effects. Given its stimulating nature, it is recommended to use this during the day.",
