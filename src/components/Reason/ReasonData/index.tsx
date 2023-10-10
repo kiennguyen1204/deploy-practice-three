@@ -1,4 +1,4 @@
-import { memo } from 'react';
+import { memo } from "react";
 
 interface Props {
   item: {
@@ -10,16 +10,16 @@ interface Props {
 
 const ReasonItem: React.FC<Props> = ({ item }): JSX.Element => {
   const {
-    icon = '/src/assets/images/default_image.webp',
-    title = '',
-    description = 'Default description'
+    icon = "../../../assets/images/default_image.webp",
+    title = "",
+    description = "Default description",
   } = item;
 
   return (
-    <section className='item-box'>
-      <div className='icon'>{icon}</div>
-      <p className='title-box'>{title}</p>
-      <p className='description'>{description}</p>
+    <section className="item-box">
+      <div className="icon">{icon}</div>
+      <p className="title-box">{title}</p>
+      <p className="description">{description}</p>
     </section>
   );
 };

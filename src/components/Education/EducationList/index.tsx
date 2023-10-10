@@ -13,7 +13,7 @@ interface Props {
 
 const WeedEducationItem: React.FC<Props> = ({ item }): JSX.Element => {
   const {
-    image = '/src/assets/images/default_image.webp',
+    image = '../../../assets/images/default_image.webp',
     subtitle = '',
     title = '',
     description = 'Default Description',

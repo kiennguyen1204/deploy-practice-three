@@ -1,5 +1,5 @@
-import { memo } from 'react';
-import { NavLink } from 'react-router-dom';
+import { memo } from "react";
+import { NavLink } from "react-router-dom";
 
 interface Props {
   image: string;
@@ -11,27 +11,27 @@ interface Props {
 }
 
 const BoxInfoItem: React.FC<Props> = ({
-  image = './../../../assets/images/default_image.webp',
-  title = '',
-  description = 'Default Description',
-  to = '',
-  shop = '',
-  icon = '/src/assets/images/default_image.webp'
+  image = "./../../../assets/images/default_image.webp",
+  title = "",
+  description = "Default Description",
+  to = "",
+  shop = "",
+  icon = "../../../assets/images/default_image.webp",
 }): JSX.Element => (
-  <section className='item-box'>
-    <picture className='flex-row-container card-image'>
+  <section className="item-box">
+    <picture className="flex-row-container card-image">
       <img src={image} alt={title} />
 
       <img
-        className='flex-container icon-image'
+        className="flex-container icon-image"
         src={icon}
         alt={`${title} Icon`}
-        aria-hidden='true'
+        aria-hidden="true"
       />
     </picture>
-    <h2 className='title'>{title}</h2>
-    <p className='description'>{description}</p>
-    <NavLink to={to} className='shop' aria-label={`Visit ${shop}`}>
+    <h2 className="title">{title}</h2>
+    <p className="description">{description}</p>
+    <NavLink to={to} className="shop" aria-label={`Visit ${shop}`}>
       {shop}
     </NavLink>
   </section>

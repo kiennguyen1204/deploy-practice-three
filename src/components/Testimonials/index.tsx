@@ -107,7 +107,7 @@ const CustomerTestimonials: React.FC = (): JSX.Element => {
                                 src={
                                   item <= el.star
                                     ? Star
-                                    : "/src/assets/images/star.svg"
+                                    : "../../assets/images/star.svg"
                                 }
                                 alt="Star"
                               />
