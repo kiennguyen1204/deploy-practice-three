@@ -7,6 +7,3 @@ storybook-static
 
 # Test  
 coverage
-
-# vite env environment variables file
-.env
