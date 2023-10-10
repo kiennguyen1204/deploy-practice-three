@@ -11,7 +11,7 @@ interface Props {
 }
 
 const BoxInfoItem: React.FC<Props> = ({
-  image = '/src/assets/images/default_image.webp',
+  image = './../../../assets/images/default_image.webp',
   title = '',
   description = 'Default Description',
   to = '',
