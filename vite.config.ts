@@ -8,7 +8,7 @@ import tsconfigPaths from "vite-tsconfig-paths";
 // https://vitejs.dev/config/
 export default defineConfig({
   build: {
-    outDir: 'public'
+    outDir: "public",
   },
   plugins: [
     react(),
@@ -46,9 +46,5 @@ export default defineConfig({
 
   server: {
     port: 3000,
-  },
-
-  build: {
-    outDir: "public",
   },
 });
