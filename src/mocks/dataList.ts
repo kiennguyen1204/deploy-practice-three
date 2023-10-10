@@ -2,7 +2,7 @@ export const dataItemDetail = {
   effects: [
     {
       title: 'effects',
-      image: '../assets/images/products/color_filter.png',
+      image: 'assets/images/products/color_filter.png',
       content: 'Calming, Creative, Happy, Relaxing, Sleepy, Uplifting'
     },
     {
