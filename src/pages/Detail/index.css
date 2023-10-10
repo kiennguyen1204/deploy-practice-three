@@ -1,6 +1,8 @@
 .detail-container {
   padding: 24px;
   gap: 40px;
+  display: flex;
+  flex-direction: column;
 }
 
 .featured-product {
@@ -101,7 +103,11 @@
 .detail-container .info-container .overview-container .title {
   color: var(--color-neutral-black);
   font-size: clamp(var(--font-size-xl), 2vw, var(--font-size-32));
-  font-weight: clamp(var(--font-weight-medium), 2vw, var(--font-weight-semibold));
+  font-weight: clamp(
+    var(--font-weight-medium),
+    2vw,
+    var(--font-weight-semibold)
+  );
   line-height: var(--line-height-large);
 }
 
@@ -127,7 +133,11 @@
   align-items: center;
 }
 
-.detail-container .info-container .overview-container .numeral-container .price-container {
+.detail-container
+  .info-container
+  .overview-container
+  .numeral-container
+  .price-container {
   display: flex;
   gap: 8px;
   align-items: center;
@@ -146,14 +156,23 @@
   text-decoration-line: line-through;
 }
 
-.detail-container .info-container .overview-container .numeral-container .price-container .price {
+.detail-container
+  .info-container
+  .overview-container
+  .numeral-container
+  .price-container
+  .price {
   color: var(--color-other-red);
   font-size: clamp(var(--font-size-normal), 2vw, var(--font-size-xl));
   font-weight: var(--font-weight-medium);
   line-height: 150%;
 }
 
-.detail-container .info-container .overview-container .numeral-container .review-container {
+.detail-container
+  .info-container
+  .overview-container
+  .numeral-container
+  .review-container {
   display: flex;
   align-items: center;
   gap: 12px;
@@ -252,11 +271,20 @@
   height: 32px;
 }
 
-.detail-container .info-container .effects-container .effects-box .effects-text {
+.detail-container
+  .info-container
+  .effects-container
+  .effects-box
+  .effects-text {
   gap: 6px;
 }
 
-.detail-container .info-container .effects-container .effects-box .effects-text .content {
+.detail-container
+  .info-container
+  .effects-container
+  .effects-box
+  .effects-text
+  .content {
   color: var(--color-neutral-black);
   font-size: var(--font-size-medium);
   font-weight: var(--font-weight-regular);
