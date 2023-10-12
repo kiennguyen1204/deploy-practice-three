@@ -26,7 +26,7 @@ export const DATA_INFO = [
   {
     title: "Indica",
     image: "assets/images/indica.webp",
-    icon: "../assets/images/sleeping_face.svg",
+    icon: "assets/images/sleeping_face.svg",
     description: `This type of cannabis is commonly taken by those who want to sink into a state of total relaxation in every limb. This reduces stress overall and can take your worries and fatigue away. Because of its relaxing effects, it is suggested to use this type of cannabis at night. It is particularly recommended for people who have trouble sleeping, be it due to insomnia, pain or other associated sleep issues.`,
     to: "/indica",
     shop: "Shop Indica",
