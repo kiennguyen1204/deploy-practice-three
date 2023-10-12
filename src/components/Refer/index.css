@@ -217,19 +217,29 @@
   .item-bottom {
   text-align: center;
   width: 100%;
+  max-width: 548px;
+  margin-inline: auto;
 }
 
 @media only screen and (min-width: 768px) {
   .refer-box-container .content-full-card .content-bottom .list-content {
     justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
   }
 
+
   .refer-box-container .card-box-container .card-box {
-    padding: 64px 120px;
+    padding: 64px 24px;
+    margin-bottom: 0;
   }
 }
 
 @media only screen and (min-width: 992px) {
+
+  .refer-box-container .card-box-container .card-box {
+    padding: 64px 120px;
+  }
   .refer-box-container
     .card-box-container
     .card-box

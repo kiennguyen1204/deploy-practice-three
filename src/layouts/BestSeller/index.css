@@ -104,17 +104,25 @@
     .best-seller-box-wrapper
     .nav-pill {
     width: auto;
+    justify-content: flex-start;
   }
 }
 
 @media screen and (min-width: 992px) {
+  .best-seller-container
+  .best-seller-container-box
+  .best-seller-box-wrapper
+  .nav-pill
+  .nav-item{
+    width: calc((100% / 3) - 32px - 24px);
+  }
   .best-seller-container
     .best-seller-container-box
     .best-seller-box-wrapper
     .nav-pill
     .nav-item
     .nav-link {
-    padding: 8px 137px;
+    /* padding: 8px 137px; */
   }
 
   .best-seller-container .best-seller-container-box .best-seller-title {
