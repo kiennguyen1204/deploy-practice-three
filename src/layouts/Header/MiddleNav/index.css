@@ -59,7 +59,22 @@
   padding: 12px 12px;
 }
 
-.navbar-container .navbar-box .navbar-search-box .form-group .floating-form .search-button {
+.navbar-container .navbar-box .navbar-brand-name .mobile-logo {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+}
+
+.navbar-container .navbar-box .navbar-brand-name .navbar-logo {
+  display: none;
+}
+
+.navbar-container
+  .navbar-box
+  .navbar-search-box
+  .form-group
+  .floating-form
+  .search-button {
   gap: 0;
   position: relative;
   width: 52px;
@@ -148,14 +163,25 @@
   }
 
   .navbar-container .navbar-box .navbar-brand-name .navbar-logo {
+    max-width: 270px;
+    width: var(--width-base);
+    height: var(--height-large);
+    display: none;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .navbar-container .navbar-box .navbar-brand-name .navbar-logo {
     display: block;
     max-width: 270px;
     width: var(--width-base);
     height: var(--height-large);
   }
-}
 
-@media screen and (min-width: 992px) {
+  .navbar-container .navbar-box .navbar-brand-name .mobile-logo {
+    display: none;
+  }
+
   .navbar-container .navbar-box .navbar-brand-name .menu {
     display: none;
   }
