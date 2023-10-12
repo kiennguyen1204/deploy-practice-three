@@ -15,6 +15,8 @@
   --color-success: #68c03f;
   --color-error: #f8d7da;
 
+  --color-avatar: #73c255;
+
   --color-primary-light: #9bdda2;
   --color-primary-base: #17af26;
   --color-neutral-dark-green: #062a09;
@@ -87,8 +89,8 @@
   --border-radius-huge-1: 50%;
 
   /* Fonts family */
-  --font-family-primary: 'Lexend-Regular';
-  --font-family-secondary: 'Lexend-Medium';
+  --font-family-primary: "Lexend-Regular";
+  --font-family-secondary: "Lexend-Medium";
 
   /* Shadows */
   --shadow: 0 2px 4px rgba(0, 0, 0, 0.2);

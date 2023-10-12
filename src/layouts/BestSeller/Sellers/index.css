@@ -130,20 +130,6 @@
   width: var(--width-base);
 }
 
-.seller-list-container
-  .seller-list-container-box
-  .seller-list
-  .splide__slide
-  .sell-container-box
-  .sell-container-box-header
-  .card-image
-  .splide-product-image {
-  position: relative;
-  max-width: 100%;
-  height: auto;
-  margin: auto;
-}
-
 .seller-list-container .seller-list-container-box .seller-list .splide__arrow {
   width: 36px;
   height: 36px;

@@ -39,6 +39,14 @@
   padding: 24px;
 }
 
+.show-all-link {
+  color: var(--color-primary-base);
+  font-size: var(--font-size-normal);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-medium);
+  text-decoration-line: underline;
+}
+
 @media screen and (min-width: 768px) {
   .card-box-container .card-box .card-box-element {
     padding: 64px;

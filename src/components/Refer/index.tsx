@@ -10,6 +10,7 @@ import RegisterIcon from 'assets/images/refer/register.svg';
 import ShopIcon from 'assets/images/refer/shop.svg';
 import WalletIcon from 'assets/images/refer/wallet.svg';
 import RelaxIcon from 'assets/images/refer/relax.svg';
+import Background from 'assets/images/refer/bg_mobile.svg';
 
 // components
 import Button from 'components/common/Button';
@@ -49,12 +50,13 @@ const ReferFriend: React.FC = (): JSX.Element => {
         <div className='card-box'>
           <div className='card-box-element'>
             <picture className='svg'>
-              <img src={ReferFriendSVG} alt='refer' />
+              <img src={Background} alt='refer' className='bg-mobile' />
+              <img src={ReferFriendSVG} alt='refer' className='bg-desktop' />
             </picture>
             <div className='wrapper-container card-wrapper'>
               <h1 className='title'>REFER A FRIEND</h1>
               <p className='get'>
-                And get <span className='percent'>30%</span>
+                And get <span className='percent'>$30!</span>
               </p>
               <Button
                 variant={BUTTON_VARIANT.PRIMARY}

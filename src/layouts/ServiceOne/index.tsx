@@ -38,7 +38,7 @@ export const FirstServicePattern: React.FC = (): JSX.Element => {
           <div className='service-list-box-left'>
             <div className='flex-container icon-box'>{icon}</div>
           </div>
-          <div className='.wrapper-container service-list-box-right'>
+          <div className='wrapper-container service-list-box-right'>
             <h2 className='service-list-title'>{title}</h2>
             <p className='service-list-description'>{description}</p>
           </div>

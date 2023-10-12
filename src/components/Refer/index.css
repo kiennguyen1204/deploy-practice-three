@@ -7,7 +7,7 @@
 }
 
 .refer-box-container::before {
-  content: "";
+  content: '';
   position: absolute;
   top: 140px;
   width: 100%;
@@ -32,7 +32,8 @@
 
 .refer-box-container .card-box-container .card-box {
   position: relative;
-  padding: 0 24px;
+  padding: 24px 24px;
+  margin-bottom: 0;
 }
 
 .refer-box-container .card-box-container .card-box .card-box-element {
@@ -51,21 +52,12 @@
   z-index: 0;
 }
 
-.refer-box-container
-  .card-box-container
-  .card-box
-  .card-box-element
-  .card-wrapper {
+.refer-box-container .card-box-container .card-box .card-box-element .card-wrapper {
   position: relative;
   z-index: 1;
 }
 
-.refer-box-container
-  .card-box-container
-  .card-box
-  .card-box-element
-  .card-wrapper
-  .title {
+.refer-box-container .card-box-container .card-box .card-box-element .card-wrapper .title {
   font-size: clamp(var(--font-size-huge), 2vw, var(--font-size-huge));
   color: var(--color-neutral-white);
   text-align: left;
@@ -73,12 +65,7 @@
   white-space: nowrap;
 }
 
-.refer-box-container
-  .card-box-container
-  .card-box
-  .card-box-element
-  .card-wrapper
-  .get {
+.refer-box-container .card-box-container .card-box .card-box-element .card-wrapper .get {
   margin-top: 24px;
   margin-bottom: 40px;
   display: flex;
@@ -87,22 +74,11 @@
   font-size: var(--font-size-xl);
 }
 
-.refer-box-container
-  .card-box-container
-  .card-box
-  .card-box-element
-  .card-wrapper
-  .get
-  .percent {
+.refer-box-container .card-box-container .card-box .card-box-element .card-wrapper .get .percent {
   color: var(--color-other-orange);
 }
 
-.refer-box-container
-  .card-box-container
-  .card-box
-  .card-box-element
-  .card-wrapper
-  .custom-button {
+.refer-box-container .card-box-container .card-box .card-box-element .card-wrapper .custom-button {
   height: 56px;
   background-color: var(--color-primary-base);
   color: var(--color-neutral-white);
@@ -149,19 +125,13 @@
 }
 
 .refer-box-container .content-full-card .content-bottom .list-content {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  row-gap: 32px;
-  column-gap: 22px;
+  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 32px;
 }
 
-.refer-box-container
-  .content-full-card
-  .content-bottom
-  .list-content
-  .item-bottom
-  .top-header {
+.refer-box-container .content-full-card .content-bottom .list-content .item-bottom .top-header {
   margin-bottom: 16px;
   margin-left: -15px;
 }
@@ -210,32 +180,38 @@
   margin-top: 40px;
 }
 
-.refer-box-container
-  .content-full-card
-  .content-bottom
-  .list-content
-  .item-bottom {
+.refer-box-container .content-full-card .content-bottom .list-content .item-bottom {
   text-align: center;
   width: 100%;
 }
 
-@media only screen and (min-width: 768px) {
-  .refer-box-container .content-full-card .content-bottom .list-content {
-    justify-content: center;
-  }
+.bg-desktop {
+  display: none;
+}
 
+@media only screen and (min-width: 768px) {
   .refer-box-container .card-box-container .card-box {
     padding: 64px 120px;
+  }
+
+  .refer-box-container .card-box-container .card-box .card-box-element {
+    background-image: url('/src/assets/images/refer/refer_orange_blur.png');
+    background-position: right;
+    background-size: 600px 100%;
+    background-repeat: no-repeat;
+  }
+
+  .bg-mobile {
+    display: none;
+  }
+
+  .bg-desktop {
+    display: block;
   }
 }
 
 @media only screen and (min-width: 992px) {
-  .refer-box-container
-    .card-box-container
-    .card-box
-    .card-box-element
-    .card-wrapper
-    .get {
+  .refer-box-container .card-box-container .card-box .card-box-element .card-wrapper .get {
     font-size: var(--font-size-huge);
     margin-top: 32px;
   }
@@ -266,23 +242,11 @@
   }
 
   .refer-box-container .card-box-container .card-box .card-box-element {
-    background-image: url("../../assets/images/refer/refer_orange_blur.png");
-    background-position: right;
-    background-size: 600px 100%;
-    background-repeat: no-repeat;
-  }
-
-  .refer-box-container .card-box-container .card-box .card-box-element {
     height: 342px;
     padding: 96px 120px;
   }
 
-  .refer-box-container
-    .card-box-container
-    .card-box
-    .card-box-element
-    .card-wrapper
-    .title {
+  .refer-box-container .card-box-container .card-box .card-box-element .card-wrapper .title {
     font-size: var(--font-size-huge-1);
   }
 
@@ -318,12 +282,7 @@
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .refer-box-container
-    .content-full-card
-    .content-bottom
-    .list-content
-    .item-bottom
-    .top-header {
+  .refer-box-container .content-full-card .content-bottom .list-content .item-bottom .top-header {
     gap: 40px;
     margin-left: -52px;
   }

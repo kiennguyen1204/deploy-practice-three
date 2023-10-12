@@ -21,13 +21,11 @@
 }
 
 .card-image {
+  display: flex;
+  align-items: center;
   position: relative;
-  justify-content: center;
-  background: var(--color-secondary-ultra-light);
   border-radius: 8px;
-  text-align: center;
-  padding: 24px;
-  background: var(--color-secondary-ultra-light);
+  gap: 16px;
 }
 
 .icon-image {
@@ -65,6 +63,7 @@
 .box-info-bottom-container .box-container .item-box .shop {
   color: var(--color-primary-base);
   font-size: var(--font-size-medium);
+  text-decoration: underline;
 }
 
 .card-image .icon-position {

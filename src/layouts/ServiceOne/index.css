@@ -42,7 +42,7 @@
   .service-list-container-box
   .service-list-box-left
   .icon-box
-  svg {
+  img {
   width: 36px;
   height: var(--height-regular);
 }
@@ -59,7 +59,7 @@
   position: relative;
   color: var(--color-neutral-base);
   font-size: var(--font-size-xxl);
-  font-weight: var(--font-weight-medium);
+  font-weight: var(--font-weight-regular);
   line-height: 1.5;
   letter-spacing: -0.5px;
 }
@@ -71,9 +71,9 @@
   .service-list-description {
   position: relative;
   color: var(--color-neutral-light);
-  font-size: clamp(var(--font-size-medium), 2vw, var(--font-size-normal));
-  font-weight: var(--font-weight-normal);
-  line-height: 1.5;
+  font-size: 16px;
+  font-weight: var(--font-weight-regular);
+  line-height: 24px;
 }
 
 @media only screen and (min-width: 768px) {
@@ -95,15 +95,36 @@
     width: 56px;
     height: var(--height-huge);
   }
+
+  .service-list-container
+    .list-container-box
+    .service-list-container-box
+    .service-list-box-left
+    .icon-box {
+    padding: 8px;
+    border-radius: var(--border-radius-huge-1);
+    background: var(--color-neutral-white);
+    width: 100px;
+    height: 100px;
+  }
+  .service-list-container
+    .list-container-box
+    .service-list-container-box
+    .service-list-box-left
+    .icon-box
+    img {
+    width: 64px;
+    height: 64px;
+  }
+
+  .service-list-container .list-container-box .service-list-container-box .service-list-box-right {
+    gap: 16px;
+  }
 }
 
 @media screen and (min-width: 992px) {
   .service-list-container .list-container-box {
     gap: 32px;
-  }
-
-  .service-list-container .list-container-box .service-list-container-box {
-    width: calc(50% - 32px);
   }
 }
 

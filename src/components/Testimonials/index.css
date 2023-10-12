@@ -1,7 +1,4 @@
-.testimonials-list-container
-  .testimonials-list-containerBox
-  .top-header-testimonials
-  .title-header {
+.testimonials-list-container .testimonials-list-container-box .title-header {
   position: relative;
   max-width: 948px;
   width: 100%;
@@ -14,16 +11,13 @@
   padding-inline: 24px;
 }
 
-.testimonials-list-container .testimonials-list-containerBox .list-data {
+.testimonials-list-container .testimonials-list-container-box .list-data {
   position: relative;
   width: 100%;
   padding-inline: 24px;
 }
 
-.testimonials-list-container
-  .testimonials-list-containerBox
-  .list-data
-  .box-voted {
+.testimonials-list-container .testimonials-list-container-box .list-data .box-voted {
   border-radius: 16px;
   padding: 24px;
   gap: 32px;
@@ -32,7 +26,7 @@
 }
 
 .testimonials-list-container
-  .testimonials-list-containerBox
+  .testimonials-list-container-box
   .list-data
   .box-voted
   .voted-box-title {
@@ -42,11 +36,7 @@
   line-height: 36px;
 }
 
-.testimonials-list-container
-  .testimonials-list-containerBox
-  .list-data
-  .box-voted
-  .line-hor {
+.testimonials-list-container .testimonials-list-container-box .list-data .box-voted .line-hor {
   margin: 32px 0;
   height: 1px;
   border: none;
@@ -54,7 +44,7 @@
 }
 
 .testimonials-list-container
-  .testimonials-list-containerBox
+  .testimonials-list-container-box
   .list-data
   .box-voted
   .bottom-box-voted {
@@ -62,7 +52,7 @@
 }
 
 .testimonials-list-container
-  .testimonials-list-containerBox
+  .testimonials-list-container-box
   .list-data
   .box-voted
   .bottom-box-voted
@@ -72,8 +62,13 @@
   font-weight: var(--font-weight-regular);
 }
 
+.testimonials-container-box-header .card-image .splide-product-image {
+  background-color: var(--color-avatar);
+  border-radius: 50%;
+}
+
 .testimonials-list-container
-  .testimonials-list-containerBox
+  .testimonials-list-container-box
   .list-data
   .box-voted
   .bottom-box-voted
@@ -85,7 +80,7 @@
 }
 
 .testimonials-list-container
-  .testimonials-list-containerBox
+  .testimonials-list-container-box
   .list-data
   .box-voted
   .bottom-box-voted
@@ -97,7 +92,7 @@
 }
 
 .testimonials-list-container
-  .testimonials-list-containerBox
+  .testimonials-list-container-box
   .list-data
   .box-voted
   .bottom-box-voted
@@ -110,14 +105,14 @@
 }
 
 .testimonials-list-container
-  .testimonials-list-containerBox
+  .testimonials-list-container-box
   .list-data
   .box-voted
   .bottom-box-voted
   .rating-bottom
   .total-reviews::before {
   position: absolute;
-  content: "";
+  content: '';
   height: 100%;
   width: 1px;
   background: var(--color-secondary-mid);
@@ -125,7 +120,7 @@
 }
 
 .testimonials-list-container
-  .testimonials-list-containerBox
+  .testimonials-list-container-box
   .list-data
   .box-voted
   .bottom-box-voted
@@ -135,17 +130,14 @@
   color: var(--color-secondary-mid);
 }
 
-.testimonials-list-container
-  .testimonials-list-containerBox
-  .list-data
-  .testimonials-list {
+.testimonials-list-container .testimonials-list-container-box .list-data .testimonials-list {
   position: relative;
   display: block;
   margin-top: 32px;
 }
 
 .testimonials-list-container
-  .testimonials-list-containerBox
+  .testimonials-list-container-box
   .list-data
   .testimonials-list
   .testimonials-container-box
@@ -155,7 +147,7 @@
 }
 
 .testimonials-list-container
-  .testimonials-list-containerBox
+  .testimonials-list-container-box
   .list-data
   .testimonials-list
   .testimonials-container-box
@@ -164,7 +156,7 @@
 }
 
 .testimonials-list-container
-  .testimonials-list-containerBox
+  .testimonials-list-container-box
   .list-data
   .testimonials-list
   .testimonials-container-box
@@ -176,7 +168,7 @@
 }
 
 .testimonials-list-container
-  .testimonials-list-containerBox
+  .testimonials-list-container-box
   .list-data
   .testimonials-list
   .testimonials-container-box
@@ -192,7 +184,7 @@
 }
 
 .testimonials-list-container
-  .testimonials-list-containerBox
+  .testimonials-list-container-box
   .list-data
   .testimonials-list
   .testimonials-container-box
@@ -204,36 +196,30 @@
 }
 
 @media only screen and (min-width: 992px) {
-  .testimonials-list-container .testimonials-list-containerBox .list-data {
+  .testimonials-list-container .testimonials-list-container-box .list-data {
     display: flex;
     gap: 32px;
   }
 
-  .testimonials-list-container
-    .testimonials-list-containerBox
-    .list-data
-    .box-voted {
+  .testimonials-list-container .testimonials-list-container-box .list-data .box-voted {
     width: 380px;
   }
 
   .testimonials-list-container
-    .testimonials-list-containerBox
+    .testimonials-list-container-box
     .list-data
     .box-voted
     .voted-box-title {
     max-width: 300px;
   }
 
-  .testimonials-list-container
-    .testimonials-list-containerBox
-    .list-data
-    .testimonials-list {
+  .testimonials-list-container .testimonials-list-container-box .list-data .testimonials-list {
     width: calc(100% - 380px - 32px);
   }
 }
 
 .testimonials-list-container
-  .testimonials-list-containerBox
+  .testimonials-list-container-box
   .list-data
   .testimonials-list
   .testimonials-container-box {
@@ -243,26 +229,23 @@
 }
 
 @media only screen and (min-width: 1200px) {
-  .testimonials-list-container .testimonials-list-containerBox {
+  .testimonials-list-container .testimonials-list-container-box {
     padding-inline: 120px;
   }
 
-  .testimonials-list-container
-    .testimonials-list-containerBox
-    .top-header-testimonials
-    .title-header {
+  .testimonials-list-container .testimonials-list-container-box .title-header {
     font-size: 64px;
     line-height: 1.1;
     padding-bottom: 64px;
     padding-inline: 0;
   }
 
-  .testimonials-list-container .testimonials-list-containerBox .list-data {
+  .testimonials-list-container .testimonials-list-container-box .list-data {
     padding-inline: 0;
   }
 
   .testimonials-list-container
-    .testimonials-list-containerBox
+    .testimonials-list-container-box
     .list-data
     .testimonials-list
     .testimonials-container-box {
@@ -271,10 +254,7 @@
 }
 
 @media screen and (min-width: 1400px) {
-  .testimonials-list-container
-    .testimonials-list-containerBox
-    .top-header-testimonials
-    .title-header {
+  .testimonials-list-container .testimonials-list-container-box .title-header {
     padding-inline: unset;
   }
 }

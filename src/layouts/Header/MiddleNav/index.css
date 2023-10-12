@@ -69,12 +69,7 @@
   display: none;
 }
 
-.navbar-container
-  .navbar-box
-  .navbar-search-box
-  .form-group
-  .floating-form
-  .search-button {
+.navbar-container .navbar-box .navbar-search-box .form-group .floating-form .search-button {
   gap: 0;
   position: relative;
   width: 52px;

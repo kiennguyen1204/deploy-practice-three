@@ -58,6 +58,7 @@
 .item-card .content-item {
   margin-top: 24px;
   text-align: center;
+  padding-top: 24px;
 }
 
 .item-card .content-item .cate-item {

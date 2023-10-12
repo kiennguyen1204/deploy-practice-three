@@ -17,12 +17,13 @@
   max-width: 948px;
   width: 100%;
   color: var(--color-neutral-base);
-  font-size: var(--font-size-32);
+  font-size: var(--font-size-huge);
   font-weight: var(--font-weight-semibold);
   line-height: var(--line-height-xxl);
   text-align: center;
   margin: auto;
   padding-bottom: 64px;
+  letter-spacing: -1.5px;
 }
 
 .best-seller-container .best-seller-container-box .best-seller-box-wrapper {
@@ -37,10 +38,7 @@
   overflow-y: hidden;
 }
 
-.best-seller-container
-  .best-seller-container-box
-  .best-seller-box-wrapper
-  .nav-pill {
+.best-seller-container .best-seller-container-box .best-seller-box-wrapper .nav-pill {
   justify-content: space-between;
   align-items: stretch;
   gap: 32px;
@@ -48,11 +46,7 @@
   padding-block: 1rem;
 }
 
-.best-seller-container
-  .best-seller-container-box
-  .best-seller-box-wrapper
-  .nav-pill
-  .nav-item {
+.best-seller-container .best-seller-container-box .best-seller-box-wrapper .nav-pill .nav-item {
   position: relative;
   color: var(--color-neutral-base);
   font-size: var(--font-size-normal);
@@ -77,6 +71,7 @@
   white-space: nowrap;
   border: none;
   background: transparent;
+  color: var(--color-secondary-dark);
 }
 
 .best-seller-container
@@ -90,7 +85,7 @@
 
 @media screen and (min-width: 768px) {
   .best-seller-container .best-seller-container-box {
-    padding: 80px 120px;
+    padding: 80px 64px;
   }
 
   .best-seller-container .best-seller-container-box .best-seller-title {
@@ -99,10 +94,7 @@
     letter-spacing: 1px;
   }
 
-  .best-seller-container
-    .best-seller-container-box
-    .best-seller-box-wrapper
-    .nav-pill {
+  .best-seller-container .best-seller-container-box .best-seller-box-wrapper .nav-pill {
     width: auto;
   }
 }
@@ -114,10 +106,21 @@
     .nav-pill
     .nav-item
     .nav-link {
-    padding: 8px 137px;
+    padding: 8px 100px;
   }
 
   .best-seller-container .best-seller-container-box .best-seller-title {
     font-size: 64px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .best-seller-container
+    .best-seller-container-box
+    .best-seller-box-wrapper
+    .nav-pill
+    .nav-item
+    .nav-link {
+    padding: 8px 137px;
   }
 }

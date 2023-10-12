@@ -90,6 +90,24 @@
   column-gap: 16px;
 }
 
+.footer-container
+  .footer-insider-container
+  .footer-insider-box
+  .footer-content
+  .footer-content-item
+  .footer-link-list-more {
+  display: flex;
+}
+
+.footer-container
+  .footer-insider-container
+  .footer-insider-box
+  .footer-content
+  .footer-content-item.payment-method
+  .list-group {
+  display: flex;
+}
+
 @media screen and (min-width: 992px) {
   .footer-container
     .footer-insider-container
