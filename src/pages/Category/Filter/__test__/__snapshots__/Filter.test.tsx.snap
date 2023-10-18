@@ -1,0 +1,362 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BannerCategory component renders component correctly 1`] = `
+<DocumentFragment>
+  <article
+    class="left-filter-container"
+  >
+    <h2
+      class="title-filter"
+    >
+      Filters
+    </h2>
+    <section
+      class="list-cate-item"
+    >
+      <p
+        class="cate-title"
+      >
+        PRODUCT CATEGORY
+      </p>
+      <div
+        class="list-check"
+      >
+        <label
+          class="check-item block"
+          for="sales"
+        >
+          <input
+            hidden=""
+            id="sales"
+            type="radio"
+            value="12"
+          />
+          <span
+            class="flex-container radio"
+          />
+          <span
+            class="flex-container name"
+          >
+            Sales
+          </span>
+          <span
+            class="line"
+          />
+          <span
+            class="value"
+          >
+            12
+          </span>
+        </label>
+        <label
+          class="check-item block"
+          for="cannabis"
+        >
+          <input
+            checked=""
+            hidden=""
+            id="cannabis"
+            type="radio"
+            value="430"
+          />
+          <span
+            class="flex-container radio"
+          />
+          <span
+            class="flex-container name"
+          >
+            Cannabis
+          </span>
+          <span
+            class="line"
+          />
+          <span
+            class="value"
+          >
+            430
+          </span>
+        </label>
+        <label
+          class="check-item block"
+          for="pre-rolls"
+        >
+          <input
+            hidden=""
+            id="pre-rolls"
+            type="radio"
+            value="40"
+          />
+          <span
+            class="flex-container radio"
+          />
+          <span
+            class="flex-container name"
+          >
+            Pre-Rolls
+          </span>
+          <span
+            class="line"
+          />
+          <span
+            class="value"
+          >
+            40
+          </span>
+        </label>
+        <label
+          class="check-item block"
+          for="cbdoil"
+        >
+          <input
+            hidden=""
+            id="cbdoil"
+            type="radio"
+            value="12"
+          />
+          <span
+            class="flex-container radio"
+          />
+          <span
+            class="flex-container name"
+          >
+            CBD Oil
+          </span>
+          <span
+            class="line"
+          />
+          <span
+            class="value"
+          >
+            12
+          </span>
+        </label>
+        <label
+          class="check-item block"
+          for="magicmushrooms"
+        >
+          <input
+            hidden=""
+            id="magicmushrooms"
+            type="radio"
+            value="34"
+          />
+          <span
+            class="flex-container radio"
+          />
+          <span
+            class="flex-container name"
+          >
+            Magic Mushrooms
+          </span>
+          <span
+            class="line"
+          />
+          <span
+            class="value"
+          >
+            34
+          </span>
+        </label>
+        <label
+          class="check-item block"
+          for="extracts"
+        >
+          <input
+            hidden=""
+            id="extracts"
+            type="radio"
+            value="26"
+          />
+          <span
+            class="flex-container radio"
+          />
+          <span
+            class="flex-container name"
+          >
+            Extracts
+          </span>
+          <span
+            class="line"
+          />
+          <span
+            class="value"
+          >
+            26
+          </span>
+        </label>
+        <label
+          class="check-item block"
+          for="edibles"
+        >
+          <input
+            hidden=""
+            id="edibles"
+            type="radio"
+            value="32"
+          />
+          <span
+            class="flex-container radio"
+          />
+          <span
+            class="flex-container name"
+          >
+            Edibles
+          </span>
+          <span
+            class="line"
+          />
+          <span
+            class="value"
+          >
+            32
+          </span>
+        </label>
+        <label
+          class="check-item block"
+          for="vapepens"
+        >
+          <input
+            hidden=""
+            id="vapepens"
+            type="radio"
+            value="12"
+          />
+          <span
+            class="flex-container radio"
+          />
+          <span
+            class="flex-container name"
+          >
+            Vape Pens
+          </span>
+          <span
+            class="line"
+          />
+          <span
+            class="value"
+          >
+            12
+          </span>
+        </label>
+        <label
+          class="check-item block"
+          for="accessories"
+        >
+          <input
+            hidden=""
+            id="accessories"
+            type="radio"
+            value="10"
+          />
+          <span
+            class="flex-container radio"
+          />
+          <span
+            class="flex-container name"
+          >
+            Accessories
+          </span>
+          <span
+            class="line"
+          />
+          <span
+            class="value"
+          >
+            10
+          </span>
+        </label>
+        <label
+          class="check-item block"
+          for="bath&body"
+        >
+          <input
+            hidden=""
+            id="bath&body"
+            type="radio"
+            value="8"
+          />
+          <span
+            class="flex-container radio"
+          />
+          <span
+            class="flex-container name"
+          >
+            Bath & Body
+          </span>
+          <span
+            class="line"
+          />
+          <span
+            class="value"
+          >
+            8
+          </span>
+        </label>
+        <label
+          class="check-item block"
+          for="bundles"
+        >
+          <input
+            hidden=""
+            id="bundles"
+            type="radio"
+            value="24"
+          />
+          <span
+            class="flex-container radio"
+          />
+          <span
+            class="flex-container name"
+          >
+            Bundles
+          </span>
+          <span
+            class="line"
+          />
+          <span
+            class="value"
+          >
+            24
+          </span>
+        </label>
+        <label
+          class="check-item block"
+          for="wholesale"
+        >
+          <input
+            hidden=""
+            id="wholesale"
+            type="radio"
+            value="28"
+          />
+          <span
+            class="flex-container radio"
+          />
+          <span
+            class="flex-container name"
+          >
+            Wholesale
+          </span>
+          <span
+            class="line"
+          />
+          <span
+            class="value"
+          >
+            28
+          </span>
+        </label>
+      </div>
+    </section>
+    <section
+      class="button-clear"
+    >
+      <button
+        class="align-center btn clear-all-filter btn-action"
+      >
+        Clear Filters
+      </button>
+    </section>
+  </article>
+</DocumentFragment>
+`;

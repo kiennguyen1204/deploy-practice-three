@@ -1,0 +1,140 @@
+.checkout-container {
+  .checkout-content {
+    .cart-content {
+      .list-cart {
+        gap: 16px;
+        width: 100%;
+
+        .item-cart {
+          display: flex;
+          padding-bottom: 16px;
+          align-items: flex-start;
+          gap: 16px;
+          align-self: stretch;
+          border-bottom: 1px solid var(--color-matte-white);
+
+          .item-image {
+            width: 56px;
+            height: 56px;
+            border-radius: 6px;
+            border: 1px solid var(--color-matte-white);
+          }
+
+          .content-item {
+            gap: 12px;
+
+            @media only screen and (min-width: 768px) {
+              width: 100%;
+            }
+
+            .product-box {
+              gap: 12px;
+              width: 100%;
+
+              @media only screen and (min-width: 768px) {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+              }
+
+              .title {
+                color: var(--color-neutral-lighter);
+                font-size: var(--font-size-medium);
+                font-weight: var(--font-weight-regular);
+                line-height: 150%;
+
+                @media only screen and (min-width: 768px) {
+                  width: 40%;
+                }
+              }
+
+              .product-value {
+                width: 100%;
+
+                @media only screen and (min-width: 768px) {
+                  width: 30%;
+                }
+
+                .amount-price {
+                  gap: 12px;
+                  width: 100%;
+
+                  .amount {
+                    width: 32px;
+                    height: 32px;
+                    border-radius: 4px;
+                    border: 1px solid var(--color-matte-white);
+                    background: var(--color-matte-white);
+                    color: var(--color-neutral-black);
+                    font-size: var(--font-size-small);
+                    font-weight: var(--font-weight-regular);
+                    line-height: 150%;
+
+                    .quantity {
+                      width: 32px;
+                      height: 32px;
+                      border-radius: 4px;
+                      border: 1px solid var(--color-matte-white);
+                      background: var(--color-matte-white);
+                      color: var(--color-neutral-black);
+                      font-size: var(--font-size-small);
+                      font-weight: var(--font-weight-regular);
+                      line-height: 150%;
+                    }
+
+                    .amount-btn {
+                      width: 32px;
+                      height: 32px;
+                      background: none;
+                      border: none;
+                      cursor: pointer;
+                    }
+                  }
+
+                  .price {
+                    color: var(--color-neutral-black);
+                    font-size: var(--font-size-medium);
+                    font-weight: var(--font-weight-regular);
+                    line-height: 150%;
+                  }
+                }
+              }
+            }
+
+            .subtotal {
+              width: 100%;
+              padding-top: 16px;
+              border-top: 1px solid var(--color-matte-white);
+
+              .sub-title {
+                color: var(--color-neutral-lighter);
+                font-size: var(--font-size-medium);
+                font-weight: var(--font-weight-regular);
+                line-height: 150%;
+              }
+
+              .subtotal-price {
+                color: var(--color-neutral-black);
+                font-size: var(--font-size-medium);
+                font-weight: var(--font-weight-regular);
+                line-height: 150%;
+              }
+            }
+
+            .total {
+              color: var(--color-neutral-lighter);
+              text-align: right;
+              font-size: var(--font-size-medium);
+              font-weight: var(--font-weight-regular);
+              line-height: 150%;
+
+              @media only screen and (min-width: 768px) {
+                width: 10%;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

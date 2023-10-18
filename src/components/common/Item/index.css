@@ -184,13 +184,7 @@
   opacity: 0.85;
 }
 
-@media only screen and (min-width: 576px) {
-  .item-card {
-    width: calc(((100% + 24px) / 3) - 24px);
-  }
-}
-
-@media only screen and (min-width: 1024px) {
+@media only screen and (min-width: 992px) {
   .item-card {
     width: calc(((100% + 24px) / 4) - 24px);
   }

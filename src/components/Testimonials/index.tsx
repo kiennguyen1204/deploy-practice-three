@@ -1,5 +1,4 @@
 import { Splide, SplideTrack, SplideSlide } from '@splidejs/react-splide';
-import '@splidejs/react-splide/css';
 
 // assets
 import Star from 'assets/images/star.svg';
@@ -7,9 +6,6 @@ import Google from 'assets/images/google_grey.svg';
 
 // mocks
 import { TESTIMONIALS_LIST } from 'mocks/testimonialsList';
-
-// components
-import SplideArrows from 'components/common/Arrow';
 
 // styles
 import './index.css';
@@ -109,8 +105,6 @@ const CustomerTestimonials: React.FC = (): JSX.Element => {
                   );
                 })}
               </SplideTrack>
-
-              <SplideArrows />
             </Splide>
           </div>
         </section>

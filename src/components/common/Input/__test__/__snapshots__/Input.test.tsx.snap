@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Input component should match the snapshot 1`] = `
+<DocumentFragment>
+  <section
+    class="text-wrapper"
+  >
+    <input
+      class="text-input text-input-default input-md undefined"
+      type="text"
+      value=""
+    />
+  </section>
+</DocumentFragment>
+`;

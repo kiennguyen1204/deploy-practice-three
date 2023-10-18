@@ -1,7 +1,7 @@
 import { memo } from 'react';
 import { NavLink } from 'react-router-dom';
 
-interface Props {
+export interface Props {
   image: string;
   title: string;
   icon?: string;
@@ -11,14 +11,14 @@ interface Props {
 }
 
 const BoxInfoItem: React.FC<Props> = ({
-  image = '/src/assets/images/default_image.webp',
-  title = '',
-  description = 'Default Description',
-  to = '',
-  shop = '',
-  icon = 'assets/images/default_image.webp'
+  image,
+  title,
+  description,
+  to,
+  shop,
+  icon = '/src/assets/images/default_image.webp'
 }): JSX.Element => (
-  <section className='item-box'>
+  <section className='item-box' data-testId='box-info-item'>
     <picture className='flex-row-container card-image'>
       <img src={image} alt={title} />
 
@@ -29,9 +29,13 @@ const BoxInfoItem: React.FC<Props> = ({
         aria-hidden='true'
       />
     </picture>
-    <h2 className='title'>{title}</h2>
-    <p className='description'>{description}</p>
-    <NavLink to={to} className='shop' aria-label={`Visit ${shop}`}>
+    <h2 className='title' data-testid='title'>
+      {title}
+    </h2>
+    <p className='description' data-testid='description'>
+      {description}
+    </p>
+    <NavLink to={to} className='shop' aria-label={`Visit ${shop}`} data-testid='shop'>
       {shop}
     </NavLink>
   </section>

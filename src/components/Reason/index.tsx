@@ -49,7 +49,7 @@ const WhatMake: React.FC = (): JSX.Element => {
   return (
     <article className='what-make-box-container'>
       <section className='wrapper-element'>
-        <h3 className='title'>
+        <h3 className='title' data-testid='what-make-title'>
           WHAT MAKES US THE <span className='num-1'>#1</span> ONLINE MARIJUANA DISPENSARY IN CANADA?
         </h3>
 

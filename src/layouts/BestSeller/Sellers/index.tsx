@@ -15,8 +15,13 @@ import ItemCard from 'components/common/Item';
 
 // styles
 import './index.css';
+import { Item } from '../../../interfaces/item';
+import { useEffect, useState } from 'react';
+import { getProducts } from '../../../services/api-action';
 
 export const Sellers: React.FC = (): JSX.Element => {
+  const [featuredProducts, setFeaturedProducts] = useState<Item[]>([]);
+
   const splideOpts = {
     type: 'loop',
     perPage: 3,
@@ -37,6 +42,15 @@ export const Sellers: React.FC = (): JSX.Element => {
       1920: { perPage: 2.65, padding: 0 }
     }
   };
+
+  useEffect(() => {
+    const fetchFeaturedProducts = async () => {
+      const productsData = await getProducts();
+      setFeaturedProducts(productsData);
+    };
+
+    fetchFeaturedProducts();
+  }, []);
 
   const handleOnclick = (): void => {
     //TODO: handle function onclick
@@ -79,12 +93,13 @@ export const Sellers: React.FC = (): JSX.Element => {
         <div className='seller-list'>
           <Splide hasTrack={false} options={splideOpts} aria-label='My Favorite Images'>
             <SplideTrack>
-              {DATA_LIST.map((el, index) => (
+              {featuredProducts.map((el, index) => (
                 <SplideSlide key={index}>
                   <ItemCard
-                    className='custom-card'
                     item={el}
-                    index={index}
+                    key={index}
+                    index={0}
+                    className={'custom-card'}
                     onClick={handleOnclick}
                   />
                 </SplideSlide>

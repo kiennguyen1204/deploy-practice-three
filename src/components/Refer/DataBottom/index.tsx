@@ -1,18 +1,13 @@
 import { memo } from 'react';
 
-interface Props {
+export interface Props {
   index: number;
   icon: JSX.Element;
   title: string;
   description: string;
 }
 
-const ReferFriendItem: React.FC<Props> = ({
-  index = 0,
-  icon,
-  title = 'Default title',
-  description = 'Default description'
-}) => (
+const ReferFriendItem: React.FC<Props> = ({ index, icon, title, description }) => (
   <article className='item-bottom'>
     <section className='flex-start-container top-header'>
       <div className='flex-container index-circle'>{index + 1}</div>

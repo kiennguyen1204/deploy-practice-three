@@ -1,0 +1,227 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ReferFriend Component matches snapshot 1`] = `
+<DocumentFragment>
+  <article
+    class="refer-box-container"
+  >
+    <section
+      class="card-box-container"
+    >
+      <div
+        class="card-box"
+      >
+        <div
+          class="card-box-element"
+        >
+          <picture
+            class="svg"
+          >
+            <img
+              alt="refer"
+              src="IMAGE_MOCK"
+            />
+          </picture>
+          <div
+            class="wrapper-container card-wrapper"
+          >
+            <h1
+              class="title"
+            >
+              REFER A FRIEND
+            </h1>
+            <p
+              class="get"
+            >
+              And get 
+              <span
+                class="percent"
+              >
+                30%
+              </span>
+            </p>
+            <button
+              class="btn btn-primary btn-color-default btn-sm   btn btn-action custom-button btn-color-text-primary"
+              type="button"
+            >
+              <span>
+                Refer Here
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section
+      class="content-full-card"
+    >
+      <h2
+        class="title-bottom"
+      >
+        HOW TO ORDER WEED ONLINE FROM TOP SHELF BC - MAIL ORDER MARIJUANA
+      </h2>
+      <p
+        class="description"
+      >
+        Ordering weed online from Top Shelf BC is easy. We are proud to have made the process accessible across multiple platforms and simple to understand, meaning that more people can come to us to buy their cannabis products online.
+      </p>
+      <div
+        class="content-bottom"
+      >
+        <div
+          class="list-content"
+        >
+          <article
+            class="item-bottom"
+          >
+            <section
+              class="flex-start-container top-header"
+            >
+              <div
+                class="flex-container index-circle"
+              >
+                1
+              </div>
+              <div
+                class="icon"
+              >
+                <img
+                  alt="refer"
+                  src="IMAGE_MOCK"
+                />
+              </div>
+            </section>
+            <section
+              class="item-content"
+            >
+              <h2
+                class="title"
+              >
+                REGISTER
+              </h2>
+              <p
+                class="description"
+              >
+                Sign up for an account with us. This is quick and simple. We don’t require any more details from you than the bare minimum needed for you to place an order and get your product delivered.
+              </p>
+            </section>
+          </article>
+          <article
+            class="item-bottom"
+          >
+            <section
+              class="flex-start-container top-header"
+            >
+              <div
+                class="flex-container index-circle"
+              >
+                2
+              </div>
+              <div
+                class="icon"
+              >
+                <img
+                  alt="refer"
+                  src="IMAGE_MOCK"
+                />
+              </div>
+            </section>
+            <section
+              class="item-content"
+            >
+              <h2
+                class="title"
+              >
+                SHOP
+              </h2>
+              <p
+                class="description"
+              >
+                Decide on what you want to purchase. We stock a wide range of edibles,flowers, concentrates and mushrooms there is bound to be something for everyone.
+              </p>
+            </section>
+          </article>
+          <article
+            class="item-bottom"
+          >
+            <section
+              class="flex-start-container top-header"
+            >
+              <div
+                class="flex-container index-circle"
+              >
+                3
+              </div>
+              <div
+                class="icon"
+              >
+                <img
+                  alt="refer"
+                  src="IMAGE_MOCK"
+                />
+              </div>
+            </section>
+            <section
+              class="item-content"
+            >
+              <h2
+                class="title"
+              >
+                MAKE PAYMENT
+              </h2>
+              <p
+                class="description"
+              >
+                Pay securely. Our site boasts sturdy protection certificates to keep your card details and related data safe.
+              </p>
+            </section>
+          </article>
+          <article
+            class="item-bottom"
+          >
+            <section
+              class="flex-start-container top-header"
+            >
+              <div
+                class="flex-container index-circle"
+              >
+                4
+              </div>
+              <div
+                class="icon"
+              >
+                <img
+                  alt="refer"
+                  src="IMAGE_MOCK"
+                />
+              </div>
+            </section>
+            <section
+              class="item-content"
+            >
+              <h2
+                class="title"
+              >
+                RELAX
+              </h2>
+              <p
+                class="description"
+              >
+                Your product will be packaged discretely and shipped by Canada Post Xpresspost. We will provide you with a tracking number so then you can follow your mail order marijuana every step of the way.
+              </p>
+            </section>
+          </article>
+        </div>
+        <button
+          class="btn btn-primary btn-color-default btn-sm   btn btn-action flex-container custom-button btn-color-text-primary"
+          type="button"
+        >
+          <span>
+            Choose your Weed
+          </span>
+        </button>
+      </div>
+    </section>
+  </article>
+</DocumentFragment>
+`;

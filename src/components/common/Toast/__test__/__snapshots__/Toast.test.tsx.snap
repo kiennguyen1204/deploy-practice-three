@@ -1,11 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Toast component renders error toast correctly 1`] = `
-<div
+<section
   class="toast error"
 >
   <div
-    class="notification"
+    class="flex-space-between-container notification"
   >
     <span
       class="material-symbols-outlined warning"
@@ -27,15 +27,15 @@ exports[`Toast component renders error toast correctly 1`] = `
       X
     </button>
   </div>
-</div>
+</section>
 `;
 
 exports[`Toast component renders success toast correctly 1`] = `
-<div
+<section
   class="toast success"
 >
   <div
-    class="notification"
+    class="flex-space-between-container notification"
   >
     <span
       class="material-symbols-outlined done"
@@ -57,5 +57,5 @@ exports[`Toast component renders success toast correctly 1`] = `
       X
     </button>
   </div>
-</div>
+</section>
 `;

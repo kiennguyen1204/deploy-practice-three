@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ReasonItem renders the component with default props 1`] = `
+<DocumentFragment>
+  <section
+    class="item-box"
+  >
+    <div
+      class="icon"
+    >
+      <img
+        alt="Default icon"
+        src="/src/assets/images/default_image.webp"
+      />
+    </div>
+    <p
+      class="title-box"
+    >
+      Default Title
+    </p>
+    <p
+      class="description"
+    >
+      Default description
+    </p>
+  </section>
+</DocumentFragment>
+`;

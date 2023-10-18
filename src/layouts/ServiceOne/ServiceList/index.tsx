@@ -18,7 +18,6 @@ const ServiceList: React.FC<Props> = ({ children, direction = 'row', classes }):
       className={`list-container-box ${
         direction === 'row' ? 'list-container-box-row' : 'list-container-box-column'
       }`}>
-      <div className='list-container-box-header' />
       {children}
     </div>
   </section>

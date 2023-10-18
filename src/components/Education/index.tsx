@@ -9,7 +9,7 @@ import WeedEducationItem from './EducationList';
 import './index.css';
 
 export const WeedEducationPattern: React.FC = (): JSX.Element => (
-  <Card classes={'weed-education-container'} title='WEED EDUCATION' iShowAll>
+  <Card classes={'weed-education-container'} title='WEED EDUCATION'>
     <main className='flex-start-container weed-education-box'>
       <section className='weed-education-group'>
         {LIST_ITEM_EDUCATION.map((item, index) => (

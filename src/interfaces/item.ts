@@ -1,18 +1,16 @@
-export interface Item {
+export interface Product {
   id: string;
   name: string;
   title: string;
-  description?: string;
-  sale?: string;
+  description: string;
+  sale: string;
   image: string;
-  reviews?: number /* numbers of reviews */;
-  isSoldOut: boolean | string;
+  reviews: number;
+  isSoldOut: boolean;
   category: string;
-  price?: number;
-  discount?: number;
+  price: number;
+  discount: number;
   volume: string[];
-  unit: string;
-  perPrice?: string | number;
   rate?: string;
-  totalReviews: string;
+  totalReviews: number;
 }

@@ -61,7 +61,7 @@ describe('Toast component', () => {
   it('should call the onClose function after the specified timeout', () => {
     const timeout = 2000;
 
-    render(<Toast status="success" message="Success!" onClose={onCloseMock} timeout={timeout} />);
+    render(<Toast status='success' message='Success!' onClose={onCloseMock} timeout={timeout} />);
     jest.advanceTimersByTime(timeout);
 
     expect(onCloseMock).toHaveBeenCalledTimes(1);
@@ -70,7 +70,7 @@ describe('Toast component', () => {
   it('should clear the timer when unmounting', () => {
     const timeout = 2000;
     const { unmount } = render(
-      <Toast status="success" message="Success" onClose={onCloseMock} timeout={timeout} />
+      <Toast status='success' message='Success' onClose={onCloseMock} timeout={timeout} />
     );
 
     unmount();
@@ -81,7 +81,7 @@ describe('Toast component', () => {
   it('should call the onClose function when close button is clicked', () => {
     const timeout = 2000;
 
-    render(<Toast status="success" message="Success!" onClose={onCloseMock} timeout={timeout} />);
+    render(<Toast status='success' message='Success!' onClose={onCloseMock} timeout={timeout} />);
     fireEvent.click(screen.getByLabelText('Close'));
 
     expect(onCloseMock).toHaveBeenCalledTimes(1);

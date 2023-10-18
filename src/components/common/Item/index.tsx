@@ -1,7 +1,7 @@
 import React, { memo } from 'react';
 
 // constants
-import { Item } from 'interfaces/item';
+import { Product } from 'interfaces/item';
 
 // assets
 import Star from 'assets/images/seller/star.svg';
@@ -10,8 +10,8 @@ import Star from 'assets/images/seller/star.svg';
 import './index.css';
 import { Link } from 'react-router-dom';
 
-interface Props {
-  item: Item;
+export interface Props {
+  item: Product;
   index: number;
   className: string;
   onClick: () => void;
@@ -20,67 +20,62 @@ interface Props {
 const ItemCard: React.FC<Props> = ({ item, index, className, onClick }): JSX.Element => {
   const MAX_STAR = 5;
 
-  const {
-    perPrice = '',
-    isSoldOut = false,
-    discount = '',
-    unit = 'Default unit',
-    image = '/src/assets/images/default_image.webp',
-    title = '',
-    category = 'Default category',
-    name = 'Default name',
-    rate = '',
-    reviews = '',
-    sale = '',
-    price = 0,
-    volume
-  } = item;
+  const { isSoldOut, discount, image, title, category, name, rate, reviews, sale, price, volume } =
+    item;
 
   return (
-    <article className={`item-card ${className} ${item.id}`} key={index}>
+    <article className={`item-card ${className}`} data-testid={`item-card-${item.id}`} key={index}>
       <Link to={`/products/${item.id}`} key={item.id}>
         <section className='image-card'>
-          {perPrice && <p className='per-price'>{perPrice}</p>}
-          {isSoldOut && <p className='sold-out'>Sold Out</p>}
-          <img src={image} alt={title} />
+          {isSoldOut && (
+            <p className='sold-out' data-testid='sold-out'>
+              Out Of Stock
+            </p>
+          )}
+          <img src={image} alt={title} data-testid='item-image' />
         </section>
 
         <section className='content-item'>
-          <p className='cate-item'>{category}</p>
-          <h2 className='title-item'>{name}</h2>
+          <p className='cate-item' data-testid='category'>
+            {category}
+          </p>
+          <h2 className='title-item' data-testid='name'>
+            {name}
+          </h2>
 
           <div className='star-review'>
             <span className='voted'>
-              <img src={Star} alt='Star' />
+              <img src={Star} alt='Star' data-testid='star-image' />
               {rate}/{MAX_STAR}
             </span>
 
-            <span className='review'>
+            <span className='review' data-testid='reviews'>
               {reviews}
               <span className='reviewsText'>Reviews</span>
             </span>
           </div>
 
-          <div className='sale'>{sale}</div>
+          <div className='sale' data-testid='sale'>
+            {sale}
+          </div>
 
-          <div className='discount-n-price'>
-            {discount && <p className='discount'>{discount}</p>}
-            <p className='price'>
+          <div className='discount-n-price' data-testid='discount'>
+            {discount && <p className='discount'>${discount}</p>}
+            <p className='price' data-testid='price'>
               {price}
-              {!discount && unit && unit.length > 0 && <span className='unit'>{` / ${unit}`}</span>}
             </p>
           </div>
 
-          <div className='volumes'>
+          <div className='volumes' data-testid='volumes'>
             {volume.map((item: string, index: number) => (
-              <div className='volume-child' key={index}>
+              <div className='volume-child' key={index} data-testid={`volume-${index}`}>
                 {item}
               </div>
             ))}
           </div>
 
           <div className='button-buy'>
-            <button className='btn btn-add-cart' onClick={onClick}>
+            <button className='btn btn-add-cart' onClick={onClick} data-testid='add-to-cart-button'>
               Add to Cart
             </button>
           </div>

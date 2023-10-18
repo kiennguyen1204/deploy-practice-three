@@ -1,0 +1,124 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ItemCard ItemCard renders correctly 1`] = `
+<div>
+  <article
+    class="item-card test-class"
+    data-testid="item-card-sampleId"
+  >
+    <a
+      href="/products/sampleId"
+    >
+      <section
+        class="image-card"
+      >
+        <p
+          class="sold-out"
+          data-testid="sold-out"
+        >
+          Sold Out
+        </p>
+        <img
+          alt="Sample Title"
+          data-testid="item-image"
+          src="/src/assets/images/default_image.webp"
+        />
+      </section>
+      <section
+        class="content-item"
+      >
+        <p
+          class="cate-item"
+          data-testid="category"
+        >
+          Sample Category
+        </p>
+        <h2
+          class="title-item"
+          data-testid="name"
+        >
+          Sample Name
+        </h2>
+        <div
+          class="star-review"
+        >
+          <span
+            class="voted"
+          >
+            <img
+              alt="Star"
+              data-testid="star-image"
+              src="IMAGE_MOCK"
+            />
+            4.5
+            /
+            5
+          </span>
+          <span
+            class="review"
+            data-testid="reviews"
+          >
+            25
+            <span
+              class="reviewsText"
+            >
+              Reviews
+            </span>
+          </span>
+        </div>
+        <div
+          class="sale"
+          data-testid="sale"
+        >
+          Sale!
+        </div>
+        <div
+          class="discount-n-price"
+          data-testid="discount"
+        >
+          <p
+            class="discount"
+          >
+            $
+            20
+          </p>
+          <p
+            class="price"
+            data-testid="price"
+          >
+            $
+            8
+          </p>
+        </div>
+        <div
+          class="volumes"
+          data-testid="volumes"
+        >
+          <div
+            class="volume-child"
+            data-testid="volume-0"
+          >
+            Volume 1
+          </div>
+          <div
+            class="volume-child"
+            data-testid="volume-1"
+          >
+            Volume 2
+          </div>
+        </div>
+        <div
+          class="button-buy"
+        >
+          <button
+            class="btn btn-add-cart"
+            data-testid="add-to-cart-button"
+          >
+            Add to Cart
+          </button>
+        </div>
+      </section>
+    </a>
+  </article>
+</div>
+`;

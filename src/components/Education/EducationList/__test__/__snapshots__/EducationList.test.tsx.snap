@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`WeedEducationItem renders the component with correct data 1`] = `
+<DocumentFragment>
+  <article
+    class="list-container weed-education-item"
+    data-testid="weed-education-item"
+  >
+    <picture
+      class="weed-education-item-image"
+    >
+      <img
+        alt="main image"
+        src="test-image.jpg"
+      />
+    </picture>
+    <section
+      class="wrapper-container weed-education-item-content"
+    >
+      <header
+        class="wrapper-container weed-education-item-info"
+      >
+        <h2
+          class="weed-education-item-subtitle"
+          data-testid="subtitle-test"
+        >
+          Test Subtitle
+        </h2>
+        <h1
+          class="weed-education-item-title"
+          data-testid="title-test"
+        >
+          Test Title
+        </h1>
+        <p
+          class="weed-education-item-description"
+        >
+          Test Description
+        </p>
+      </header>
+      <footer
+        class="weed-education-item-read-more"
+      >
+        <a
+          class="base-link"
+          href="/test-link"
+        >
+          Read More
+        </a>
+      </footer>
+    </section>
+  </article>
+</DocumentFragment>
+`;

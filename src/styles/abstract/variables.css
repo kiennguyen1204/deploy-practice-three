@@ -14,6 +14,7 @@
   --color-other-red: #eb2606;
   --color-success: #68c03f;
   --color-error: #f8d7da;
+  --color-green-white: #f3fbf4;
 
   --color-avatar: #73c255;
 
@@ -27,7 +28,16 @@
   --color-secondary-ultra-light: #f2f6f4;
   --color-secondary-dark: #05422c;
   --color-secondary-ultra-dark: #01100b;
+  --color-semi-transparent-dark-light: rgba(255, 255, 255, 0.08);
+  --color-semi-transparent-dark: rgba(255, 255, 255, 0.2);
+  --color-semi-transparent-mid: rgba(255, 255, 255, 0.4);
+  --color-semi-transparent-light: rgba(255, 255, 255, 0.5);
   --color-semi-transparent-white: rgba(255, 255, 255, 0.6);
+  --color-background-mix: conic-gradient(
+    from 180deg at 50% 50%,
+    rgba(5, 66, 44, 0.8) 299.07542deg,
+    #648a7c 355.32691deg
+  );
 
   /* Fonts */
   --font-size-super-small: 8px;
@@ -89,8 +99,8 @@
   --border-radius-huge-1: 50%;
 
   /* Fonts family */
-  --font-family-primary: "Lexend-Regular";
-  --font-family-secondary: "Lexend-Medium";
+  --font-family-primary: 'Lexend-Regular';
+  --font-family-secondary: 'Lexend-Medium';
 
   /* Shadows */
   --shadow: 0 2px 4px rgba(0, 0, 0, 0.2);

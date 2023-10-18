@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BoxInfoItem BoxInfoItem renders with the correct content and attributes 1`] = `
+<DocumentFragment>
+  <section
+    class="item-box"
+    data-testid="box-info-item"
+  >
+    <picture
+      class="flex-row-container card-image"
+    >
+      <img
+        alt="Sample Title"
+        src="/sample_image.png"
+      />
+      <img
+        alt="Sample Title Icon"
+        aria-hidden="true"
+        class="flex-container icon-image"
+        src="/sample_icon.png"
+      />
+    </picture>
+    <h2
+      class="title"
+      data-testid="title"
+    >
+      Sample Title
+    </h2>
+    <p
+      class="description"
+      data-testid="description"
+    >
+      Sample Description
+    </p>
+    <a
+      aria-label="Visit Sample Shop"
+      class="shop"
+      data-testid="shop"
+      href="/sample-link"
+    >
+      Sample Shop
+    </a>
+  </section>
+</DocumentFragment>
+`;

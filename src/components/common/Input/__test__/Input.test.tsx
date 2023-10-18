@@ -96,4 +96,9 @@ describe('Input component', () => {
 
     expect(handleKeyDown).toHaveBeenCalledWith(expect.objectContaining({ key: 'Enter' }));
   });
+
+  it('should match the snapshot', () => {
+    const { asFragment } = render(<Input />);
+    expect(asFragment()).toMatchSnapshot();
+  });
 });

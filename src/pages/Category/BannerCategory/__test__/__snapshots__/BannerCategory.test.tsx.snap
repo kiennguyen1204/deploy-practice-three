@@ -1,0 +1,157 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BannerCategory component renders component correctly 1`] = `
+<DocumentFragment>
+  <article
+    class="banner-bottom relative"
+  >
+    <div
+      class="blur"
+    />
+    <div
+      class="banner-item-wrapper"
+    >
+      <section
+        class="wrapper-left"
+      >
+        <p
+          class="cate"
+        >
+          CONCENTRATES
+        </p>
+        <p
+          class="title"
+        >
+          Mix And Match Shatter/Budder 28g (4 X 7G)
+        </p>
+        <p
+          class="align-center rating-n-review"
+        >
+          <span
+            class="align-center rating"
+          >
+            <img
+              src="IMAGE_MOCK"
+            />
+            <span
+              class="star-text"
+            >
+              4.6/5
+            </span>
+          </span>
+          <span
+            class="sign"
+          />
+          <span
+            class="reviews"
+          >
+            135
+            <span
+              class="text-review"
+            >
+              Reviews
+            </span>
+          </span>
+        </p>
+        <div
+          class="align-center volumes"
+        >
+          <span
+            class="flex-container volume-child"
+          >
+            28g
+          </span>
+          <span
+            class="flex-container volume-child"
+          >
+            1/2lb
+          </span>
+          <span
+            class="flex-container volume-child"
+          >
+            1/4lb
+          </span>
+        </div>
+        <div
+          class="flex-space-between-container button-n-price"
+        >
+          <button
+            class="btn btn-primary btn-color-default btn-sm   btn btn-add-cart-custom btn-color-text-primary"
+            type="button"
+          >
+            <span>
+              Add to cart
+            </span>
+          </button>
+          <p
+            class="price"
+          >
+            <span
+              class="sale-price"
+            >
+              $102.00
+            </span>
+            <span
+              class="real-price"
+            >
+              $200.00
+            </span>
+          </p>
+        </div>
+      </section>
+      <section
+        class="wrapper-right"
+      >
+        <div
+          class="background-blur-item relative"
+        >
+          <div
+            class="arrow-next-prev"
+          >
+            <div
+              class="splide__arrows"
+            >
+              <button
+                class="splide__arrow splide__arrow--prev"
+              >
+                <img
+                  alt="Previous"
+                  src="IMAGE_MOCK"
+                />
+              </button>
+              <button
+                class="splide__arrow splide__arrow--next"
+              >
+                <img
+                  alt="Next"
+                  src="IMAGE_MOCK"
+                />
+              </button>
+            </div>
+          </div>
+          <img
+            alt="banner-category"
+            src="/src/assets/images/category/budda_bomb_green.png"
+          />
+        </div>
+        <div
+          class="flex-container dots"
+        >
+          <span
+            class="dot active"
+          />
+          <span
+            class="dot "
+          />
+          <span
+            class="dot "
+          />
+          <span
+            class="dot "
+          />
+        </div>
+      </section>
+    </div>
+  </article>
+</DocumentFragment>
+`;

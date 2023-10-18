@@ -2,7 +2,7 @@
 
 exports[`LoadingSpinner component matches the snapshot 1`] = `
 <DocumentFragment>
-  <div
+  <section
     class="spinner-container"
     data-testid="spinner-container"
   >
@@ -10,6 +10,6 @@ exports[`LoadingSpinner component matches the snapshot 1`] = `
       class="loading-spinner"
       data-testid="loading-spinner"
     />
-  </div>
+  </section>
 </DocumentFragment>
 `;

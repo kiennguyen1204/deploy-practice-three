@@ -62,3 +62,9 @@ export enum OPTION_WEED {
   MUSHROOMS,
   CONCENTRACE
 }
+
+export enum STEPS_CART {
+  SHOPPING_CART,
+  CHECKOUT,
+  ORDER_COMPLETE
+}
