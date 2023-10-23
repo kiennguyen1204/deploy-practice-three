@@ -1,8 +1,11 @@
 import axios from 'axios';
 
-// constants
-import { PRODUCTS_API } from 'constants/api';
+// interfaces
 import { Product } from 'interfaces/item';
+
+// constants
+import { CART_API, PRODUCTS_API } from 'constants/api';
+import { Cart } from '../interfaces/cart';
 
 /**
  * Retrieves a product by its ID from the API.
@@ -30,6 +33,80 @@ export const getProducts = async (): Promise<Product[]> => {
       headers: { 'content-type': 'application/json' }
     });
 
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
+};
+
+/**
+ * Adds a product to the cart.
+ * @param {Product} product - The product to add to the cart.
+ * @returns {Promise<Product>} - The response from the API.
+ * @throws {Error} - If there's an error adding the product to the cart.
+ */
+export const addToCart = async (product: Product): Promise<Product> => {
+  try {
+    const response = await axios.post(CART_API, product, {
+      headers: { 'content-type': 'application/json' }
+    });
+
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
+};
+
+/**
+ * Retrieves all products in the cart from the API.
+ * @returns {Promise<Product[]>} - An array of products in the cart.
+ * @throws {Error} - If there's an error retrieving the cart products.
+ */
+export const getCartProducts = async (): Promise<Cart[]> => {
+  try {
+    const response = await axios.get(CART_API, {
+      headers: { 'content-type': 'application/json' }
+    });
+
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
+};
+
+/**
+ * Deletes an item from the cart.
+ * @param {string} id - The ID of the item to delete.
+ * @returns {Promise<Product>} - The response from the API.
+ * @throws {Error} - If there's an error deleting the item.
+ * */
+export const deleteCartItem = async (id: string): Promise<Cart> => {
+  try {
+    const url = `${CART_API}/${id}`;
+    const response = await axios.delete(url, {
+      headers: { 'content-type': 'application/json' }
+    });
+
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
+};
+
+/**
+ * Updates an item in the cart.
+ * @param {string} id - The ID of the item to update.
+ * @param {Partial<Product>} updatedData - The updated data for the item.
+ * @param {string} url - The URL of the API endpoint.
+ * @returns {Promise<Product>} - The response from the API.
+ * @throws {Error} - If there's an error updating the item.
+ */
+export const updateItem = async (id: string, updatedData: Partial<Product>): Promise<Product> => {
+  try {
+    const urlUpdateItem = `${CART_API}/${id}`;
+    const response = await axios.put(urlUpdateItem, updatedData, {
+      headers: { 'content-type': 'application/json' }
+    });
     return response.data;
   } catch (error) {
     throw error;

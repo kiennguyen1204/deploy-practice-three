@@ -8,21 +8,16 @@ import Interact from 'assets/images/interac.svg';
 import './index.css';
 
 export const Payments: React.FC = (): JSX.Element => (
-  <section className='payments'>
+  <section className='flex-column payments'>
     <h1 className='title-payments'>SECURE PAYMENTS PROVIDED BY</h1>
     <div className='list-payments'>
-      <div className='item-payment'>
-        <img src={MasterCard} alt='MasterCard' />
-      </div>
-      <div className='item-payment'>
-        <img src={Visa} alt='Visa' />
-      </div>
-      <div className='item-payment'>
-        <img src={Bitcoin} alt='Bitcoin' />
-      </div>
-      <div className='item-payment'>
-        <img src={Interact} alt='Interact' />
-      </div>
+      <img src={MasterCard} alt='MasterCard' className='item-payment' />
+
+      <img src={Visa} alt='Visa' className='item-payment' />
+
+      <img src={Bitcoin} alt='Bitcoin' className='item-payment' />
+
+      <img src={Interact} alt='Interact' className='item-payment' />
     </div>
   </section>
 );

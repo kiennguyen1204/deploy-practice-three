@@ -58,6 +58,10 @@
     color: var(--color-neutral-base);
     border-bottom: 1px solid var(--color-matte-white);
 
+    @media screen and (min-width: 992px) {
+      display: none;
+    }
+
     .first-title {
       font-size: var(--font-size-normal);
     }
@@ -264,10 +268,6 @@
           }
         }
 
-        .top-title-wrapper {
-          display: none;
-        }
-
         .list-item-selling {
           border-radius: 16px;
           background-color: var(--color-secondary-ultra-light);
@@ -276,6 +276,66 @@
         .list-item-data {
           padding-inline: 0;
         }
+      }
+
+      /* Dropdown container */
+      .flex-container {
+        .filter-title {
+          position: relative;
+          cursor: pointer;
+        }
+
+        .filter-title {
+          display: flex;
+          align-items: center;
+          color: var(--color-neutral-black);
+          font-size: 16px;
+          padding: 10px 20px;
+          background-color: var(--color-neutral-dark);
+          border-radius: 5px;
+          transition:
+            background-color 0.3s,
+            color 0.3s;
+        }
+
+        .filter-title:hover {
+          background-color: var(--color-semi-transparent-dark-light);
+        }
+
+        .filter-title img {
+          width: 16px;
+          height: 16px;
+          margin-left: 5px;
+        }
+      }
+
+      /* Dropdown content */
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: var(--color-neutral-white);
+        box-shadow: var(--box-shadow-dropdown-filter);
+        z-index: 1;
+        border-radius: 5px;
+        overflow: hidden;
+        margin-top: 5px;
+
+        & p {
+          color: var(--color-neutral-base);
+          padding: 10px 20px;
+          margin: 0;
+          transition:
+            background-color 0.3s,
+            color 0.3s;
+        }
+
+        &p:hover {
+          background-color: var(--color-dropdown-light);
+        }
+      }
+
+      & .filter-title:hover .dropdown-content {
+        display: block;
       }
     }
 

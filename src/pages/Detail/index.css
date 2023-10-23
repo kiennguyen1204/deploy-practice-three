@@ -1,4 +1,6 @@
 .detail-container {
+  display: flex;
+  flex-direction: column;
   padding: 24px;
   gap: 40px;
 }

@@ -1,17 +1,29 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
+
+// assets
 import CartSvg from 'assets/images/checkout/cart.svg';
 import CheckoutSvg from 'assets/images/checkout/checkout.svg';
 import OrderSvg from 'assets/images/checkout/order.svg';
 import TickSvg from 'assets/images/checkout/tick.svg';
 
+// contexts
+import { ProductContext } from 'contexts/ProductsProvider';
+
+// constants
 import { STEPS_CART } from 'constants/enums';
+
+// components
+import { ProductCart } from './components/ProductCart';
+import { PaymentInfo } from './components/PaymentInfo';
+
+// styles
 import './index.css';
-import { dataCart } from 'mocks/mockData';
-import { Payments } from 'pages/Checkout/Payments';
 
-import { ProductCart } from './ProductCart';
+export const Checkout: React.FC = (): JSX.Element => {
+  const [currentStep] = useState<number>(0);
+  const { cart } = useContext(ProductContext);
+  const totalQuantity = cart.reduce((total, item) => total + item.quantity, 0);
 
-export default function Checkout() {
   const steps = [
     {
       title: 'Shopping Cart',
@@ -30,80 +42,29 @@ export default function Checkout() {
     }
   ];
 
-  const [currentStep, setCurrentStep] = useState(0);
-  const [amountProduct] = useState(4);
-
-  const [step, setStep] = useState(steps[0]);
+  const [step] = useState(steps[0]);
 
   return (
-    <div className='checkout-container'>
-      <div className='checkout-header'>
-        {steps.map((e, i) => (
-          <div
-            className='step-item pe-auto'
-            key={i}
-            onClick={() => {
-              setStep(e);
-              setCurrentStep(i);
-            }}>
+    <div className='flex-column checkout-container'>
+      <div className='flex-container checkout-header'>
+        {steps.map((element, index) => (
+          <div className='align-center step-item pe-auto' key={index}>
             <div
-              className={`step-icon ${i === currentStep ? 'active' : ''} ${
-                i < currentStep ? 'complete' : ''
+              className={`flex-container step-icon ${index === currentStep && 'active'} ${
+                index < currentStep && 'complete'
               }`}>
-              {i < currentStep ? <img src={TickSvg} alt='Tick' /> : e.icon}
+              {index < currentStep ? <img src={TickSvg} alt='Tick' /> : element.icon}
             </div>
-            <p className='step-title'>{e.title}</p>
-            {i < steps.length - 1 && <div className='step-divider'></div>}
+            <p className='step-title'>{element.title}</p>
+            {index < steps.length - 1 && <div className='step-divider'></div>}
           </div>
         ))}
       </div>
-      <div className='checkout-content'>
-        {step.id === STEPS_CART.SHOPPING_CART && <ProductCart amountProduct={amountProduct} />}
 
-        <div className='payments-container'>
-          <div className='price-group'>
-            <div className='price-box'>
-              <p className='title'>Subtotal</p>
-              <div className='price'>${dataCart.total}</div>
-            </div>
-            <div className='price-box'>
-              <p className='title'>Discount</p>
-              <div className='price'>${dataCart.discount}</div>
-            </div>
-            <div className='price-box'>
-              <p className='title'>Shipping Costs</p>
-              <div className='price'>${dataCart.shipping}</div>
-            </div>
-          </div>
-          <div className='coupon-group'>
-            <div className='coupon-input'>
-              <input placeholder='Coupon Code' />
-            </div>
-            <button className='btn coupon-btn'>Apply Coupon</button>
-          </div>
-          <div className='free-ship'>
-            <div className='progress-bar'>
-              <div className='progress'></div>
-            </div>
-            <div className='text-group'>
-              <p>
-                Get Free
-                <span> Shipping </span>
-                for orders over
-                <span className='costs'> $100</span>
-              </p>
-              <a>Continue Shopping</a>
-            </div>
-          </div>
-          <button className='btn checkout-btn'>
-            <p>Checkout</p>
-            <div className='divider'></div>
-            <p>${dataCart.payTotal}</p>
-          </button>
-          <div className='divider'></div>
-          <Payments />
-        </div>
+      <div className='flex-column checkout-content'>
+        {step.id === STEPS_CART.SHOPPING_CART && <ProductCart amountProduct={totalQuantity} />}
+        <PaymentInfo />
       </div>
     </div>
   );
-}
+};

@@ -13,4 +13,5 @@ export interface Product {
   volume: string[];
   rate?: string;
   totalReviews: number;
+  quantity: number;
 }

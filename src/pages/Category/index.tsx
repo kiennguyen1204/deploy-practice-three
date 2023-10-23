@@ -1,9 +1,6 @@
-import { useEffect, useState } from 'react';
+import { useCallback, useContext, useEffect, useState } from 'react';
 import { Splide, SplideTrack, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/react-splide/css';
-
-// services
-import { getProducts } from 'services/api-action';
 
 // interfaces
 import { Product } from 'interfaces/item';
@@ -13,6 +10,15 @@ import PrevArrow from 'assets/images/arrow_left.svg';
 import NextArrow from 'assets/images/arrow_right.svg';
 import ArrowDown from 'assets/images/dropdown_chevron.svg';
 
+// utils
+import { handleAddToCartWithToast } from 'utils/cart';
+
+// hooks
+import { useToast } from 'hooks/useToast';
+
+// context
+import { ProductContext } from 'contexts/ProductsProvider';
+
 // layouts
 import { FirstServicePattern } from 'layouts/ServiceOne';
 
@@ -21,21 +27,34 @@ import ItemCard from 'components/common/Item';
 import { Filter } from './Filter';
 import { BannerCategory } from './BannerCategory';
 import ProductList from 'components/common/ListProduct';
+import Toast from 'components/common/Toast';
 
 // styles
 import './index.css';
 
-export const CategoryProduct: React.FC = (): JSX.Element => {
-  const [featuredProducts, setFeaturedProducts] = useState<Product[]>([]);
+interface Props {
+  searchValue: string;
+}
+
+export const CategoryProduct: React.FC<Props> = ({ searchValue }): JSX.Element => {
+  const { products } = useContext(ProductContext);
+  const { toast, showToast, hideToast } = useToast();
+  const { cart, onAddToCart } = useContext(ProductContext);
+
+  const [sortBy, setSortBy] = useState<'price_asc' | 'price_desc' | null>(null);
+
+  const [searchResults, setSearchResults] = useState<Product[]>([]);
 
   useEffect(() => {
-    const fetchFeaturedProducts = async () => {
-      const productsData = await getProducts();
-      setFeaturedProducts(productsData);
-    };
-
-    fetchFeaturedProducts();
-  }, []);
+    if (searchValue) {
+      const results = products.filter((product) =>
+        product.name.toLowerCase().includes(searchValue.toLowerCase())
+      );
+      setSearchResults(results);
+    } else {
+      setSearchResults(products);
+    }
+  }, [searchValue, products]);
 
   const splideOpts = {
     type: 'loop',
@@ -61,8 +80,34 @@ export const CategoryProduct: React.FC = (): JSX.Element => {
     }
   };
 
-  const handleAddToCart = () => {
-    // TODO: handle add to cart
+  const handleAddToCart = useCallback(
+    async (productToAdd: Product): Promise<void> => {
+      await handleAddToCartWithToast(productToAdd, cart, onAddToCart, showToast);
+    },
+    [cart, onAddToCart, showToast]
+  );
+
+  const handleClose = (): void => {
+    hideToast();
+  };
+
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
+  const toggleDropdown = () => {
+    setIsDropdownOpen(!isDropdownOpen);
+  };
+
+  const handleSortBy = (criteria: 'price_asc' | 'price_desc') => {
+    setSortBy(criteria);
+    setIsDropdownOpen(false);
+
+    if (criteria === 'price_asc') {
+      const sortedResults = searchResults.slice().sort((a, b) => a.price - b.price);
+      setSearchResults(sortedResults);
+    } else if (criteria === 'price_desc') {
+      const sortedResults = searchResults.slice().sort((a, b) => b.price - a.price);
+      setSearchResults(sortedResults);
+    }
   };
 
   return (
@@ -83,9 +128,15 @@ export const CategoryProduct: React.FC = (): JSX.Element => {
             <span role='heading' className='shop-title'>
               Shop
             </span>
-            <span role='button' className='flex-container filter-title'>
+            <span role='button' className='flex-container filter-title' onClick={toggleDropdown}>
               Short By Lates
               <img src={ArrowDown} alt='arrow-down' />
+              {isDropdownOpen && (
+                <div className='dropdown-content'>
+                  <p onClick={() => handleSortBy('price_asc')}> Price Ascending </p>
+                  <p onClick={() => handleSortBy('price_desc')}> Price Descending </p>
+                </div>
+              )}
             </span>
           </header>
 
@@ -108,14 +159,9 @@ export const CategoryProduct: React.FC = (): JSX.Element => {
               <div className='splide-list'>
                 <Splide hasTrack={false} options={splideOpts} aria-label='My Favorite Images'>
                   <SplideTrack>
-                    {featuredProducts.slice(0, 3).map((el, index) => (
+                    {searchResults.slice(0, 4).map((el, index) => (
                       <SplideSlide key={index}>
-                        <ItemCard
-                          item={el}
-                          index={index}
-                          className={'card-item'}
-                          onClick={handleAddToCart}
-                        />
+                        <ItemCard item={el} className={'card-item'} onAddToCart={handleAddToCart} />
                       </SplideSlide>
                     ))}
                   </SplideTrack>
@@ -133,17 +179,20 @@ export const CategoryProduct: React.FC = (): JSX.Element => {
             </div>
 
             <section className='list-item-data list-first'>
-              <ProductList />
+              <ProductList products={searchValue ? searchResults : products} />
             </section>
 
             <BannerCategory />
 
             <section className='list-item-data'>
-              <ProductList />
+              <ProductList products={searchValue ? searchResults : products} />
             </section>
           </div>
         </section>
       </div>
+      {toast.openPopup && (
+        <Toast status={toast.status} message={toast.message} onClose={handleClose} />
+      )}
     </article>
   );
 };

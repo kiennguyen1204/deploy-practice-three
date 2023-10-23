@@ -1,35 +1,53 @@
-import { useEffect, useState } from 'react';
+import { useCallback, useContext } from 'react';
 
-// services
-import { getProducts } from 'services/api-action';
+// context
+import { ProductContext } from 'contexts/ProductsProvider';
+
+// hooks
+import { useToast } from 'hooks/useToast';
+
+// utils
+import { handleAddToCartWithToast } from 'utils/cart';
 
 // interfaces
 import { Product } from 'interfaces/item';
 
 // components
 import ItemCard from 'components/common/Item';
+import Toast from '../Toast';
 
-const ProductList: React.FC = (): JSX.Element => {
-  const [featuredProducts, setFeaturedProducts] = useState<Product[]>([]);
+interface ProductListProps {
+  products?: Product[];
+}
 
-  const handleAddToCart = () => {
-    // TODO: handle add to cart
+const ProductList: React.FC<ProductListProps> = ({ products }): JSX.Element => {
+  const { cart, onAddToCart } = useContext(ProductContext);
+  const { toast, showToast, hideToast } = useToast();
+
+  const handleAddToCart = useCallback(
+    async (productToAdd: Product): Promise<void> => {
+      await handleAddToCartWithToast(productToAdd, cart, onAddToCart, showToast);
+    },
+    [cart, onAddToCart, showToast]
+  );
+
+  const handleClose = (): void => {
+    hideToast();
   };
-
-  useEffect(() => {
-    const fetchFeaturedProducts = async () => {
-      const productsData = await getProducts();
-      setFeaturedProducts(productsData);
-    };
-
-    fetchFeaturedProducts();
-  }, []);
 
   return (
     <>
-      {featuredProducts.map((e, index) => (
-        <ItemCard item={e} index={index} className={'btn-add-to-cart'} onClick={handleAddToCart} />
+      {products?.map((product) => (
+        <ItemCard
+          key={product.id}
+          item={product}
+          className={'btn-add-to-cart'}
+          onAddToCart={handleAddToCart}
+        />
       ))}
+      {toast.openPopup && (
+        <Toast status={toast.status} message={toast.message} onClose={handleClose} />
+      )}
     </>
   );
 };

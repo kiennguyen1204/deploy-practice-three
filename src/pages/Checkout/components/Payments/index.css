@@ -1,7 +1,4 @@
 .payments {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
   gap: 16px;
 
   .title-payments {
@@ -17,11 +14,8 @@
     gap: 12px;
 
     .item-payment {
-      display: flex;
       width: 56px;
       height: 32px;
-      justify-content: center;
-      align-items: center;
       border-radius: 6px;
       box-sizing: unset;
       border: 1px solid var(--color-matte-white);

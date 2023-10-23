@@ -1,5 +1,8 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import { useParams } from 'react-router-dom';
+
+// context
+import ProductProvider, { ProductContext } from 'contexts/ProductsProvider';
 
 // assets
 import Star from 'assets/images/star.svg';
@@ -23,6 +26,7 @@ const Detail: React.FC = (): JSX.Element => {
   const { productId } = useParams<{ productId: string }>();
   const [product, setProduct] = useState<Product | null>(null);
   const [currentImage, setCurrentImage] = useState<number>(0);
+  const { products } = useContext(ProductContext);
 
   useEffect(() => {
     const fetchProductById = async () => {
@@ -40,7 +44,7 @@ const Detail: React.FC = (): JSX.Element => {
 
   return (
     <>
-      <article className='list-container detail-container'>
+      <article className='detail-container'>
         <section className='list-container image-container'>
           <picture className='flex-container image-product'>
             <img src={image} alt='main product' />
@@ -112,7 +116,9 @@ const Detail: React.FC = (): JSX.Element => {
       <section className='featured-product'>
         <h2 className='featured-title'>Featured Product</h2>
         <div className='container-list-item'>
-          <ProductList />
+          <ProductProvider>
+            <ProductList products={products} />
+          </ProductProvider>
         </div>
       </section>
     </>

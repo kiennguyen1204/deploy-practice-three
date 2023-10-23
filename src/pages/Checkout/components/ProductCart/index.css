@@ -1,0 +1,7 @@
+.amount-product {
+  color: var(--color-neutral-lighter);
+  text-align: right;
+  font-size: var(--font-size-medium);
+  font-weight: var(--font-weight-regular);
+  line-height: 150%;
+}

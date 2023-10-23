@@ -14,6 +14,7 @@
   --color-other-red: #eb2606;
   --color-success: #68c03f;
   --color-error: #f8d7da;
+  --color-dropdown-light: #f0f0f0;
   --color-green-white: #f3fbf4;
 
   --color-avatar: #73c255;
@@ -113,6 +114,7 @@
 
   --box-shadow-dropdown: 0 2px 4px rgba(244, 243, 243, 0.2);
   --box-shadow-dropdown-item: 0 2px 4px rgba(0, 0, 0, 0.2);
+  --box-shadow-dropdown-filter: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   --box-shadow-scroll-bar: inset 0 0 6px rgba(0, 0, 0, 0.3);
   --box-shadow-arrow: 0px 6px 16px 0px rgba(0, 0, 0, 0.25);
 }

@@ -42,7 +42,7 @@ export const MOCK_DATA_CUSTOMER = {
   date: 'January 15, 2023'
 };
 
-export const dataCart = {
+export const DATA_CART = {
   total: 305.0,
   shipping: 50,
   payTotal: 355,
@@ -50,7 +50,7 @@ export const dataCart = {
   cart: [
     {
       name: 'Mix And Match Shatter/Budder 28g (4 X 7G)',
-      image: '/src/assets/images/products/rind-remix-pina-colada-snack-mix-front_2000x.webp',
+      image: '/src/assets/images/products/snack_yellow.webp',
       price: 120.0,
       amount: 2,
       total: 240.0,
@@ -72,7 +72,7 @@ export const dataCart = {
     },
     {
       name: 'Mix And Match Shatter/Budder 28g (4 X 7G)',
-      image: '/src/assets/images/products/rind-snacks-chewy-straw-peary-front_2000x.webp',
+      image: '/src/assets/images/products/snack_purple.webp',
       price: 13.0,
       amount: 5,
       total: 65.0,

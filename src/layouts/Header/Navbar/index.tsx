@@ -7,7 +7,13 @@ import EndNavbar from 'layouts/Header/EndNav';
 
 // styles
 import './index.css';
-const Navbar: React.FC = () => {
+
+interface Props {
+  searchValue: string;
+  onSetSearchValue: (value: string) => void;
+}
+
+const Navbar: React.FC<Props> = ({ searchValue, onSetSearchValue }) => {
   const [isDrawerOpen, setIsDrawerOpen] = useState<boolean>(false);
 
   const openDrawerFunction = () => {
@@ -18,7 +24,11 @@ const Navbar: React.FC = () => {
     <nav className='navbar-custom navbar-expand-lg py-0'>
       <div className='container'>
         <TopNavbar />
-        <MiddleNavbar onClick={openDrawerFunction} />
+        <MiddleNavbar
+          searchValue={searchValue}
+          onSetSearchValue={onSetSearchValue}
+          onClick={openDrawerFunction}
+        />
         <EndNavbar isOpenDrawer={openDrawerFunction} isDrawerOpen={isDrawerOpen} />
       </div>
     </nav>

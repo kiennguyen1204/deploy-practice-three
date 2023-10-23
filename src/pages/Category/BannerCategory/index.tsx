@@ -28,9 +28,9 @@ export const BannerCategory: React.FC = (): JSX.Element => {
             <h1 className='title'>Mix And Match Shatter/Budder 28g (4 X 7G)</h1>
             <RatingAndReview />
             <div className='align-center volumes'>
-              <span className='flex-container volume-child'>28g</span>
-              <span className='flex-container volume-child'>1/2lb</span>
-              <span className='flex-container volume-child'>1/4lb</span>
+              <span className='flex-container'>28g</span>
+              <span className='flex-container'>1/2lb</span>
+              <span className='flex-container'>1/4lb</span>
             </div>
 
             <div className='flex-space-between-container button-n-price'>

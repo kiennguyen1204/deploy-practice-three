@@ -5,7 +5,8 @@
 
       .title-filter {
         color: var(--color-neutral-base);
-        font-size: var(--font-size-large);
+        font-size: var(--font-size-normal);
+        font-weight: var(--font-weight-regular);
         line-height: 150%;
         height: 68px;
         padding-bottom: 6px;
@@ -72,20 +73,19 @@
             }
           }
         }
+      }
+      .button-clear {
+        margin-top: 20px;
 
-        .button-clear {
-          margin-top: 20px;
-
-          .clear-all-filter {
-            height: 40px;
-            padding: 0px 32px;
-            gap: 16px;
-            background: var(--color-green-white);
-            color: var(--color-primary-base);
-            font-size: var(--font-size-medium);
-            font-weight: var(--font-weight-regular);
-            line-height: var(--line-height-small);
-          }
+        & .clear-all-filter {
+          height: 40px;
+          padding: 0px 32px;
+          gap: 16px;
+          background: var(--color-green-white);
+          color: var(--color-primary-base);
+          font-size: var(--font-size-medium);
+          font-weight: var(--font-weight-regular);
+          line-height: var(--line-height-small);
         }
       }
     }

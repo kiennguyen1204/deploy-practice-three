@@ -1,7 +1,8 @@
-import React, { memo } from 'react';
+import React, { memo, useCallback } from 'react';
 
 // constants
 import { Product } from 'interfaces/item';
+import { SOLD_OUT } from 'constants/common';
 
 // assets
 import Star from 'assets/images/seller/star.svg';
@@ -12,19 +13,24 @@ import { Link } from 'react-router-dom';
 
 export interface Props {
   item: Product;
-  index: number;
   className: string;
-  onClick: () => void;
+  onAddToCart: (product: Product) => void;
 }
 
-const ItemCard: React.FC<Props> = ({ item, index, className, onClick }): JSX.Element => {
+const ItemCard: React.FC<Props> = ({ item, className, onAddToCart }): JSX.Element => {
   const MAX_STAR = 5;
 
-  const { isSoldOut, discount, image, title, category, name, rate, reviews, sale, price, volume } =
-    item;
+  const { isSoldOut, discount, image, category, name, rate, reviews, sale, price, volume } = item;
+
+  const handleAddToCart = useCallback(() => {
+    onAddToCart(item);
+  }, [onAddToCart, item]);
 
   return (
-    <article className={`item-card ${className}`} data-testid={`item-card-${item.id}`} key={index}>
+    <article
+      className={`item-card ${className}`}
+      data-testid={`item-card-${item.id}`}
+      key={item.id}>
       <Link to={`/products/${item.id}`} key={item.id}>
         <section className='image-card'>
           {isSoldOut && (
@@ -32,7 +38,7 @@ const ItemCard: React.FC<Props> = ({ item, index, className, onClick }): JSX.Ele
               Out Of Stock
             </p>
           )}
-          <img src={image} alt={title} data-testid='item-image' />
+          <img src={image} alt={isSoldOut ? SOLD_OUT : ''} data-testid='item-image' />
         </section>
 
         <section className='content-item'>
@@ -73,14 +79,17 @@ const ItemCard: React.FC<Props> = ({ item, index, className, onClick }): JSX.Ele
               </div>
             ))}
           </div>
-
-          <div className='button-buy'>
-            <button className='btn btn-add-cart' onClick={onClick} data-testid='add-to-cart-button'>
-              Add to Cart
-            </button>
-          </div>
         </section>
       </Link>
+
+      <div className='flex-container button-buy'>
+        <button
+          className='btn btn-add-cart'
+          onClick={handleAddToCart}
+          data-testid='add-to-cart-button'>
+          Add to Cart
+        </button>
+      </div>
     </article>
   );
 };

@@ -1,26 +1,31 @@
+import { useCallback, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { Splide, SplideTrack, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/react-splide/css';
+
+// context
+import { ProductContext } from 'contexts/ProductsProvider';
 
 // assets
 import BestProduct from 'assets/images/products/best_sell.png';
 import PrevArrow from 'assets/images/arrow_left.svg';
 import NextArrow from 'assets/images/arrow_right.svg';
 
-// mocks
-import { DATA_LIST } from 'mocks/dataList';
+// interfaces
+import { Product } from 'interfaces/item';
 
 // components
 import ItemCard from 'components/common/Item';
+import Toast from 'components/common/Toast';
 
 // styles
 import './index.css';
-import { Item } from '../../../interfaces/item';
-import { useEffect, useState } from 'react';
-import { getProducts } from '../../../services/api-action';
+import { handleAddToCartWithToast } from 'utils/cart';
+import { useToast } from 'hooks/useToast';
 
 export const Sellers: React.FC = (): JSX.Element => {
-  const [featuredProducts, setFeaturedProducts] = useState<Item[]>([]);
+  const { products, cart, onAddToCart } = useContext(ProductContext);
+  const { toast, showToast, hideToast } = useToast();
 
   const splideOpts = {
     type: 'loop',
@@ -43,17 +48,15 @@ export const Sellers: React.FC = (): JSX.Element => {
     }
   };
 
-  useEffect(() => {
-    const fetchFeaturedProducts = async () => {
-      const productsData = await getProducts();
-      setFeaturedProducts(productsData);
-    };
+  const handleAddToCart = useCallback(
+    async (productToAdd: Product): Promise<void> => {
+      await handleAddToCartWithToast(productToAdd, cart, onAddToCart, showToast);
+    },
+    [cart, onAddToCart, showToast]
+  );
 
-    fetchFeaturedProducts();
-  }, []);
-
-  const handleOnclick = (): void => {
-    //TODO: handle function onclick
+  const handleClose = (): void => {
+    hideToast();
   };
 
   return (
@@ -82,7 +85,7 @@ export const Sellers: React.FC = (): JSX.Element => {
               </p>
 
               <div className='best-seller-card-button'>
-                <Link to='/' className='base-seller-link'>
+                <Link to='/category' className='base-seller-link'>
                   View All
                 </Link>
               </div>
@@ -93,14 +96,13 @@ export const Sellers: React.FC = (): JSX.Element => {
         <div className='seller-list'>
           <Splide hasTrack={false} options={splideOpts} aria-label='My Favorite Images'>
             <SplideTrack>
-              {featuredProducts.map((el, index) => (
+              {products.map((el, index) => (
                 <SplideSlide key={index}>
                   <ItemCard
                     item={el}
                     key={index}
-                    index={0}
                     className={'custom-card'}
-                    onClick={handleOnclick}
+                    onAddToCart={handleAddToCart}
                   />
                 </SplideSlide>
               ))}
@@ -117,6 +119,9 @@ export const Sellers: React.FC = (): JSX.Element => {
             </div>
           </Splide>
         </div>
+        {toast.openPopup && (
+          <Toast status={toast.status} message={toast.message} onClose={handleClose} />
+        )}
       </section>
     </article>
   );
