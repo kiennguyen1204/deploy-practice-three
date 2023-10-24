@@ -2,21 +2,26 @@ import { generateIdFromName } from 'utils/stringUtils';
 
 // contexts
 import { ProductContext } from 'contexts/ProductsProvider';
+import { useContext } from 'react';
 
 // styles
 import './index.css';
-import { useContext } from 'react';
 
-export const ProductCategoryList: React.FC = (): JSX.Element => {
+interface Props {
+  handleSearchByName: (name: string) => void;
+}
+
+export const ProductCategoryList: React.FC<Props> = ({ handleSearchByName }): JSX.Element => {
   const { products } = useContext(ProductContext);
 
   return (
     <div className='list-container list-check'>
-      {products.map((element, index) => (
+      {products.map((element) => (
         <label
-          key={index}
+          key={element.id}
           className='align-center check-item block'
-          htmlFor={generateIdFromName(element.name)}>
+          htmlFor={generateIdFromName(element.name)}
+          onClick={() => handleSearchByName(element.name)}>
           <input
             type='radio'
             value={element.quantity}

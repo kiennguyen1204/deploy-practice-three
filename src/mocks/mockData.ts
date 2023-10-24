@@ -18,25 +18,25 @@ export const MOCK_PROPS = {
 };
 
 export const MOCK_ITEM: Product = {
-  id: 'sampleId',
-  isSoldOut: true,
-  discount: 20,
-  image: '/src/assets/images/default_image.webp',
-  title: 'Sample Title',
-  category: 'Sample Category',
-  name: 'Sample Name',
-  rate: '4.5',
-  totalReviews: 25,
-  sale: 'Sale!',
-  price: 8,
-  volume: ['Volume 1', 'Volume 2'],
-  description: 'Sample Description',
-  reviews: 0
+  id: '1',
+  name: 'Product A',
+  title: 'Product A Title',
+  description: 'Description for Product A',
+  sale: '30%',
+  image: 'image-url-1',
+  reviews: 15,
+  isSoldOut: false,
+  category: 'Category A',
+  price: 100,
+  discount: 10,
+  volume: ['100ml', '200ml'],
+  totalReviews: 20,
+  quantity: 50
 };
 
 export const MOCK_DATA_CUSTOMER = {
   userName: 'Vikki Starr',
-  avatar: '/src/assets/images/reviews/VikkiStarr.png',
+  avatar: 'assets/images/reviews/VikkiStarr.png',
   comment: `Absolutely love TopShelfBC; affordable on any budget and such fast delivery, straight to my door! I recommend them to all my friends and family for their 420 needs.`,
   star: 4,
   date: 'January 15, 2023'
@@ -50,7 +50,7 @@ export const DATA_CART = {
   cart: [
     {
       name: 'Mix And Match Shatter/Budder 28g (4 X 7G)',
-      image: '/src/assets/images/products/snack_yellow.webp',
+      image: 'assets/images/products/snack_yellow.webp',
       price: 120.0,
       amount: 2,
       total: 240.0,
@@ -72,7 +72,7 @@ export const DATA_CART = {
     },
     {
       name: 'Mix And Match Shatter/Budder 28g (4 X 7G)',
-      image: '/src/assets/images/products/snack_purple.webp',
+      image: 'assets/images/products/snack_purple.webp',
       price: 13.0,
       amount: 5,
       total: 65.0,

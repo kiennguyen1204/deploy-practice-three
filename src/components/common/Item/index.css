@@ -169,6 +169,7 @@
 .item-card .button-buy .btn-add-cart {
   height: 40px;
   padding: 0px 24px;
+  display: flex;
   justify-content: center;
   align-items: center;
   gap: 8px;
@@ -178,9 +179,10 @@
   color: var(--color-neutral-white);
   transition: all 0.3s;
   border: none;
+  cursor: pointer;
 }
 
-.item-card .content-item .button-buy .btn-add-cart:hover {
+.item-card .button-buy .btn-add-cart:hover {
   opacity: 0.85;
 }
 

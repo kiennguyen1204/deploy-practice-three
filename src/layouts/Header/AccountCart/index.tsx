@@ -1,15 +1,17 @@
+import { useContext } from 'react';
 import { Link } from 'react-router-dom';
+
+// context
+import { CartContext } from 'contexts/CartProvider';
 
 // assets
 import CartIcon from 'assets/images/bag.svg';
 
 // styles
 import './index.css';
-import { useContext } from 'react';
-import { ProductContext } from 'contexts/ProductsProvider';
 
 const AccountCart: React.FC = (): JSX.Element => {
-  const { cart } = useContext(ProductContext);
+  const { cart } = useContext(CartContext);
   const totalQuantity = cart.reduce((total, item) => total + item.quantity, 0);
 
   return (

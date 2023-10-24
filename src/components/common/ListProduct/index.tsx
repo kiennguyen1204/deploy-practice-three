@@ -1,6 +1,7 @@
 import { useCallback, useContext } from 'react';
 
 // context
+import { CartContext } from 'contexts/CartProvider';
 import { ProductContext } from 'contexts/ProductsProvider';
 
 // hooks
@@ -21,7 +22,8 @@ interface ProductListProps {
 }
 
 const ProductList: React.FC<ProductListProps> = ({ products }): JSX.Element => {
-  const { cart, onAddToCart } = useContext(ProductContext);
+  const { onAddToCart } = useContext(ProductContext);
+  const { cart } = useContext(CartContext);
   const { toast, showToast, hideToast } = useToast();
 
   const handleAddToCart = useCallback(

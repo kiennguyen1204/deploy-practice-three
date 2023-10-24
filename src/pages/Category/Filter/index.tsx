@@ -4,12 +4,16 @@ import './index.css';
 // components
 import { ProductCategoryList } from '../ProductCategoryList';
 
-export const Filter: React.FC = (): JSX.Element => (
+interface Props {
+  onSearchByName: (name: string) => void;
+}
+
+export const Filter: React.FC<Props> = ({ onSearchByName }): JSX.Element => (
   <article className='left-filter-container'>
     <h2 className='title-filter'>Filters</h2>
     <section className='list-cate-item'>
       <h3 className='cate-title'>PRODUCT CATEGORY</h3>
-      <ProductCategoryList />
+      <ProductCategoryList handleSearchByName={onSearchByName} />
     </section>
 
     <section className='button-clear'>

@@ -7,8 +7,7 @@ import OrderSvg from 'assets/images/checkout/order.svg';
 import TickSvg from 'assets/images/checkout/tick.svg';
 
 // contexts
-import { ProductContext } from 'contexts/ProductsProvider';
-
+import { CartContext } from 'contexts/CartProvider';
 // constants
 import { STEPS_CART } from 'constants/enums';
 
@@ -21,7 +20,7 @@ import './index.css';
 
 export const Checkout: React.FC = (): JSX.Element => {
   const [currentStep] = useState<number>(0);
-  const { cart } = useContext(ProductContext);
+  const { cart } = useContext(CartContext);
   const totalQuantity = cart.reduce((total, item) => total + item.quantity, 0);
 
   const steps = [

@@ -5,6 +5,9 @@ import '@splidejs/react-splide/css';
 // interfaces
 import { Product } from 'interfaces/item';
 
+// constants
+import { SORT_TYPE } from 'constants/enums';
+
 // assets
 import PrevArrow from 'assets/images/arrow_left.svg';
 import NextArrow from 'assets/images/arrow_right.svg';
@@ -37,9 +40,8 @@ interface Props {
 }
 
 export const CategoryProduct: React.FC<Props> = ({ searchValue }): JSX.Element => {
-  const { products } = useContext(ProductContext);
+  const { products, onAddToCart } = useContext(ProductContext);
   const { toast, showToast, hideToast } = useToast();
-  const { cart, onAddToCart } = useContext(ProductContext);
 
   const [sortBy, setSortBy] = useState<'price_asc' | 'price_desc' | null>(null);
 
@@ -82,9 +84,9 @@ export const CategoryProduct: React.FC<Props> = ({ searchValue }): JSX.Element =
 
   const handleAddToCart = useCallback(
     async (productToAdd: Product): Promise<void> => {
-      await handleAddToCartWithToast(productToAdd, cart, onAddToCart, showToast);
+      await handleAddToCartWithToast(productToAdd, products, onAddToCart, showToast);
     },
-    [cart, onAddToCart, showToast]
+    [products, onAddToCart, showToast]
   );
 
   const handleClose = (): void => {
@@ -97,17 +99,24 @@ export const CategoryProduct: React.FC<Props> = ({ searchValue }): JSX.Element =
     setIsDropdownOpen(!isDropdownOpen);
   };
 
-  const handleSortBy = (criteria: 'price_asc' | 'price_desc') => {
+  const handleSortBy = (criteria: SORT_TYPE.ASC | SORT_TYPE.DESC) => {
     setSortBy(criteria);
     setIsDropdownOpen(false);
 
-    if (criteria === 'price_asc') {
+    if (criteria === SORT_TYPE.ASC) {
       const sortedResults = searchResults.slice().sort((a, b) => a.price - b.price);
       setSearchResults(sortedResults);
-    } else if (criteria === 'price_desc') {
+    } else if (criteria === SORT_TYPE.DESC) {
       const sortedResults = searchResults.slice().sort((a, b) => b.price - a.price);
       setSearchResults(sortedResults);
     }
+  };
+
+  const handleSearchByName = (name: string) => {
+    const filteredProducts = products.filter((product) =>
+      product.name.toLowerCase().includes(name.toLowerCase())
+    );
+    setSearchResults(filteredProducts);
   };
 
   return (
@@ -122,7 +131,7 @@ export const CategoryProduct: React.FC<Props> = ({ searchValue }): JSX.Element =
       </header>
 
       <div className='two-row-container'>
-        <Filter />
+        <Filter onSearchByName={handleSearchByName} />
         <section className='content-cate-product'>
           <header className='title-shop'>
             <span role='heading' className='shop-title'>
@@ -133,8 +142,8 @@ export const CategoryProduct: React.FC<Props> = ({ searchValue }): JSX.Element =
               <img src={ArrowDown} alt='arrow-down' />
               {isDropdownOpen && (
                 <div className='dropdown-content'>
-                  <p onClick={() => handleSortBy('price_asc')}> Price Ascending </p>
-                  <p onClick={() => handleSortBy('price_desc')}> Price Descending </p>
+                  <p onClick={() => handleSortBy(SORT_TYPE.ASC)}> Price Ascending </p>
+                  <p onClick={() => handleSortBy(SORT_TYPE.DESC)}> Price Descending </p>
                 </div>
               )}
             </span>
@@ -159,8 +168,8 @@ export const CategoryProduct: React.FC<Props> = ({ searchValue }): JSX.Element =
               <div className='splide-list'>
                 <Splide hasTrack={false} options={splideOpts} aria-label='My Favorite Images'>
                   <SplideTrack>
-                    {searchResults.slice(0, 4).map((el, index) => (
-                      <SplideSlide key={index}>
+                    {searchResults.slice(0, 4).map((el) => (
+                      <SplideSlide key={el.id}>
                         <ItemCard item={el} className={'card-item'} onAddToCart={handleAddToCart} />
                       </SplideSlide>
                     ))}

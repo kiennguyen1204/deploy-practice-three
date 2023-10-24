@@ -6,9 +6,11 @@ import CloseButton from 'components/common/CloseButton';
 // styles
 import './index.css';
 
-interface Props {
-  children: React.ReactNode;
+export interface Props {
+  isOpen: boolean;
   onClose: () => void;
+  children?: React.ReactNode;
+  title: string;
 }
 
 //TODO: handle dismiss when touching on overlay

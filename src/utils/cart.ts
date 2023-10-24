@@ -1,4 +1,5 @@
 import { Product } from 'interfaces/item';
+import { MESSAGES } from 'constants/messages';
 
 export const handleAddToCartWithToast = async (
   productToAdd: Product,
@@ -7,9 +8,9 @@ export const handleAddToCartWithToast = async (
   showToast: (status: string, message: string) => void
 ): Promise<void> => {
   if (cart.some((item) => item.id === productToAdd.id)) {
-    showToast('error', 'Product already exists in the cart');
+    showToast('error', MESSAGES.EXIST_PRODUCT);
   } else {
     await onAddToCart(productToAdd);
-    showToast('success', 'Successfully added to cart');
+    showToast('success', MESSAGES.ADD_NEW_PRODUCT_SUCCESS);
   }
 };

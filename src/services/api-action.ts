@@ -1,5 +1,8 @@
 import axios from 'axios';
 
+// constants
+import { MESSAGES } from 'constants/messages';
+
 // interfaces
 import { Product } from 'interfaces/item';
 
@@ -23,7 +26,7 @@ export const getProductById = async (id: string): Promise<Product | null> => {
 
     return response.data;
   } catch (error) {
-    throw error;
+    throw new Error(MESSAGES.FAIL_TO_FETCH);
   }
 };
 
@@ -35,7 +38,7 @@ export const getProducts = async (): Promise<Product[]> => {
 
     return response.data;
   } catch (error) {
-    throw error;
+    throw new Error(MESSAGES.FAIL_TO_FETCH);
   }
 };
 
@@ -53,7 +56,7 @@ export const addToCart = async (product: Product): Promise<Product> => {
 
     return response.data;
   } catch (error) {
-    throw error;
+    throw new Error(MESSAGES.ADD_TO_CART_FAIL);
   }
 };
 
@@ -70,7 +73,7 @@ export const getCartProducts = async (): Promise<Cart[]> => {
 
     return response.data;
   } catch (error) {
-    throw error;
+    throw new Error(MESSAGES.FAIL_TO_FETCH);
   }
 };
 
@@ -89,7 +92,7 @@ export const deleteCartItem = async (id: string): Promise<Cart> => {
 
     return response.data;
   } catch (error) {
-    throw error;
+    throw new Error(MESSAGES.REMOVE_FROM_CART_FAIL);
   }
 };
 
@@ -109,6 +112,6 @@ export const updateItem = async (id: string, updatedData: Partial<Product>): Pro
     });
     return response.data;
   } catch (error) {
-    throw error;
+    throw new Error(MESSAGES.UPDATE_PRODUCT_FAIL);
   }
 };

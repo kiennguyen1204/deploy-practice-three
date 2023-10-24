@@ -68,3 +68,8 @@ export enum STEPS_CART {
   CHECKOUT,
   ORDER_COMPLETE
 }
+
+export enum SORT_TYPE {
+  ASC = 'price_asc',
+  DESC = 'price_desc'
+}

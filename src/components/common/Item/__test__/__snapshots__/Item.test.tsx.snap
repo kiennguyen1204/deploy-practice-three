@@ -4,24 +4,18 @@ exports[`ItemCard ItemCard renders correctly 1`] = `
 <div>
   <article
     class="item-card test-class"
-    data-testid="item-card-sampleId"
+    data-testid="item-card-1"
   >
     <a
-      href="/products/sampleId"
+      href="/products/1"
     >
       <section
         class="image-card"
       >
-        <p
-          class="sold-out"
-          data-testid="sold-out"
-        >
-          Sold Out
-        </p>
         <img
-          alt="Sample Title"
+          alt=""
           data-testid="item-image"
-          src="/src/assets/images/default_image.webp"
+          src="image-url-1"
         />
       </section>
       <section
@@ -31,13 +25,13 @@ exports[`ItemCard ItemCard renders correctly 1`] = `
           class="cate-item"
           data-testid="category"
         >
-          Sample Category
+          Category A
         </p>
         <h2
           class="title-item"
           data-testid="name"
         >
-          Sample Name
+          Product A
         </h2>
         <div
           class="star-review"
@@ -50,7 +44,6 @@ exports[`ItemCard ItemCard renders correctly 1`] = `
               data-testid="star-image"
               src="IMAGE_MOCK"
             />
-            4.5
             /
             5
           </span>
@@ -58,7 +51,7 @@ exports[`ItemCard ItemCard renders correctly 1`] = `
             class="review"
             data-testid="reviews"
           >
-            25
+            15
             <span
               class="reviewsText"
             >
@@ -70,7 +63,7 @@ exports[`ItemCard ItemCard renders correctly 1`] = `
           class="sale"
           data-testid="sale"
         >
-          Sale!
+          30%
         </div>
         <div
           class="discount-n-price"
@@ -80,14 +73,13 @@ exports[`ItemCard ItemCard renders correctly 1`] = `
             class="discount"
           >
             $
-            20
+            10
           </p>
           <p
             class="price"
             data-testid="price"
           >
-            $
-            8
+            100
           </p>
         </div>
         <div
@@ -98,27 +90,27 @@ exports[`ItemCard ItemCard renders correctly 1`] = `
             class="volume-child"
             data-testid="volume-0"
           >
-            Volume 1
+            100ml
           </div>
           <div
             class="volume-child"
             data-testid="volume-1"
           >
-            Volume 2
+            200ml
           </div>
-        </div>
-        <div
-          class="button-buy"
-        >
-          <button
-            class="btn btn-add-cart"
-            data-testid="add-to-cart-button"
-          >
-            Add to Cart
-          </button>
         </div>
       </section>
     </a>
+    <div
+      class="flex-container button-buy"
+    >
+      <button
+        class="btn btn-add-cart"
+        data-testid="add-to-cart-button"
+      >
+        Add to Cart
+      </button>
+    </div>
   </article>
 </div>
 `;

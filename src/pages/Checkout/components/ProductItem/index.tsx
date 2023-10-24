@@ -1,20 +1,21 @@
-// assets
-import Minus from 'assets/images/minus.svg';
-import Add from 'assets/images/add.svg';
+import { useContext } from 'react';
+
+// context
+import { CartContext } from 'contexts/CartProvider';
+
+// hooks
+import { useToast } from 'hooks/useToast';
+
+// components
+import QuantityControl from 'components/QuantityChange';
+import Toast from 'components/common/Toast';
 
 // styles
 import './index.css';
-import { useContext, useState } from 'react';
-import { ProductContext } from 'contexts/ProductsProvider';
-import { useToast } from 'hooks/useToast';
-
-import QuantityControl from 'components/QuantityChange';
 
 export const ProductItem: React.FC = (): JSX.Element => {
-  const { cart, onDeleteProductFromCart, onUpdateCart } = useContext(ProductContext);
-  const [showModal, setShowModal] = useState(false);
-  const { showToast, hideToast } = useToast();
-
+  const { cart, onDeleteProductFromCart, onUpdateCart } = useContext(CartContext);
+  const { toast, showToast, hideToast } = useToast();
   const handleDecreaseQuantity = (id: string) => {
     const updatedCart = cart.map((item) =>
       item.id === id
@@ -48,15 +49,12 @@ export const ProductItem: React.FC = (): JSX.Element => {
   };
 
   const handleDeleteProduct = async (productId: string) => {
-    setShowModal(true);
-    try {
-      await onDeleteProductFromCart(productId);
-      showToast('success', 'Product deleted successfully');
-    } catch (error) {
-      showToast('error', 'Failed to delete product');
-    } finally {
-      setShowModal(false);
-    }
+    onDeleteProductFromCart(productId);
+    showToast('success', 'Product successfully deleted');
+  };
+
+  const handleClose = (): void => {
+    hideToast();
   };
 
   return (
@@ -92,6 +90,10 @@ export const ProductItem: React.FC = (): JSX.Element => {
           ${cart.reduce((acc, item) => acc + item.price * item.quantity, 0)}
         </p>
       </div>
+
+      {toast.openPopup && (
+        <Toast status={toast.status} message={toast.message} onClose={handleClose} />
+      )}
     </section>
   );
 };

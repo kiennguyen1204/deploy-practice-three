@@ -4,6 +4,7 @@ import RouterViews from './router';
 import { Footer } from 'layouts/Footer';
 import Navbar from 'layouts/Header/Navbar';
 import { useState } from 'react';
+import CartProvider from './contexts/CartProvider';
 
 const App: React.FC = () => {
   const [searchValue, setSearchValue] = useState('');
@@ -11,7 +12,11 @@ const App: React.FC = () => {
   return (
     <div className='App'>
       <RouterViews
-        header={<Navbar searchValue={searchValue} onSetSearchValue={setSearchValue} />}
+        header={
+          <CartProvider>
+            <Navbar searchValue={searchValue} onSetSearchValue={setSearchValue} />
+          </CartProvider>
+        }
         children={undefined}
         footer={<Footer />}
         searchValue={searchValue}></RouterViews>

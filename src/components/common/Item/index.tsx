@@ -1,7 +1,10 @@
-import React, { memo, useCallback } from 'react';
+import { memo, useCallback } from 'react';
+import { Link } from 'react-router-dom';
+
+// interface
+import { Product } from 'interfaces/item';
 
 // constants
-import { Product } from 'interfaces/item';
 import { SOLD_OUT } from 'constants/common';
 
 // assets
@@ -9,7 +12,6 @@ import Star from 'assets/images/seller/star.svg';
 
 // styles
 import './index.css';
-import { Link } from 'react-router-dom';
 
 export interface Props {
   item: Product;

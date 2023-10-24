@@ -4,8 +4,9 @@ import { render } from '@testing-library/react';
 import { Filter } from '../index';
 
 describe('BannerCategory component', () => {
+  const mockHandleSearchByName = jest.fn();
   it('renders component correctly', () => {
-    const { asFragment } = render(<Filter />);
+    const { asFragment } = render(<Filter onSearchByName={mockHandleSearchByName} />);
     expect(asFragment()).toMatchSnapshot();
   });
 });

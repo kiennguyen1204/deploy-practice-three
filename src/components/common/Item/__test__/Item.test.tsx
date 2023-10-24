@@ -13,9 +13,8 @@ jest.mock('react-router-dom', () => ({
 const setup = (props = {}) => {
   const defaultProps: Props = {
     item: MOCK_ITEM,
-    index: 0,
     className: 'test-class',
-    onClick: jest.fn(),
+    onAddToCart: jest.fn(),
     ...props
   };
 
@@ -28,10 +27,10 @@ describe('ItemCard', () => {
     expect(screen.getByText(MOCK_ITEM.category)).toBeInTheDocument();
   });
 
-  it('renders the "Sold Out" element when isSoldOut is true', () => {
+  it('renders the "Out Of Stock" element when isSoldOut is true', () => {
     setup();
 
-    const soldOutElement = screen.queryByTestId('sold-out');
+    const soldOutElement = screen.queryByTestId('item-image');
     expect(soldOutElement).toBeInTheDocument();
   });
 
@@ -39,13 +38,13 @@ describe('ItemCard', () => {
     const mockItemNotSoldOut = { ...MOCK_ITEM, isSoldOut: false };
     setup({ item: mockItemNotSoldOut });
 
-    const soldOutElement = screen.queryByTestId('sold-out');
+    const soldOutElement = screen.queryByTestId('Out Of Stock');
     expect(soldOutElement).toBeNull();
   });
 
   it('calls the onClick function when "Add to Cart" button is clicked', () => {
     const onClickMock = jest.fn();
-    render(<ItemCard item={MOCK_ITEM} index={0} className='test-class' onClick={onClickMock} />);
+    render(<ItemCard item={MOCK_ITEM} className='test-class' onAddToCart={onClickMock} />);
 
     const addToCartButton = screen.getByText('Add to Cart');
     fireEvent.click(addToCartButton);
@@ -55,7 +54,7 @@ describe('ItemCard', () => {
 
   it('ItemCard renders correctly', () => {
     const { container } = render(
-      <ItemCard item={MOCK_ITEM} index={0} className='test-class' onClick={() => {}} />
+      <ItemCard item={MOCK_ITEM} className='test-class' onAddToCart={() => {}} />
     );
 
     expect(container).toMatchSnapshot();

@@ -2,111 +2,108 @@
 
 exports[`BannerCategory component renders component correctly 1`] = `
 <DocumentFragment>
-  <article
-    class="banner-bottom relative"
+  <div
+    class="banner"
   >
-    <div
-      class="blur"
-    />
-    <div
-      class="banner-item-wrapper"
+    <article
+      class="banner-bottom relative"
     >
-      <section
-        class="wrapper-left"
+      <div
+        class="blur"
+      />
+      <div
+        class="banner-item-wrapper"
       >
-        <p
-          class="cate"
+        <section
+          class="flex-column wrapper-left"
         >
-          CONCENTRATES
-        </p>
-        <p
-          class="title"
-        >
-          Mix And Match Shatter/Budder 28g (4 X 7G)
-        </p>
-        <p
-          class="align-center rating-n-review"
-        >
-          <span
-            class="align-center rating"
+          <p
+            class="cate"
           >
-            <img
-              src="IMAGE_MOCK"
+            CONCENTRATES
+          </p>
+          <h1
+            class="title"
+          >
+            Mix And Match Shatter/Budder 28g (4 X 7G)
+          </h1>
+          <div
+            class="align-center rating-n-review"
+          >
+            <span
+              class="align-center rating"
+            >
+              <img
+                alt="Star"
+                src="IMAGE_MOCK"
+              />
+              <span
+                class="star-text"
+              >
+                4.6/ 5
+              </span>
+            </span>
+            <span
+              class="sign"
             />
             <span
-              class="star-text"
+              class="align-center reviews"
             >
-              4.6/5
+              135
+              <span
+                class="text-review"
+              >
+                Reviews
+              </span>
             </span>
-          </span>
-          <span
-            class="sign"
-          />
-          <span
-            class="reviews"
-          >
-            135
-            <span
-              class="text-review"
-            >
-              Reviews
-            </span>
-          </span>
-        </p>
-        <div
-          class="align-center volumes"
-        >
-          <span
-            class="flex-container volume-child"
-          >
-            28g
-          </span>
-          <span
-            class="flex-container volume-child"
-          >
-            1/2lb
-          </span>
-          <span
-            class="flex-container volume-child"
-          >
-            1/4lb
-          </span>
-        </div>
-        <div
-          class="flex-space-between-container button-n-price"
-        >
-          <button
-            class="btn btn-primary btn-color-default btn-sm   btn btn-add-cart-custom btn-color-text-primary"
-            type="button"
-          >
-            <span>
-              Add to cart
-            </span>
-          </button>
-          <p
-            class="price"
+          </div>
+          <div
+            class="align-center volumes"
           >
             <span
-              class="sale-price"
+              class="flex-container"
             >
-              $102.00
+              28g
             </span>
             <span
-              class="real-price"
+              class="flex-container"
             >
-              $200.00
+              1/2lb
             </span>
-          </p>
-        </div>
-      </section>
-      <section
-        class="wrapper-right"
-      >
-        <div
-          class="background-blur-item relative"
+            <span
+              class="flex-container"
+            >
+              1/4lb
+            </span>
+          </div>
+          <div
+            class="flex-space-between-container button-n-price"
+          >
+            <button
+              class="btn btn-primary btn-color-default btn-sm   btn btn-add-cart-custom btn-color-text-primary"
+              type="button"
+            >
+              <span>
+                Add to cart
+              </span>
+            </button>
+            <p
+              class="price"
+            >
+              <span>
+                $102.00
+              </span>
+              <span>
+                $200.00
+              </span>
+            </p>
+          </div>
+        </section>
+        <section
+          class="wrapper-right"
         >
           <div
-            class="arrow-next-prev"
+            class="background-blur-item relative"
           >
             <div
               class="splide__arrows"
@@ -128,30 +125,30 @@ exports[`BannerCategory component renders component correctly 1`] = `
                 />
               </button>
             </div>
+            <img
+              alt="banner-category"
+              src="/src/assets/images/category/product_category.webp"
+            />
           </div>
-          <img
-            alt="banner-category"
-            src="/src/assets/images/category/budda_bomb_green.png"
-          />
-        </div>
-        <div
-          class="flex-container dots"
-        >
-          <span
-            class="dot active"
-          />
-          <span
-            class="dot "
-          />
-          <span
-            class="dot "
-          />
-          <span
-            class="dot "
-          />
-        </div>
-      </section>
-    </div>
-  </article>
+          <div
+            class="flex-container dots"
+          >
+            <span
+              class="dot active "
+            />
+            <span
+              class="dot false "
+            />
+            <span
+              class="dot false "
+            />
+            <span
+              class="dot false "
+            />
+          </div>
+        </section>
+      </div>
+    </article>
+  </div>
 </DocumentFragment>
 `;

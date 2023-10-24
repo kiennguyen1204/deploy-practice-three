@@ -9,6 +9,7 @@ import { CategoryProduct } from 'pages/Category';
 import ROUTE from './constants/route';
 import { Checkout } from './pages/Checkout';
 import ProductsProvider from './contexts/ProductsProvider';
+import CartProvider from './contexts/CartProvider';
 
 interface RouterProps {
   children: React.ReactNode;
@@ -21,22 +22,45 @@ const Router = (props: RouterProps) => {
   const { children, header, footer, searchValue } = props;
 
   return (
-    <ProductsProvider>
-      <RouterView>
-        {header && header} {/* Only render if header is defined */}
-        {children}
-        <Routes>
-          <Route path='/' element={<Homepage />} />
-          <Route path={ROUTE.PRODUCT} element={<Detail />} />
-          <Route
-            path={ROUTE.CATEGORY_PAGE}
-            element={<CategoryProduct searchValue={searchValue} />}
-          />
-          <Route path={ROUTE.CART_PAGE} element={<Checkout />} />
-        </Routes>
-        {footer && footer} {/* Only render if footer is defined */}
-      </RouterView>
-    </ProductsProvider>
+    <RouterView>
+      {header && header} {/* Only render if header is defined */}
+      {children}
+      <Routes>
+        <Route
+          path='/'
+          element={
+            <ProductsProvider>
+              <Homepage />
+            </ProductsProvider>
+          }
+        />
+        <Route
+          path={ROUTE.PRODUCT}
+          element={
+            <ProductsProvider>
+              <Detail />
+            </ProductsProvider>
+          }
+        />
+        <Route
+          path={ROUTE.CATEGORY_PAGE}
+          element={
+            <ProductsProvider>
+              <CategoryProduct searchValue={searchValue} />
+            </ProductsProvider>
+          }
+        />
+        <Route
+          path={ROUTE.CART_PAGE}
+          element={
+            <CartProvider>
+              <Checkout />
+            </CartProvider>
+          }
+        />
+      </Routes>
+      {footer && footer} {/* Only render if footer is defined */}
+    </RouterView>
   );
 };
 

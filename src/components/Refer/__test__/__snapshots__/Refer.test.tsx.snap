@@ -19,6 +19,12 @@ exports[`ReferFriend Component matches snapshot 1`] = `
           >
             <img
               alt="refer"
+              class="bg-mobile"
+              src="IMAGE_MOCK"
+            />
+            <img
+              alt="refer"
+              class="bg-desktop"
               src="IMAGE_MOCK"
             />
           </picture>
@@ -37,7 +43,7 @@ exports[`ReferFriend Component matches snapshot 1`] = `
               <span
                 class="percent"
               >
-                30%
+                $30!
               </span>
             </p>
             <button

@@ -92,7 +92,7 @@ const CustomerTestimonials: React.FC = (): JSX.Element => {
                             {arrStar.map((item) => (
                               <img
                                 key={item}
-                                src={item <= el.star ? Star : '/src/assets/images/star.svg'}
+                                src={item <= el.star ? Star : 'assets/images/star.svg'}
                                 alt='Star'
                               />
                             ))}

@@ -24,7 +24,7 @@ import { handleAddToCartWithToast } from 'utils/cart';
 import { useToast } from 'hooks/useToast';
 
 export const Sellers: React.FC = (): JSX.Element => {
-  const { products, cart, onAddToCart } = useContext(ProductContext);
+  const { products, onAddToCart } = useContext(ProductContext);
   const { toast, showToast, hideToast } = useToast();
 
   const splideOpts = {
@@ -50,9 +50,9 @@ export const Sellers: React.FC = (): JSX.Element => {
 
   const handleAddToCart = useCallback(
     async (productToAdd: Product): Promise<void> => {
-      await handleAddToCartWithToast(productToAdd, cart, onAddToCart, showToast);
+      await handleAddToCartWithToast(productToAdd, products, onAddToCart, showToast);
     },
-    [cart, onAddToCart, showToast]
+    [products, onAddToCart, showToast]
   );
 
   const handleClose = (): void => {
@@ -96,11 +96,11 @@ export const Sellers: React.FC = (): JSX.Element => {
         <div className='seller-list'>
           <Splide hasTrack={false} options={splideOpts} aria-label='My Favorite Images'>
             <SplideTrack>
-              {products.map((el, index) => (
-                <SplideSlide key={index}>
+              {products.map((el) => (
+                <SplideSlide>
                   <ItemCard
+                    key={el.id}
                     item={el}
-                    key={index}
                     className={'custom-card'}
                     onAddToCart={handleAddToCart}
                   />

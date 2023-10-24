@@ -19,21 +19,25 @@ import ReferFriendItem from './DataBottom';
 const ReferFriend: React.FC = (): JSX.Element => {
   const dataBottom = [
     {
+      id: 1,
       title: 'REGISTER',
       icon: <img src={RegisterIcon} alt='refer' />,
       description: `Sign up for an account with us. This is quick and simple. We don’t require any more details from you than the bare minimum needed for you to place an order and get your product delivered.`
     },
     {
+      id: 2,
       title: 'SHOP',
       icon: <img src={ShopIcon} alt='refer' />,
       description: `Decide on what you want to purchase. We stock a wide range of edibles,flowers, concentrates and mushrooms there is bound to be something for everyone.`
     },
     {
+      id: 3,
       title: 'MAKE PAYMENT',
       icon: <img src={WalletIcon} alt='refer' />,
       description: `Pay securely. Our site boasts sturdy protection certificates to keep your card details and related data safe.`
     },
     {
+      id: 4,
       title: 'RELAX',
       icon: <img src={RelaxIcon} alt='refer' />,
       description: `Your product will be packaged discretely and shipped by Canada Post Xpresspost. We will provide you with a tracking number so then you can follow your mail order marijuana every step of the way.`
@@ -81,9 +85,9 @@ const ReferFriend: React.FC = (): JSX.Element => {
 
         <div className='content-bottom'>
           <div className='list-content'>
-            {dataBottom.map((el, index) => (
+            {dataBottom.map((el) => (
               <ReferFriendItem
-                index={index}
+                index={el.id}
                 icon={el.icon}
                 title={el.title}
                 description={el.description}
