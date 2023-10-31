@@ -1,4 +1,5 @@
-import { memo } from 'react';
+// components
+import Image from 'components/common/Image';
 
 interface Props {
   item: {
@@ -16,17 +17,19 @@ const WeedEducationItem: React.FC<Props> = ({ item }): JSX.Element => {
   return (
     <article className='list-container weed-education-item' data-testid='weed-education-item'>
       <picture className='weed-education-item-image'>
-        <img src={image} alt='main image' />
+        <Image src={image} alt='main image' />
       </picture>
 
       <section className='wrapper-container weed-education-item-content'>
         <header className='wrapper-container weed-education-item-info'>
-          <h2 className='weed-education-item-subtitle' data-testid='subtitle-test'>
-            {subtitle}
-          </h2>
-          <h1 className='weed-education-item-title' data-testid='title-test'>
+          <h3 className='weed-education-item-title' data-testid='title-test'>
             {title}
-          </h1>
+          </h3>
+
+          <h4 className='weed-education-item-subtitle' data-testid='subtitle-test'>
+            {subtitle}
+          </h4>
+
           <p className='weed-education-item-description'>{description}</p>
         </header>
         <footer className='weed-education-item-read-more'>
@@ -39,4 +42,4 @@ const WeedEducationItem: React.FC<Props> = ({ item }): JSX.Element => {
   );
 };
 
-export default memo(WeedEducationItem);
+export default WeedEducationItem;

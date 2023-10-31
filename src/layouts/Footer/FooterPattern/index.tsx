@@ -10,6 +10,7 @@ import { TYPE_LINKS } from 'constants/enums';
 // components
 import PaymentMethodItem from 'layouts/Footer/PaymentMethod';
 import FooterLinkList from 'layouts/Footer/FooterLinkList';
+import Image from 'components/common/Image';
 
 // styles
 import './index.css';
@@ -21,9 +22,14 @@ const FooterPattern: React.FC = () => (
         <div className='wrapper-container footer-logo'>
           <h3 className='footer-title'>
             <Link to='/'>
-              <img src={Logo} className='footer-logo' alt='logo' />
+              <Image src={Logo} className='footer-logo' alt='logo' />
             </Link>
           </h3>
+
+          <Link to='/' className='footer-title'>
+            <img src={Logo} className='footer-logo' alt='logo' />
+          </Link>
+
           <p className='footer-description'>
             #1 Canadian top rated online dispensary that meets the customers needs in every single
             medical marijuana aspect. The team here at TopShelfBC is heavily involved in the

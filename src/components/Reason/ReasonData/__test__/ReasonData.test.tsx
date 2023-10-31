@@ -5,7 +5,7 @@ import ReasonItem, { Props } from 'components/Reason/ReasonData';
 
 const defaultProps: Props = {
   item: {
-    icon: <img src='assets/images/default_image.webp' alt='Default icon' />,
+    icon: <img src='/src/assets/images/default_image.webp' alt='Default icon' />,
     title: 'Default Title',
     description: 'Default description'
   }

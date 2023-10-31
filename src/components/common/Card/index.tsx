@@ -13,7 +13,7 @@ const Card: React.FC<Props> = ({ children, classes, title = '' }): JSX.Element =
   <article className={`card-box-container ${classes}`}>
     {title.length > 0 && (
       <header className='flex-space-between-container header-title'>
-        <h2 className='title'>{title}</h2>
+        <h2 className='card-title'>{title}</h2>
 
         <a href='https://weedmaps.com/learn' className='show-all-link'>
           Show All
@@ -27,4 +27,4 @@ const Card: React.FC<Props> = ({ children, classes, title = '' }): JSX.Element =
   </article>
 );
 
-export default memo(Card);
+export default Card;

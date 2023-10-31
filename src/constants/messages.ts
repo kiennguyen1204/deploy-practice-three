@@ -13,5 +13,5 @@ export const MESSAGES = {
   UPDATE_PRODUCT_FAIL: 'Update product fail',
   REMOVE_PRODUCT_SUCCESS: 'Remove product success',
   REMOVE_PRODUCT_FAIL: 'Remove product fail',
-  EXIST_PRODUCT: 'Product already exist'
+  EXIST_PRODUCT: 'Product already exists in the cart'
 };

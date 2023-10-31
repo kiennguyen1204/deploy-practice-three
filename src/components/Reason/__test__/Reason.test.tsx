@@ -6,7 +6,7 @@ import WhatMake from 'components/Reason';
 describe('WhatMake', () => {
   it('renders the component with the correct title', () => {
     const { asFragment } = render(<WhatMake />);
-    const title = screen.getByTestId('what-make-title');
+    const title = screen.getByTestId('reason-title');
     expect(title).toBeInTheDocument();
     expect(asFragment()).toMatchSnapshot();
   });

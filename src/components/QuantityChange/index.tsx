@@ -1,5 +1,12 @@
+// assets
 import Minus from 'assets/images/minus.svg';
 import Add from 'assets/images/add.svg';
+
+// constants
+import { IMG_NOT_FOUND } from 'constants/common';
+
+// components
+import Image from 'components/common/Image';
 
 interface QuantityControlProps {
   quantity: number;
@@ -15,13 +22,13 @@ const QuantityControl: React.FC<QuantityControlProps> = ({ quantity, onDecrease,
           className='flex-container amount-btn'
           onClick={onDecrease}
           disabled={quantity === 1}>
-          <img src={Minus} alt='Minus' />
+          <Image src={Minus} alt='Minus' />
         </button>
 
         <span className='flex-container'>{quantity}</span>
 
         <button className='amount-btn' onClick={onIncrease}>
-          <img src={Add} alt='Add' />
+          <Image src={Add} alt='Add' />
         </button>
       </div>
     </div>

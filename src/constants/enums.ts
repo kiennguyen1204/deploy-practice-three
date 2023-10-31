@@ -73,3 +73,14 @@ export enum SORT_TYPE {
   ASC = 'price_asc',
   DESC = 'price_desc'
 }
+
+export enum DECODING_TYPES {
+  Async = 'async',
+  Auto = 'auto',
+  Sync = 'sync'
+}
+
+export enum LOADING_TYPES {
+  Eager = 'eager',
+  Lazy = 'lazy'
+}

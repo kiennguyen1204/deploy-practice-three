@@ -19,7 +19,7 @@ exports[`ReasonItem renders the component with default props 1`] = `
       Default Title
     </p>
     <p
-      class="description"
+      class="item-description"
     >
       Default description
     </p>

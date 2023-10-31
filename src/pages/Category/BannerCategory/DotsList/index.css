@@ -1,0 +1,28 @@
+.dots {
+  margin-top: 16px;
+  width: 100%;
+  gap: 8px;
+
+  .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--color-semi-transparent-dark);
+    position: relative;
+
+    &.active {
+      background: var(--color-neutral-white);
+
+      &::before {
+        content: '';
+        position: absolute;
+        background: var(--color-semi-transparent-dark);
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        left: -3px;
+        top: -3px;
+      }
+    }
+  }
+}

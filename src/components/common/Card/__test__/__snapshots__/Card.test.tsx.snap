@@ -8,7 +8,7 @@ exports[`Card renders the card component correctly 1`] = `
     class="flex-space-between-container header-title"
   >
     <h2
-      class="title"
+      class="card-title"
     >
       Test Title
     </h2>

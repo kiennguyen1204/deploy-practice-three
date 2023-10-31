@@ -14,7 +14,7 @@
           gap: 16px;
           width: 100%;
 
-          .title {
+          .image-title {
             color: var(--color-primary-base);
             font-size: var(--font-size-normal);
             font-weight: var(--font-weight-regular);

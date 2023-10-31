@@ -1,4 +1,4 @@
-import { useState, useEffect, useContext } from 'react';
+import { useState, useEffect, useContext, Suspense } from 'react';
 import { useParams } from 'react-router-dom';
 
 // context
@@ -6,9 +6,6 @@ import ProductProvider, { ProductContext } from 'contexts/ProductsProvider';
 
 // assets
 import Star from 'assets/images/star.svg';
-
-// mocks
-import { dataItemDetail } from 'mocks/dataList';
 
 // interfaces
 import { Product } from 'interfaces/item';
@@ -18,6 +15,9 @@ import { getProductById } from 'services/api-action';
 
 // components
 import ProductList from 'components/common/ListProduct';
+import Image from 'components/common/Image';
+import ThumbsList from './ThumbList';
+import LoadingSpinner from 'components/common/Loading';
 
 // styles
 import './index.css';
@@ -25,7 +25,7 @@ import './index.css';
 const Detail: React.FC = (): JSX.Element => {
   const { productId } = useParams<{ productId: string }>();
   const [product, setProduct] = useState<Product | null>(null);
-  const [currentImage, setCurrentImage] = useState<number>(0);
+
   const { products } = useContext(ProductContext);
 
   useEffect(() => {
@@ -39,50 +39,45 @@ const Detail: React.FC = (): JSX.Element => {
     fetchProductById();
   }, [productId]);
 
-  const { image, name, sale, discount, price, category, rate, totalReviews, description } =
-    product || {};
+  const {
+    image,
+    name,
+    sale,
+    discount,
+    price,
+    category,
+    rate = 0,
+    totalReviews,
+    description
+  } = product || {};
 
   return (
     <>
       <article className='detail-container'>
         <section className='list-container image-container'>
           <picture className='flex-container image-product'>
-            <img src={image} alt='main product' />
+            <Image src={image} alt='main product' />
           </picture>
 
-          <div className='thumb-list'>
-            {Array.from({ length: 4 }).map((_, index) => {
-              const handleThumbnailClick = () => {
-                setCurrentImage(index);
-              };
-
-              return (
-                <a
-                  className={`thumb-item ${index === currentImage && 'choosing'}`}
-                  onClick={handleThumbnailClick}>
-                  <img src={image} alt={`Thumbnail ${index}`} />
-                </a>
-              );
-            })}
-          </div>
+          <ThumbsList image={image} />
         </section>
 
         <div className='list-container info-container'>
           <div className='list-container overview-container'>
             <p className='category'>{category}</p>
-            <p className='title'>{name}</p>
-            <div className='sale'>
-              <p>{sale}</p>
-            </div>
-            <div className='numeral-container'>
+            <h1 className='product-title-name'>{name}</h1>
+
+            <p className='sale'>{sale}</p>
+
+            <section className='numeral-container'>
               <div className='price-container'>
-                <p className='discount'>{discount}</p>
-                <p className='price'>{price}</p>
+                <p className='discount'>${discount}</p>
+                <p className='price'>${price}</p>
               </div>
               <div className='review-container'>
                 <div className='rate-box'>
                   <picture className='rate-svg'>
-                    <img src={Star} alt='star' />
+                    <Image src={Star} alt='star' />
                   </picture>
                   <span className='rate-text'>{rate}</span>
                 </div>
@@ -93,21 +88,11 @@ const Detail: React.FC = (): JSX.Element => {
                   </div>
                 </div>
               </div>
-            </div>
+            </section>
           </div>
-          <div className='list-container effects-container'>
-            {dataItemDetail.effects.map((e) => (
-              <figure className='effects-box'>
-                <img src={e.image} />
-                <figcaption className='effects-text'>
-                  <p className='title'>{e.title}</p>
-                  <p className='content'>{e.content}</p>
-                </figcaption>
-              </figure>
-            ))}
-          </div>
+
           <div className='list-container description-container'>
-            <p className='title'>description</p>
+            <h2 className='detail-description'>description</h2>
             <p className='content'>{description}</p>
           </div>
         </div>
@@ -117,7 +102,9 @@ const Detail: React.FC = (): JSX.Element => {
         <h2 className='featured-title'>Featured Product</h2>
         <div className='container-list-item'>
           <ProductProvider>
-            <ProductList products={products} />
+            <Suspense fallback={<LoadingSpinner />}>
+              <ProductList products={products} />
+            </Suspense>
           </ProductProvider>
         </div>
       </section>

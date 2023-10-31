@@ -75,6 +75,10 @@
         border-radius: 100px;
         padding: 8px 14px;
         border: 1px solid var(--color-matte-white);
+        color: var(--color-neutral-base);
+        font-size: var(--font-size-medium);
+        font-weight: var(--font-weight-regular);
+        line-height: var(--line-height-small);
       }
     }
   }
@@ -105,7 +109,7 @@
         }
       }
 
-      .title {
+      .product-title {
         padding-inline: 24px;
         padding-top: 24px;
         padding-bottom: 16px;
@@ -113,7 +117,7 @@
         font-size: clamp(var(--font-size-normal), 2vw, var(--font-size-xl));
       }
 
-      .description {
+      .product-description {
         padding-inline: 24px;
         font-size: clamp(var(--font-size-medium), 2vw, var(--font-size-normal));
         color: var(--color-neutral-light);
@@ -125,6 +129,8 @@
 
         .list-item-selling {
           background-color: var(--color-secondary-ultra-light);
+          padding-inline: 24px;
+          padding-bottom: 24px;
 
           .title-top-selling {
             font-size: var(--font-size-large);
@@ -133,35 +139,7 @@
             padding: 24px;
           }
 
-          .splide-list {
-            width: 100%;
-
-            .splide {
-              .item-card {
-                width: unset;
-              }
-
-              .splide__arrows {
-                .splide__arrow {
-                  background-color: var(--color-neutral-white);
-                  box-shadow: 0px 6px 16px 0px rgba(0, 0, 0, 0.12);
-
-                  &.splide__arrow--prev svg {
-                    transform: scaleX(1);
-                  }
-                }
-              }
-            }
-          }
-        }
-
-        .list-data {
-          padding-inline: 24px;
-          padding-bottom: 24px;
-
           .item-card {
-            width: 100%;
-
             .image-card {
               background-color: var(--color-neutral-white);
               padding: 48px;

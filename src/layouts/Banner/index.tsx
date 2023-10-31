@@ -8,9 +8,9 @@ import Button from 'components/common/Button';
 import './index.css';
 
 const BannerPattern: React.FC = (): JSX.Element => {
-    const handleCategoryPageNavigation = () => {
-      // TODO: handle onclick
-    };
+  const handleCategoryPageNavigation = () => {
+    // TODO: handle onclick
+  };
 
   return (
     <article className='banner-container'>
@@ -20,8 +20,9 @@ const BannerPattern: React.FC = (): JSX.Element => {
         <div className='banner-box'>
           <div className='.wrapper-container banner-box-content'>
             <div className='banner-box-title'>
-              <h4 className='banner-subtitle'>BEST SELLER</h4>
-              <h2 className='banner-title'>BEST DISPENSARY TO BUY WEED ONLINE </h2>
+              <h1 className='banner-title'>BEST DISPENSARY TO BUY WEED ONLINE </h1>
+
+              <h2 className='banner-subtitle'>BEST SELLER</h2>
             </div>
             <div className='banner-box-description'>
               <p className='banner-description'>Vitamins & Supplements</p>

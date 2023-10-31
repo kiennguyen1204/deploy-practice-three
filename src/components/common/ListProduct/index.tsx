@@ -1,4 +1,4 @@
-import { useCallback, useContext } from 'react';
+import { memo, useCallback, useContext } from 'react';
 
 // context
 import { CartContext } from 'contexts/CartProvider';
@@ -33,10 +33,6 @@ const ProductList: React.FC<ProductListProps> = ({ products }): JSX.Element => {
     [cart, onAddToCart, showToast]
   );
 
-  const handleClose = (): void => {
-    hideToast();
-  };
-
   return (
     <>
       {products?.map((product) => (
@@ -48,10 +44,10 @@ const ProductList: React.FC<ProductListProps> = ({ products }): JSX.Element => {
         />
       ))}
       {toast.openPopup && (
-        <Toast status={toast.status} message={toast.message} onClose={handleClose} />
+        <Toast status={toast.status} message={toast.message} onClose={hideToast} />
       )}
     </>
   );
 };
 
-export default ProductList;
+export default memo(ProductList);

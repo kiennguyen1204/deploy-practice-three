@@ -1,72 +1,40 @@
-import { useCallback, useContext } from 'react';
+import { Suspense, useContext } from 'react';
 import { Link } from 'react-router-dom';
-import { Splide, SplideTrack, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/react-splide/css';
+
+// hooks
+import { useToast } from 'hooks/useToast';
 
 // context
 import { ProductContext } from 'contexts/ProductsProvider';
 
 // assets
 import BestProduct from 'assets/images/products/best_sell.png';
-import PrevArrow from 'assets/images/arrow_left.svg';
-import NextArrow from 'assets/images/arrow_right.svg';
 
-// interfaces
-import { Product } from 'interfaces/item';
+// constants
+import { DECODING_TYPES, LOADING_TYPES } from 'constants/enums';
 
 // components
-import ItemCard from 'components/common/Item';
 import Toast from 'components/common/Toast';
+import Image from 'components/common/Image';
+import ProductList from 'components/common/ListProduct';
+import LoadingSpinner from 'components/common/Loading';
 
 // styles
 import './index.css';
-import { handleAddToCartWithToast } from 'utils/cart';
-import { useToast } from 'hooks/useToast';
 
 export const Sellers: React.FC = (): JSX.Element => {
-  const { products, onAddToCart } = useContext(ProductContext);
-  const { toast, showToast, hideToast } = useToast();
-
-  const splideOpts = {
-    type: 'loop',
-    perPage: 3,
-    perMove: 1,
-    gap: '32px',
-    padding: '15%',
-
-    pagination: false,
-    breakpoints: {
-      575: {
-        perPage: 1,
-        gap: '24px'
-      },
-      767: { perPage: 2 },
-      991: { perPage: 3 },
-      1100: { perPage: 1.5 },
-      1200: { perPage: 2.5 },
-      1920: { perPage: 2.65, padding: 0 }
-    }
-  };
-
-  const handleAddToCart = useCallback(
-    async (productToAdd: Product): Promise<void> => {
-      await handleAddToCartWithToast(productToAdd, products, onAddToCart, showToast);
-    },
-    [products, onAddToCart, showToast]
-  );
-
-  const handleClose = (): void => {
-    hideToast();
-  };
+  const { products } = useContext(ProductContext);
+  const { toast, hideToast } = useToast();
 
   return (
     <article className='seller-list-container'>
       <section className='flex-row seller-list-container-box'>
         <div className='list-container best-seller-card'>
           <picture className='best-seller-card-image'>
-            <img
-              decoding='async'
-              loading='lazy'
+            <Image
+              decoding={DECODING_TYPES.Async}
+              loading={LOADING_TYPES.Lazy}
               src={BestProduct}
               className='best-product-image'
               alt='best-product'
@@ -74,8 +42,8 @@ export const Sellers: React.FC = (): JSX.Element => {
           </picture>
 
           <div className='flex-container seller-card-content'>
-            <header className='best-seller-cardTitle'>
-              <h2>Shop our Best Sellers</h2>
+            <header className='best-seller-card-title'>
+              <h3>Shop our Best Sellers</h3>
             </header>
 
             <div className='best-seller-card-description'>
@@ -93,34 +61,14 @@ export const Sellers: React.FC = (): JSX.Element => {
           </div>
         </div>
 
-        <div className='seller-list'>
-          <Splide hasTrack={false} options={splideOpts} aria-label='My Favorite Images'>
-            <SplideTrack>
-              {products.map((el) => (
-                <SplideSlide>
-                  <ItemCard
-                    key={el.id}
-                    item={el}
-                    className={'custom-card'}
-                    onAddToCart={handleAddToCart}
-                  />
-                </SplideSlide>
-              ))}
-            </SplideTrack>
+        <section className='list-container seller-list'>
+          <Suspense fallback={<LoadingSpinner />}>
+            <ProductList products={products} />
+          </Suspense>
+        </section>
 
-            <div className='splide__arrows'>
-              <button className='splide__arrow splide__arrow--prev'>
-                <img src={PrevArrow} alt='Arrow Prev' />
-              </button>
-
-              <button className='splide__arrow splide__arrow--next'>
-                <img src={NextArrow} alt='Arrow Next' />
-              </button>
-            </div>
-          </Splide>
-        </div>
         {toast.openPopup && (
-          <Toast status={toast.status} message={toast.message} onClose={handleClose} />
+          <Toast status={toast.status} message={toast.message} onClose={hideToast} />
         )}
       </section>
     </article>

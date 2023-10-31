@@ -4,11 +4,16 @@ import { Link } from 'react-router-dom';
 // interface
 import { Product } from 'interfaces/item';
 
-// constants
-import { SOLD_OUT } from 'constants/common';
-
 // assets
 import Star from 'assets/images/seller/star.svg';
+
+// constants
+import { MAX_STAR, SOLD_OUT } from 'constants/common';
+
+// components
+import Image from 'components/common/Image';
+
+import Volumes from '../Volumes';
 
 // styles
 import './index.css';
@@ -20,9 +25,18 @@ export interface Props {
 }
 
 const ItemCard: React.FC<Props> = ({ item, className, onAddToCart }): JSX.Element => {
-  const MAX_STAR = 5;
-
-  const { isSoldOut, discount, image, category, name, rate, reviews, sale, price, volume } = item;
+  const {
+    isSoldOut,
+    discount,
+    image,
+    category,
+    name,
+    rate = 0,
+    reviews,
+    sale,
+    price,
+    volume
+  } = item;
 
   const handleAddToCart = useCallback(() => {
     onAddToCart(item);
@@ -40,7 +54,7 @@ const ItemCard: React.FC<Props> = ({ item, className, onAddToCart }): JSX.Elemen
               Out Of Stock
             </p>
           )}
-          <img src={image} alt={isSoldOut ? SOLD_OUT : ''} data-testid='item-image' />
+          <Image src={image} alt={isSoldOut ? SOLD_OUT : ''} data-testid='item-image' />
         </section>
 
         <section className='content-item'>
@@ -53,7 +67,7 @@ const ItemCard: React.FC<Props> = ({ item, className, onAddToCart }): JSX.Elemen
 
           <div className='star-review'>
             <span className='voted'>
-              <img src={Star} alt='Star' data-testid='star-image' />
+              <Image src={Star} alt='Star' data-testid='star-image' />
               {rate}/{MAX_STAR}
             </span>
 
@@ -74,13 +88,7 @@ const ItemCard: React.FC<Props> = ({ item, className, onAddToCart }): JSX.Elemen
             </p>
           </div>
 
-          <div className='volumes' data-testid='volumes'>
-            {volume.map((item: string, index: number) => (
-              <div className='volume-child' key={index} data-testid={`volume-${index}`}>
-                {item}
-              </div>
-            ))}
-          </div>
+          <Volumes volume={volume} />
         </section>
       </Link>
 

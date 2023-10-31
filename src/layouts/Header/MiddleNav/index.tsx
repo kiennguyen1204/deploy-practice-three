@@ -10,6 +10,9 @@ import Menu from 'assets/images/menu.svg';
 // layouts
 import AccountCart from 'layouts/Header/AccountCart';
 
+// components
+import Image from 'components/common/Image';
+
 // styles
 import './index.css';
 import SearchBox from 'components/SearchBar';
@@ -30,12 +33,12 @@ const MiddleNavbar: React.FC<Props> = ({ onClick, searchValue, onSetSearchValue 
       <div className='flex-space-between-container navbar-box'>
         <div className='navbar-brand-name'>
           <button className='btn menu' onClick={onClick}>
-            <img src={Menu} alt='menu' />
+            <Image src={Menu} alt='menu' />
           </button>
 
           <Link to='/'>
-            <img src={LogoMobile} className='mobile-logo' alt='logo' />
-            <img src={Logo} className='navbar-logo' alt='logo' />
+            <Image src={LogoMobile} className='mobile-logo' alt='logo' />
+            <Image src={Logo} className='navbar-logo' alt='logo' />
           </Link>
         </div>
         <SearchBox

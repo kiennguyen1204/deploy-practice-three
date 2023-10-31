@@ -1,0 +1,34 @@
+.detail-container {
+  .image-container {
+    .thumb-list {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+
+      .thumb-item {
+        width: 56px;
+        height: 56px;
+        border-radius: 8px;
+        background: var(--color-matte-white);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        & img {
+          width: 40px;
+          height: 40px;
+        }
+      }
+
+      .choosing {
+        border: 1px solid var(--primary-500, #17af26);
+      }
+    }
+
+    @media screen and (min-width: 1200px) {
+      .thumb-list {
+        justify-content: center;
+      }
+    }
+  }
+}

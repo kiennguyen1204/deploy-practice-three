@@ -10,6 +10,9 @@ import { LIST_ITEM_NAVIGATION } from 'constants/listItem';
 // layouts
 import DropdownBox from 'layouts/Header/Dropdown';
 
+// components
+import Image from 'components/common/Image';
+
 // styles
 import './index.css';
 
@@ -48,7 +51,7 @@ const EndNavbar: React.FC<Props> = ({ isDrawerOpen, isOpenDrawer }): JSX.Element
       return (
         <button type='button' className='btn dropdown-menu-box' onClick={openList} key={index}>
           <span className='navbar-link'>{name}</span>
-          {dropdown.length > 0 && <img src={DropdownChevronIcon} alt='cart' />}
+          {dropdown.length > 0 && <Image src={DropdownChevronIcon} alt='cart' />}
 
           <DropdownBox children={dropdown} />
         </button>
@@ -58,7 +61,7 @@ const EndNavbar: React.FC<Props> = ({ isDrawerOpen, isOpenDrawer }): JSX.Element
 
   return (
     <section className={`navbar-box-end-container ${isDrawerOpen ? 'show-drawer' : ''}`}>
-      <button className='btn close-drawer' onClick={isOpenDrawer}>
+      <button className='btn close-drawer' onClick={isOpenDrawer} aria-label='Close'>
         <i className='fa-solid fa-xmark'></i>
       </button>
 

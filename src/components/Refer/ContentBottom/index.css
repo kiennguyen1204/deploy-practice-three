@@ -1,0 +1,92 @@
+.refer-box-container {
+  .content-full-card {
+    .content-bottom {
+      margin-top: 40px;
+
+      .list-content {
+        justify-content: center;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 32px;
+
+        .item-bottom {
+          text-align: center;
+          width: 100%;
+          padding-bottom: 40px;
+
+          .top-header {
+            margin-bottom: 16px;
+
+            .index-circle {
+              width: 28px;
+              height: 28px;
+              font-size: var(--font-size-normal);
+              background: var(--color-other-orange);
+              border-radius: 100%;
+              color: var(--color-secondary-dark);
+              margin-top: 4px;
+            }
+          }
+
+          .item-content {
+            .title {
+              font-size: clamp(var(--font-size-large), 2vw, var(--font-size-xxl));
+            }
+          }
+        }
+      }
+
+      .custom-button {
+        height: 56px;
+        background-color: var(--color-primary-base);
+        color: var(--color-neutral-white);
+        padding: 0 40px;
+        margin-top: 40px;
+        margin-inline: auto;
+        border: none;
+
+        &:hover {
+          opacity: 0.85;
+        }
+      }
+    }
+  }
+
+  @media screen and (min-width: 1200px) {
+    .content-full-card {
+      .content-bottom {
+        margin-top: 74px;
+
+        .list-content {
+          padding-inline: 80px;
+          flex-wrap: wrap;
+          justify-content: center;
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+
+          .item-bottom {
+            .top-header {
+              gap: 40px;
+              margin-left: -52px;
+            }
+          }
+
+          .custom-button {
+            height: 64px;
+            padding: 8px 56px;
+          }
+        }
+      }
+    }
+  }
+
+  @media only screen and (min-width: 1400px) {
+    .content-full-card {
+      .content-bottom {
+        .list-content {
+          padding-inline: 140px;
+        }
+      }
+    }
+  }
+}

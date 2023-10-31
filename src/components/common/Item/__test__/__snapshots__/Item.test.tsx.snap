@@ -14,7 +14,8 @@ exports[`ItemCard ItemCard renders correctly 1`] = `
       >
         <img
           alt=""
-          data-testid="item-image"
+          decoding="async"
+          loading="lazy"
           src="image-url-1"
         />
       </section>
@@ -41,9 +42,11 @@ exports[`ItemCard ItemCard renders correctly 1`] = `
           >
             <img
               alt="Star"
-              data-testid="star-image"
+              decoding="async"
+              loading="lazy"
               src="IMAGE_MOCK"
             />
+            0
             /
             5
           </span>
@@ -83,17 +86,17 @@ exports[`ItemCard ItemCard renders correctly 1`] = `
           </p>
         </div>
         <div
-          class="volumes"
+          class="flex-container volumes"
           data-testid="volumes"
         >
           <div
-            class="volume-child"
+            class="flex-container volume-child"
             data-testid="volume-0"
           >
             100ml
           </div>
           <div
-            class="volume-child"
+            class="flex-container volume-child"
             data-testid="volume-1"
           >
             200ml

@@ -11,15 +11,15 @@ export const PaymentInfo: React.FC = (): JSX.Element => (
   <div className='flex-column payments-container'>
     <div className='flex-column price-group'>
       <div className='flex-space-between-container price-box'>
-        <h4 className='title'>Subtotal</h4>
+        <h3 className='box-title'>Subtotal</h3>
         <div className='price'>${DATA_CART.total}</div>
       </div>
       <div className='price-box'>
-        <h4 className='title'>Discount</h4>
+        <h3 className='box-title'>Discount</h3>
         <div className='price'>${DATA_CART.discount}</div>
       </div>
       <div className='price-box'>
-        <h4 className='title'>Shipping Costs</h4>
+        <h3 className='box-title'>Shipping Costs</h3>
         <div className='price'>${DATA_CART.shipping}</div>
       </div>
     </div>

@@ -14,3 +14,11 @@ a:active,
 a:focus {
   text-decoration: none;
 }
+
+button {
+  cursor: pointer;
+}
+
+::placeholder {
+  font-family: var(--font-family-primary);
+}

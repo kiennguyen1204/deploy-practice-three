@@ -1,5 +1,5 @@
-import { useCallback, useContext, useEffect, useState } from 'react';
-import { Splide, SplideTrack, SplideSlide } from '@splidejs/react-splide';
+import { Suspense, useContext, useEffect, useState } from 'react';
+
 import '@splidejs/react-splide/css';
 
 // interfaces
@@ -9,12 +9,8 @@ import { Product } from 'interfaces/item';
 import { SORT_TYPE } from 'constants/enums';
 
 // assets
-import PrevArrow from 'assets/images/arrow_left.svg';
-import NextArrow from 'assets/images/arrow_right.svg';
-import ArrowDown from 'assets/images/dropdown_chevron.svg';
 
-// utils
-import { handleAddToCartWithToast } from 'utils/cart';
+import ArrowDown from 'assets/images/dropdown_chevron.svg';
 
 // hooks
 import { useToast } from 'hooks/useToast';
@@ -26,11 +22,12 @@ import { ProductContext } from 'contexts/ProductsProvider';
 import { FirstServicePattern } from 'layouts/ServiceOne';
 
 // components
-import ItemCard from 'components/common/Item';
 import { Filter } from './Filter';
 import { BannerCategory } from './BannerCategory';
 import ProductList from 'components/common/ListProduct';
 import Toast from 'components/common/Toast';
+import Image from 'components/common/Image';
+import LoadingSpinner from 'components/common/Loading';
 
 // styles
 import './index.css';
@@ -39,9 +36,9 @@ interface Props {
   searchValue: string;
 }
 
-export const CategoryProduct: React.FC<Props> = ({ searchValue }): JSX.Element => {
-  const { products, onAddToCart } = useContext(ProductContext);
-  const { toast, showToast, hideToast } = useToast();
+const CategoryProduct: React.FC<Props> = ({ searchValue }): JSX.Element => {
+  const { products } = useContext(ProductContext);
+  const { toast, hideToast } = useToast();
 
   const [sortBy, setSortBy] = useState<'price_asc' | 'price_desc' | null>(null);
 
@@ -57,41 +54,6 @@ export const CategoryProduct: React.FC<Props> = ({ searchValue }): JSX.Element =
       setSearchResults(products);
     }
   }, [searchValue, products]);
-
-  const splideOpts = {
-    type: 'loop',
-    perPage: 3,
-    perMove: 1,
-    gap: '32px',
-    padding: '15%',
-
-    pagination: false,
-    breakpoints: {
-      575: {
-        perPage: 1,
-        gap: '24px'
-      },
-      767: { perPage: 2 },
-      991: { perPage: 3 },
-      1100: { perPage: 3 },
-      1400: { perPage: 3 },
-      1920: {
-        perPage: 4,
-        padding: 0
-      }
-    }
-  };
-
-  const handleAddToCart = useCallback(
-    async (productToAdd: Product): Promise<void> => {
-      await handleAddToCartWithToast(productToAdd, products, onAddToCart, showToast);
-    },
-    [products, onAddToCart, showToast]
-  );
-
-  const handleClose = (): void => {
-    hideToast();
-  };
 
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
@@ -125,8 +87,8 @@ export const CategoryProduct: React.FC<Props> = ({ searchValue }): JSX.Element =
       <header className='flex-space-between-container top-title-wrapper'>
         <h1 className='first-title'>Shop</h1>
         <div className='align-center flex-title'>
-          <h3 className='two-title title-filter'>Filter</h3>
-          <h4 className='three-title title-filter'>Short By Lates</h4>
+          <h2 className='two-title title-filter'>Filter</h2>
+          <h2 className='three-title title-filter'>Short By Lates</h2>
         </div>
       </header>
 
@@ -139,7 +101,7 @@ export const CategoryProduct: React.FC<Props> = ({ searchValue }): JSX.Element =
             </span>
             <span role='button' className='flex-container filter-title' onClick={toggleDropdown}>
               Short By Lates
-              <img src={ArrowDown} alt='arrow-down' />
+              <Image src={ArrowDown} alt='arrow-down' />
               {isDropdownOpen && (
                 <div className='dropdown-content'>
                   <p onClick={() => handleSortBy(SORT_TYPE.ASC)}> Price Ascending </p>
@@ -149,9 +111,9 @@ export const CategoryProduct: React.FC<Props> = ({ searchValue }): JSX.Element =
             </span>
           </header>
 
-          <h5 className='title'>Cannabis</h5>
+          <h3 className='product-title'>Cannabis</h3>
 
-          <p className='description'>
+          <p className='product-description'>
             Here at WestCoastSupply’s “ cannabis section, we showcase the best Indica, Hybrid, and
             Sativa medical cannabis strain selections at the best prices online. You can be assured
             that all our strains go through a strict screening process to ensure that all your
@@ -163,45 +125,36 @@ export const CategoryProduct: React.FC<Props> = ({ searchValue }): JSX.Element =
           </p>
 
           <div className='main-content'>
-            <div className='list-item-selling list-data'>
-              <h6 className='title-top-selling'>Top Selling</h6>
-              <div className='splide-list'>
-                <Splide hasTrack={false} options={splideOpts} aria-label='My Favorite Images'>
-                  <SplideTrack>
-                    {searchResults.slice(0, 4).map((el) => (
-                      <SplideSlide key={el.id}>
-                        <ItemCard item={el} className={'card-item'} onAddToCart={handleAddToCart} />
-                      </SplideSlide>
-                    ))}
-                  </SplideTrack>
-
-                  <div className='splide__arrows'>
-                    <button className='splide__arrow splide__arrow--prev'>
-                      <img src={PrevArrow} alt='prev arrow' />
-                    </button>
-                    <button className='splide__arrow splide__arrow--next'>
-                      <img src={NextArrow} alt='next-arrow' />
-                    </button>
-                  </div>
-                </Splide>
-              </div>
+            <div className='list-item-selling'>
+              <h2 className='title-top-selling'>Top Selling</h2>
+              <section className='list-item-data'>
+                <Suspense fallback={<LoadingSpinner />}>
+                  <ProductList products={searchValue ? searchResults : products} />
+                </Suspense>
+              </section>
             </div>
 
             <section className='list-item-data list-first'>
-              <ProductList products={searchValue ? searchResults : products} />
+              <Suspense fallback={<LoadingSpinner />}>
+                <ProductList products={searchValue ? searchResults : products} />
+              </Suspense>
             </section>
 
             <BannerCategory />
 
             <section className='list-item-data'>
-              <ProductList products={searchValue ? searchResults : products} />
+              <Suspense fallback={<LoadingSpinner />}>
+                <ProductList products={searchValue ? searchResults : products} />
+              </Suspense>
             </section>
           </div>
         </section>
       </div>
       {toast.openPopup && (
-        <Toast status={toast.status} message={toast.message} onClose={handleClose} />
+        <Toast status={toast.status} message={toast.message} onClose={hideToast} />
       )}
     </article>
   );
 };
+
+export default CategoryProduct;

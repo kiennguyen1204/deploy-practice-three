@@ -11,6 +11,8 @@ exports[`WeedEducationItem renders the component with correct data 1`] = `
     >
       <img
         alt="main image"
+        decoding="async"
+        loading="lazy"
         src="test-image.jpg"
       />
     </picture>
@@ -20,18 +22,18 @@ exports[`WeedEducationItem renders the component with correct data 1`] = `
       <header
         class="wrapper-container weed-education-item-info"
       >
-        <h2
-          class="weed-education-item-subtitle"
-          data-testid="subtitle-test"
-        >
-          Test Subtitle
-        </h2>
-        <h1
+        <h3
           class="weed-education-item-title"
           data-testid="title-test"
         >
           Test Title
-        </h1>
+        </h3>
+        <h4
+          class="weed-education-item-subtitle"
+          data-testid="subtitle-test"
+        >
+          Test Subtitle
+        </h4>
         <p
           class="weed-education-item-description"
         >

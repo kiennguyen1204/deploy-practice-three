@@ -1,6 +1,6 @@
 import { ReactNode, createContext, useCallback, useEffect, useMemo, useState } from 'react';
 import { Cart } from 'interfaces/cart';
-import { addToCart, deleteCartItem, getCartProducts, updateItem } from 'services/api-action';
+import { deleteCartItem, getCartProducts, updateItem } from 'services/api-action';
 import { Product } from 'interfaces/item';
 
 interface CartProviderProps {
@@ -35,7 +35,12 @@ const CartProvider: React.FC<CartProviderProps> = ({ children }) => {
 
   const handleDeleteProductFromCart = useCallback(async (productId: string): Promise<void> => {
     await deleteCartItem(productId);
-    setCart((prevCart) => prevCart.filter((product) => product.id !== productId));
+    setCart((prevCart) => {
+      if (prevCart && prevCart.length) {
+        return prevCart.filter((product) => product.id !== productId);
+      }
+      return [];
+    });
   }, []);
 
   const handleUpdateItem = useCallback(async (productId: string, updatedData: Partial<Product>) => {

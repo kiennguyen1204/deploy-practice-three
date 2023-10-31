@@ -10,11 +10,13 @@ import BannerPattern from 'layouts/Banner';
 import { BestSeller } from 'layouts/BestSeller';
 import { FirstServicePattern } from 'layouts/ServiceOne';
 
-export const Homepage: React.FC = (): JSX.Element => (
+const Homepage: React.FC = (): JSX.Element => (
   <div className='container-homepage'>
     <BannerPattern />
     <FirstServicePattern />
+
     <BestSeller />
+
     <CustomerTestimonials />
     <ReferFriend />
     <WhatMake />
@@ -22,3 +24,4 @@ export const Homepage: React.FC = (): JSX.Element => (
     <WeedEducationPattern />
   </div>
 );
+export default Homepage;

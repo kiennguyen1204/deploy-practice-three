@@ -1,0 +1,11 @@
+.testimonials-list-container
+  .testimonials-list-container-box
+  .list-data
+  .box-voted
+  .bottom-box-voted
+  .rating-bottom
+  .list-star {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}

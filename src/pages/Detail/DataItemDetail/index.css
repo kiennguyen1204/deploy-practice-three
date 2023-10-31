@@ -1,0 +1,32 @@
+.detail-container {
+  .info-container {
+    .effects-container {
+      padding: 20px;
+      gap: 20px;
+      border-radius: 12px;
+      border: 1px solid var(--color-matte-white);
+      background: var(--color-neutral-white);
+
+      .effects-box {
+        display: flex;
+        gap: 16px;
+
+        & img {
+          width: 32px;
+          height: 32px;
+        }
+
+        .effects-text {
+          gap: 6px;
+
+          .content {
+            color: var(--color-neutral-black);
+            font-size: var(--font-size-medium);
+            font-weight: var(--font-weight-regular);
+            line-height: 150%;
+          }
+        }
+      }
+    }
+  }
+}

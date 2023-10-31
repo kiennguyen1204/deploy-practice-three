@@ -1,15 +1,21 @@
 import { BrowserRouter as RouterView, Routes, Route } from 'react-router-dom';
+import { Suspense, lazy } from 'react';
 
 // pages
-import { Homepage } from './pages/Homepage';
-import Detail from 'pages/Detail';
-import { CategoryProduct } from 'pages/Category';
+const LazyHomePage = lazy(() => import('pages/Homepage'));
+const LazyDetail = lazy(() => import('pages/Detail'));
+const LazyCategoryProduct = lazy(() => import('pages/Category'));
+const LazyCheckout = lazy(() => import('pages/Checkout'));
+
+// components
+import LoadingSpinner from 'components/common/Loading';
 
 // constants
 import ROUTE from './constants/route';
-import { Checkout } from './pages/Checkout';
-import ProductsProvider from './contexts/ProductsProvider';
-import CartProvider from './contexts/CartProvider';
+
+// contexts
+import ProductsProvider from 'contexts/ProductsProvider';
+import CartProvider from 'contexts/CartProvider';
 
 interface RouterProps {
   children: React.ReactNode;
@@ -30,7 +36,9 @@ const Router = (props: RouterProps) => {
           path='/'
           element={
             <ProductsProvider>
-              <Homepage />
+              <Suspense fallback={<LoadingSpinner />}>
+                <LazyHomePage />
+              </Suspense>
             </ProductsProvider>
           }
         />
@@ -38,7 +46,9 @@ const Router = (props: RouterProps) => {
           path={ROUTE.PRODUCT}
           element={
             <ProductsProvider>
-              <Detail />
+              <Suspense fallback={<LoadingSpinner />}>
+                <LazyDetail />
+              </Suspense>
             </ProductsProvider>
           }
         />
@@ -46,7 +56,9 @@ const Router = (props: RouterProps) => {
           path={ROUTE.CATEGORY_PAGE}
           element={
             <ProductsProvider>
-              <CategoryProduct searchValue={searchValue} />
+              <Suspense fallback={<LoadingSpinner />}>
+                <LazyCategoryProduct searchValue={searchValue} />
+              </Suspense>
             </ProductsProvider>
           }
         />
@@ -54,7 +66,9 @@ const Router = (props: RouterProps) => {
           path={ROUTE.CART_PAGE}
           element={
             <CartProvider>
-              <Checkout />
+              <Suspense fallback={<LoadingSpinner />}>
+                <LazyCheckout />
+              </Suspense>
             </CartProvider>
           }
         />

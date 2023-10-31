@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProductsProvider should render the component and match the snapshot 1`] = `
+<div>
+  <div>
+    Test
+  </div>
+</div>
+`;

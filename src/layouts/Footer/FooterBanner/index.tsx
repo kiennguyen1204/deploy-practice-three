@@ -18,7 +18,7 @@ export const FooterBanner: React.FC = (): JSX.Element => {
     <Card classes={'banner-container'}>
       <section className='wrapper-container card-wrapper'>
         <div className='wrapper-container banner-text '>
-          <h3 className='banner-title'>UNLOCK 20% OFF YOUR FIRST ORDER</h3>
+          <h2 className='banner-title'>UNLOCK 20% OFF YOUR FIRST ORDER</h2>
           <p className='banner-description'>
             Get 20% off your first purchase when you sign up for our newsletter.
           </p>

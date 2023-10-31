@@ -1,5 +1,3 @@
-import { memo } from 'react';
-
 export interface Props {
   index: number;
   icon: JSX.Element;
@@ -10,14 +8,14 @@ export interface Props {
 const ReferFriendItem: React.FC<Props> = ({ index, icon, title, description }) => (
   <article className='item-bottom'>
     <section className='flex-start-container top-header'>
-      <div className='flex-container index-circle'>{index + 1}</div>
+      <div className='flex-container index-circle'>{index}</div>
       <div className='icon'>{icon}</div>
     </section>
     <section className='item-content'>
-      <h2 className='title'>{title}</h2>
-      <p className='description'>{description}</p>
+      <h4 className='item-content-title'>{title}</h4>
+      <p className='item-content-description'>{description}</p>
     </section>
   </article>
 );
 
-export default memo(ReferFriendItem);
+export default ReferFriendItem;

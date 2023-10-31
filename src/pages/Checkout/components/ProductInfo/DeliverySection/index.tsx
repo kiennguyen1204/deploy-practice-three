@@ -1,3 +1,6 @@
+// components
+import Image from 'components/common/Image';
+
 interface Props {
   title?: string;
   imgSrc: string;
@@ -14,10 +17,10 @@ export const DeliverySection: React.FC<Props> = ({
   regularText
 }) => (
   <section className='flex-column delivery-content'>
-    {title && <h2 className='title'>{title}</h2>}
+    {title && <h2 className='image-title'>{title}</h2>}
     <div className='flex-column delivery-box'>
       <div className='flex-container deli-icon'>
-        <img src={imgSrc} alt={imgAlt} />
+        <Image src={imgSrc} alt={imgAlt} />
       </div>
       {boldText && <p className='deli-bold'>{boldText}</p>}
       {regularText && <p className='deli-text'>{regularText}</p>}

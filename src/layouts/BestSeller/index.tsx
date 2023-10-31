@@ -2,30 +2,13 @@ import { useState } from 'react';
 
 // components
 import { Sellers } from './Sellers';
+import TabList from './TabList';
 
 // styles
 import './index.css';
 
 export const BestSeller: React.FC = (): JSX.Element => {
-  const [currentTab, setCurrentTab] = useState<number>(0);
-  const tabsList = [
-    {
-      title: 'Best Sellers',
-      to: 'populate'
-    },
-    {
-      title: 'Bundles & Promotions',
-      to: 'Promotions'
-    },
-    {
-      title: 'On Sale',
-      to: 'Sale'
-    }
-  ];
-
-  const changeTab = (index: number) => {
-    setCurrentTab(index);
-  };
+  const [currentTab] = useState<number>(0);
 
   return (
     <section className='best-seller-container'>
@@ -33,18 +16,7 @@ export const BestSeller: React.FC = (): JSX.Element => {
         <h2 className='best-seller-title'>BEST DISPENSARY TO BUY WEED ONLINE IN CANADA</h2>
 
         <div className='best-seller-box-wrapper'>
-          <ul className='flex-row-container nav-pill'>
-            {tabsList.map((tab, index) => {
-              return (
-                <li
-                  className={`nav-item ${index === currentTab && 'active'}`}
-                  onClick={() => changeTab(index)}
-                  key={index}>
-                  <button className='btn nav-link'>{tab.title}</button>
-                </li>
-              );
-            })}
-          </ul>
+          <TabList />
         </div>
 
         <div className='tab-content'>

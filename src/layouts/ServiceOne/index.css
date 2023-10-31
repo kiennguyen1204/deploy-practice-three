@@ -43,7 +43,7 @@
   .service-list-box-left
   .icon-box
   img {
-  width: 36px;
+  object-fit: cover;
   height: var(--height-regular);
 }
 
@@ -113,7 +113,7 @@
     .service-list-box-left
     .icon-box
     img {
-    width: 64px;
+    width: 56px;
     height: 64px;
   }
 

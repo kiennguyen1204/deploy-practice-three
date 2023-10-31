@@ -20,22 +20,26 @@ exports[`ReferFriend Component matches snapshot 1`] = `
             <img
               alt="refer"
               class="bg-mobile"
+              decoding="async"
+              loading="lazy"
               src="IMAGE_MOCK"
             />
             <img
               alt="refer"
               class="bg-desktop"
+              decoding="async"
+              loading="lazy"
               src="IMAGE_MOCK"
             />
           </picture>
           <div
             class="wrapper-container card-wrapper"
           >
-            <h1
-              class="title"
+            <h2
+              class="refer-title"
             >
               REFER A FRIEND
-            </h1>
+            </h2>
             <p
               class="get"
             >
@@ -61,13 +65,13 @@ exports[`ReferFriend Component matches snapshot 1`] = `
     <section
       class="content-full-card"
     >
-      <h2
+      <h3
         class="title-bottom"
       >
         HOW TO ORDER WEED ONLINE FROM TOP SHELF BC - MAIL ORDER MARIJUANA
-      </h2>
+      </h3>
       <p
-        class="description"
+        class="item-content-description"
       >
         Ordering weed online from Top Shelf BC is easy. We are proud to have made the process accessible across multiple platforms and simple to understand, meaning that more people can come to us to buy their cannabis products online.
       </p>
@@ -93,20 +97,22 @@ exports[`ReferFriend Component matches snapshot 1`] = `
               >
                 <img
                   alt="refer"
-                  src="IMAGE_MOCK"
+                  decoding="async"
+                  loading="lazy"
+                  src="/src/assets/images/refer/register.svg"
                 />
               </div>
             </section>
             <section
               class="item-content"
             >
-              <h2
-                class="title"
+              <h4
+                class="item-content-title"
               >
                 REGISTER
-              </h2>
+              </h4>
               <p
-                class="description"
+                class="item-content-description"
               >
                 Sign up for an account with us. This is quick and simple. We don’t require any more details from you than the bare minimum needed for you to place an order and get your product delivered.
               </p>
@@ -128,20 +134,22 @@ exports[`ReferFriend Component matches snapshot 1`] = `
               >
                 <img
                   alt="refer"
-                  src="IMAGE_MOCK"
+                  decoding="async"
+                  loading="lazy"
+                  src="/src/assets/images/refer/shop.svg"
                 />
               </div>
             </section>
             <section
               class="item-content"
             >
-              <h2
-                class="title"
+              <h4
+                class="item-content-title"
               >
                 SHOP
-              </h2>
+              </h4>
               <p
-                class="description"
+                class="item-content-description"
               >
                 Decide on what you want to purchase. We stock a wide range of edibles,flowers, concentrates and mushrooms there is bound to be something for everyone.
               </p>
@@ -163,20 +171,22 @@ exports[`ReferFriend Component matches snapshot 1`] = `
               >
                 <img
                   alt="refer"
-                  src="IMAGE_MOCK"
+                  decoding="async"
+                  loading="lazy"
+                  src="/src/assets/images/refer/wallet.svg"
                 />
               </div>
             </section>
             <section
               class="item-content"
             >
-              <h2
-                class="title"
+              <h4
+                class="item-content-title"
               >
                 MAKE PAYMENT
-              </h2>
+              </h4>
               <p
-                class="description"
+                class="item-content-description"
               >
                 Pay securely. Our site boasts sturdy protection certificates to keep your card details and related data safe.
               </p>
@@ -198,20 +208,22 @@ exports[`ReferFriend Component matches snapshot 1`] = `
               >
                 <img
                   alt="refer"
-                  src="IMAGE_MOCK"
+                  decoding="async"
+                  loading="lazy"
+                  src="/src/assets/images/refer/relax.svg"
                 />
               </div>
             </section>
             <section
               class="item-content"
             >
-              <h2
-                class="title"
+              <h4
+                class="item-content-title"
               >
                 RELAX
-              </h2>
+              </h4>
               <p
-                class="description"
+                class="item-content-description"
               >
                 Your product will be packaged discretely and shipped by Canada Post Xpresspost. We will provide you with a tracking number so then you can follow your mail order marijuana every step of the way.
               </p>

@@ -5,6 +5,7 @@ import { BUTTON_VARIANT } from 'constants/enums';
 import Input from 'components/common/Input';
 import Button from 'components/common/Button';
 import SearchIcon from 'assets/images/search_normal.svg';
+import Image from 'components/common/Image';
 
 interface Props {
   onClick: (keyword: string) => void;
@@ -28,7 +29,7 @@ const SearchBox: React.FC<Props> = ({ onClick, searchValue, onSetSearchValue }) 
             onChange={onSetSearchValue}
           />
           <Button
-            icon={<img src={SearchIcon} alt='search' />}
+            icon={<Image src={SearchIcon} alt='search' />}
             className='btn search-button'
             onClick={handleSearch}
             variant={BUTTON_VARIANT.PRIMARY}

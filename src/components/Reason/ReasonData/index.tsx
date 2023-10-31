@@ -15,7 +15,7 @@ const ReasonItem: React.FC<Props> = ({ item }): JSX.Element => {
     <section className='item-box'>
       <div className='icon'>{icon}</div>
       <p className='title-box'>{title}</p>
-      <p className='description'>{description}</p>
+      <p className='item-description'>{description}</p>
     </section>
   );
 };

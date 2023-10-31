@@ -7,6 +7,9 @@ import { CartContext } from 'contexts/CartProvider';
 // assets
 import CartIcon from 'assets/images/bag.svg';
 
+// components
+import Image from 'components/common/Image';
+
 // styles
 import './index.css';
 
@@ -30,7 +33,7 @@ const AccountCart: React.FC = (): JSX.Element => {
 
         <Link to='/cart' className='navbar-item'>
           <button className='btn cart-button'>
-            <img src={CartIcon} alt='cart' />
+            <Image src={CartIcon} alt='cart' />
           </button>
           <span className='product-quantity'>{totalQuantity}</span>
         </Link>

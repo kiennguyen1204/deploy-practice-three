@@ -34,7 +34,7 @@
                 align-items: center;
               }
 
-              .title {
+              .product-title-name {
                 color: var(--color-neutral-lighter);
                 font-size: var(--font-size-medium);
                 font-weight: var(--font-weight-regular);
@@ -84,7 +84,6 @@
                       height: 32px;
                       background: none;
                       border: none;
-                      cursor: pointer;
                     }
                   }
 
@@ -113,7 +112,6 @@
             .remove-btn {
               background: none;
               border: none;
-              cursor: pointer;
 
               & i:hover {
                 color: var(--color-other-red);

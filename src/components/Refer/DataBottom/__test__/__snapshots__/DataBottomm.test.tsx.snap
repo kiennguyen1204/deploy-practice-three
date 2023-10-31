@@ -11,7 +11,7 @@ exports[`ReferFriendItem Component renders the component with the correct title 
       <div
         class="flex-container index-circle"
       >
-        2
+        1
       </div>
       <div
         class="icon"
@@ -25,13 +25,13 @@ exports[`ReferFriendItem Component renders the component with the correct title 
     <section
       class="item-content"
     >
-      <h2
-        class="title"
+      <h4
+        class="item-content-title"
       >
         Sample Title
-      </h2>
+      </h4>
       <p
-        class="description"
+        class="item-content-description"
       >
         Sample Description
       </p>

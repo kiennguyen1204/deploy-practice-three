@@ -8,8 +8,8 @@
 }
 
 .weed-education-container .card-box .card-box-element {
-  padding: 0;
   background: var(--color-matte-white);
+  padding: 0 0 64px 0;
 }
 
 .weed-education-container .card-box .card-box-element .weed-education-group {

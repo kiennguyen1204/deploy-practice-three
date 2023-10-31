@@ -14,11 +14,12 @@ import { STEPS_CART } from 'constants/enums';
 // components
 import { ProductCart } from './components/ProductCart';
 import { PaymentInfo } from './components/PaymentInfo';
+import Image from 'components/common/Image';
 
 // styles
 import './index.css';
 
-export const Checkout: React.FC = (): JSX.Element => {
+const Checkout: React.FC = (): JSX.Element => {
   const [currentStep] = useState<number>(0);
   const { cart } = useContext(CartContext);
   const totalQuantity = cart.reduce((total, item) => total + item.quantity, 0);
@@ -26,17 +27,17 @@ export const Checkout: React.FC = (): JSX.Element => {
   const steps = [
     {
       title: 'Shopping Cart',
-      icon: <img src={CartSvg} alt='Shopping Cart' />,
+      icon: <Image src={CartSvg} alt='Shopping Cart' />,
       id: STEPS_CART.SHOPPING_CART
     },
     {
       title: 'Checkout',
-      icon: <img src={CheckoutSvg} alt='Checkout' />,
+      icon: <Image src={CheckoutSvg} alt='Checkout' />,
       id: STEPS_CART.CHECKOUT
     },
     {
       title: 'Order Complete ',
-      icon: <img src={OrderSvg} alt='Order Complete' />,
+      icon: <Image src={OrderSvg} alt='Order Complete' />,
       id: STEPS_CART.ORDER_COMPLETE
     }
   ];
@@ -52,9 +53,9 @@ export const Checkout: React.FC = (): JSX.Element => {
               className={`flex-container step-icon ${index === currentStep && 'active'} ${
                 index < currentStep && 'complete'
               }`}>
-              {index < currentStep ? <img src={TickSvg} alt='Tick' /> : element.icon}
+              {index < currentStep ? <Image src={TickSvg} alt='Tick' /> : element.icon}
             </div>
-            <p className='step-title'>{element.title}</p>
+            <h2 className='step-title'>{element.title}</h2>
             {index < steps.length - 1 && <div className='step-divider'></div>}
           </div>
         ))}
@@ -67,3 +68,5 @@ export const Checkout: React.FC = (): JSX.Element => {
     </div>
   );
 };
+
+export default Checkout;

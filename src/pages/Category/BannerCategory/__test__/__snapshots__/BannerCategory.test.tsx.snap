@@ -22,11 +22,11 @@ exports[`BannerCategory component renders component correctly 1`] = `
           >
             CONCENTRATES
           </p>
-          <h1
-            class="title"
+          <h2
+            class="banner-title"
           >
             Mix And Match Shatter/Budder 28g (4 X 7G)
-          </h1>
+          </h2>
           <div
             class="align-center rating-n-review"
           >
@@ -35,6 +35,8 @@ exports[`BannerCategory component renders component correctly 1`] = `
             >
               <img
                 alt="Star"
+                decoding="async"
+                loading="lazy"
                 src="IMAGE_MOCK"
               />
               <span
@@ -113,6 +115,8 @@ exports[`BannerCategory component renders component correctly 1`] = `
               >
                 <img
                   alt="Previous"
+                  decoding="async"
+                  loading="lazy"
                   src="IMAGE_MOCK"
                 />
               </button>
@@ -121,12 +125,16 @@ exports[`BannerCategory component renders component correctly 1`] = `
               >
                 <img
                   alt="Next"
+                  decoding="async"
+                  loading="lazy"
                   src="IMAGE_MOCK"
                 />
               </button>
             </div>
             <img
               alt="banner-category"
+              decoding="async"
+              loading="lazy"
               src="/src/assets/images/category/product_category.webp"
             />
           </div>

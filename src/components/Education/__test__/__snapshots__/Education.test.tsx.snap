@@ -9,7 +9,7 @@ exports[`WeedEducationPattern component renders correctly 1`] = `
       class="flex-space-between-container header-title"
     >
       <h2
-        class="title"
+        class="card-title"
       >
         WEED EDUCATION
       </h2>
@@ -41,6 +41,8 @@ exports[`WeedEducationPattern component renders correctly 1`] = `
               >
                 <img
                   alt="main image"
+                  decoding="async"
+                  loading="lazy"
                   src="/src/assets/images/education/info.webp"
                 />
               </picture>
@@ -50,18 +52,18 @@ exports[`WeedEducationPattern component renders correctly 1`] = `
                 <header
                   class="wrapper-container weed-education-item-info"
                 >
-                  <h2
-                    class="weed-education-item-subtitle"
-                    data-testid="subtitle-test"
-                  >
-                    January 24, 2023
-                  </h2>
-                  <h1
+                  <h3
                     class="weed-education-item-title"
                     data-testid="title-test"
                   >
                     12 Mistakes To Avoid When Buying Cannabis Online
-                  </h1>
+                  </h3>
+                  <h4
+                    class="weed-education-item-subtitle"
+                    data-testid="subtitle-test"
+                  >
+                    January 24, 2023
+                  </h4>
                   <p
                     class="weed-education-item-description"
                   >
@@ -89,6 +91,8 @@ exports[`WeedEducationPattern component renders correctly 1`] = `
               >
                 <img
                   alt="main image"
+                  decoding="async"
+                  loading="lazy"
                   src="/src/assets/images/education/weight.webp"
                 />
               </picture>
@@ -98,18 +102,18 @@ exports[`WeedEducationPattern component renders correctly 1`] = `
                 <header
                   class="wrapper-container weed-education-item-info"
                 >
-                  <h2
-                    class="weed-education-item-subtitle"
-                    data-testid="subtitle-test"
-                  >
-                    January 20, 2023
-                  </h2>
-                  <h1
+                  <h3
                     class="weed-education-item-title"
                     data-testid="title-test"
                   >
                     How To Store Cannabis and Keep it Fresh and Potent?
-                  </h1>
+                  </h3>
+                  <h4
+                    class="weed-education-item-subtitle"
+                    data-testid="subtitle-test"
+                  >
+                    January 20, 2023
+                  </h4>
                   <p
                     class="weed-education-item-description"
                   >
@@ -137,6 +141,8 @@ exports[`WeedEducationPattern component renders correctly 1`] = `
               >
                 <img
                   alt="main image"
+                  decoding="async"
+                  loading="lazy"
                   src="/src/assets/images/education/weight.webp"
                 />
               </picture>
@@ -146,18 +152,18 @@ exports[`WeedEducationPattern component renders correctly 1`] = `
                 <header
                   class="wrapper-container weed-education-item-info"
                 >
-                  <h2
-                    class="weed-education-item-subtitle"
-                    data-testid="subtitle-test"
-                  >
-                    January 19, 2023
-                  </h2>
-                  <h1
+                  <h3
                     class="weed-education-item-title"
                     data-testid="title-test"
                   >
                     The Ultimate Guide to Checking the Quality of Cannabis – 10 Industry Leading Tips
-                  </h1>
+                  </h3>
+                  <h4
+                    class="weed-education-item-subtitle"
+                    data-testid="subtitle-test"
+                  >
+                    January 19, 2023
+                  </h4>
                   <p
                     class="weed-education-item-description"
                   >

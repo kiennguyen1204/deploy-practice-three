@@ -8,6 +8,9 @@ import { BUTTON_SIZE, BUTTON_VARIANT } from 'constants/enums';
 // components
 import Button from 'components/common/Button';
 import { RatingAndReview } from '../RatingAndReview';
+import Image from 'components/common/Image';
+import DotsList from './DotsList';
+
 
 // styles
 import './index.css';
@@ -24,7 +27,7 @@ export const BannerCategory: React.FC = (): JSX.Element => {
         <div className='banner-item-wrapper'>
           <section className='flex-column wrapper-left'>
             <p className='cate'>CONCENTRATES</p>
-            <h1 className='title'>Mix And Match Shatter/Budder 28g (4 X 7G)</h1>
+            <h2 className='banner-title'>Mix And Match Shatter/Budder 28g (4 X 7G)</h2>
             <RatingAndReview />
             <div className='align-center volumes'>
               <span className='flex-container'>28g</span>
@@ -51,19 +54,18 @@ export const BannerCategory: React.FC = (): JSX.Element => {
             <div className='background-blur-item relative'>
               <div className='splide__arrows'>
                 <button className='splide__arrow splide__arrow--prev'>
-                  <img src={PrevArrow} alt='Previous' />
+                  <Image src={PrevArrow} alt='Previous' />
                 </button>
                 <button className='splide__arrow splide__arrow--next'>
-                  <img src={NextArrow} alt='Next' />
+                  <Image src={NextArrow} alt='Next' />
                 </button>
               </div>
-              <img src='assets/images/category/product_category.webp' alt='banner-category' />
+              <Image
+                src='/src/assets/images/category/product_category.webp'
+                alt='banner-category'
+              />
             </div>
-            <div className='flex-container dots'>
-              {Array.from({ length: 4 }, (_, index) => (
-                <span key={index} className={`dot ${index === 0 && 'active'} `} />
-              ))}
-            </div>
+            <DotsList />
           </section>
         </div>
       </article>

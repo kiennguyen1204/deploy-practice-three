@@ -43,6 +43,8 @@
   max-width: 672px;
   width: var(--width-base);
   margin-bottom: 16px;
+  display: flex;
+  flex-direction: column-reverse;
 }
 
 .banner-subtitle {

@@ -9,6 +9,7 @@ import { useToast } from 'hooks/useToast';
 // components
 import QuantityControl from 'components/QuantityChange';
 import Toast from 'components/common/Toast';
+import Image from 'components/common/Image';
 
 // styles
 import './index.css';
@@ -61,10 +62,10 @@ export const ProductItem: React.FC = (): JSX.Element => {
     <section className='flex-column list-cart'>
       {cart.map((element) => (
         <div className='item-cart' key={element.id}>
-          <img src={element.image} className='flex-container item-image' />
+          <Image src={element.image} className='flex-container item-image' alt='image product' />
           <div className='flex-column content-item'>
             <div className='flex-column product-box'>
-              <h1 className='title'>{element.name}</h1>
+              <h3 className='product-title-name'>{element.name}</h3>
               <div className='flex-space-between-container product-value'>
                 <QuantityControl
                   quantity={element.quantity}
